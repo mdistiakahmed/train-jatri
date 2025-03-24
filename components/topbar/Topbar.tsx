@@ -2,13 +2,20 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const Topbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -16,14 +23,14 @@ const Topbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
-          <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center">
               <Link href="/">
-              <Image
+                <Image
                   src="/logo.png"
                   alt="Train Jatri Logo"
-                  width={100} 
+                  width={100}
                   height={50}
-                  className='w-30 h-15'
+                  className="w-30 h-15"
                 />
               </Link>
             </div>
@@ -46,7 +53,6 @@ const Topbar = () => {
               >
                 Cancellation & Refunds
               </Link>
-              
             </div>
           </div>
           <div className="hidden sm:ml-6 sm:flex items-center">
@@ -100,31 +106,33 @@ const Topbar = () => {
         </div>
       </div>
 
-      <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
+      <div ref={mobileMenuRef} className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="pt-2 pb-3 space-y-1">
           <Link
             href="/schedule"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            onClick={closeMobileMenu}
           >
             Schedule
           </Link>
           <Link
             href="/station"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            onClick={closeMobileMenu}
           >
             Station
           </Link>
           <Link
             href="/cancellation"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            onClick={closeMobileMenu}
           >
             Cancellation & Refunds
           </Link>
-
-          
           <Link
             href="/live-tracking"
             className="block w-full px-4 py-2 mt-2 text-center border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
+            onClick={closeMobileMenu}
           >
             Live Tracking
           </Link>

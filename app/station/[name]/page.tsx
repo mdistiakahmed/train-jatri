@@ -1,6 +1,7 @@
 import { getDataForStation } from "@/utils/getData";
 import React from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 const StationPage = async ({ params }: any) => {
   const { name } = await params;
@@ -35,6 +36,14 @@ const StationPage = async ({ params }: any) => {
           information on train numbers, names, arrival and departure times, and
           off-days. Plan your journey with ease.
         </p>
+
+        <Image
+            src="/logo.PNG"
+            alt="Bangladesh Railway Train Journey"
+            width={400}
+            height={200}
+            className="mx-auto my-8"
+          />
       </div>
 
       <div className="w-full overflow-x-auto max-w-screen p-4">

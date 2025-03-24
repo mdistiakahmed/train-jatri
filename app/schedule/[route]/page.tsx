@@ -2,6 +2,7 @@ import React from "react";
 import { getDataForRoute } from "@/utils/getData";
 import Head from "next/head";
 import LiveTrackButton from "@/components/LiveTrackButton"; // Adjust the path
+import Image from "next/image";
 
 const Page = async ({ params }: any) => {
   const { route } = await params;
@@ -47,6 +48,14 @@ const Page = async ({ params }: any) => {
             durations. Discover all available trains and categories for this
             popular travel route in Bangladesh.
           </p>
+
+          <Image
+            src="/logo.PNG"
+            alt="Bangladesh Railway Train Journey"
+            width={400}
+            height={200}
+            className="mx-auto my-8"
+          />
         </div>
 
         <div className="w-full overflow-x-auto max-w-screen p-4  whitespace-nowrap">

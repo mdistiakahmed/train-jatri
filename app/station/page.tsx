@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const StationPage = () => {
   const stations = {
@@ -79,6 +80,14 @@ const StationPage = () => {
       <p className="mb-8 text-lg text-gray-700">
         Explore comprehensive train schedules for stations across Bangladesh. Find information on train numbers, names, arrival and departure times, and off-days. Plan your journey with ease.
       </p>
+
+      <Image
+            src="/logo.PNG"
+            alt="Bangladesh Railway Train Journey"
+            width={400}
+            height={200}
+            className="mx-auto my-8"
+          />
 
       {Object.entries(stations).map(([region, stationList]) => (
         <div key={region} className="mb-8 text-center align-center">

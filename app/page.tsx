@@ -14,11 +14,11 @@ const HomePage = () => {
             Your comprehensive guide to navigating the Bangladesh Railway. Get up-to-date schedules, live tracking, and essential travel information.
           </p>
           <Image
-            src="/train-jatri.jpg"
+            src="/logo.PNG"
             alt="Bangladesh Railway Train Journey"
             width={400}
             height={200}
-            className="mx-auto rounded-lg shadow-xl"
+            className="mx-auto"
           />
         </section>
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const SchedulePage = () => {
   const routes = {
@@ -42,6 +43,14 @@ const SchedulePage = () => {
         <p className="text-lg text-gray-700 mb-10 text-center">
           Plan your travel with ease. Find comprehensive train schedules for popular routes across Bangladesh.
         </p>
+
+        <Image
+            src="/logo.PNG"
+            alt="Bangladesh Railway Train Journey"
+            width={400}
+            height={200}
+            className="mx-auto my-8"
+          />
 
         {Object.entries(routes).map(([route, schedules]) => {
           const words = route.split(' ');

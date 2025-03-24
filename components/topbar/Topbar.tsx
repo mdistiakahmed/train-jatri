@@ -26,11 +26,11 @@ const Topbar = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src="/logo.png"
+                  src="/train-jatri.jpg"
                   alt="Train Jatri Logo"
-                  width={100}
-                  height={50}
-                  className="w-30 h-15"
+                  width={80}
+                  height={40}
+                  className="w-20 h-10"
                 />
               </Link>
             </div>
@@ -48,10 +48,10 @@ const Topbar = () => {
                 Station
               </Link>
               <Link
-                href="/cancellation"
+                href="/places-to-visit"
                 className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
               >
-                Cancellation & Refunds
+                Places to visit
               </Link>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Topbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="black"
                 aria-hidden="true"
               >
                 <path
@@ -91,7 +91,7 @@ const Topbar = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
+                stroke="black"
                 aria-hidden="true"
               >
                 <path
@@ -106,7 +106,7 @@ const Topbar = () => {
         </div>
       </div>
 
-      <div ref={mobileMenuRef} className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
+      <div ref={mobileMenuRef} className={`${isMobileMenuOpen ? 'block' : 'hidden'} sm:hidden text-center `}>
         <div className="pt-2 pb-3 space-y-1">
           <Link
             href="/schedule"
@@ -123,11 +123,11 @@ const Topbar = () => {
             Station
           </Link>
           <Link
-            href="/cancellation"
+            href="/places-to-visit"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
-            Cancellation & Refunds
+            Places to visit
           </Link>
           <Link
             href="/live-tracking"

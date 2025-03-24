@@ -14,7 +14,7 @@ const HomePage = () => {
             Your comprehensive guide to navigating the Bangladesh Railway. Get up-to-date schedules, live tracking, and essential travel information.
           </p>
           <Image
-            src="/logo.PNG"
+            src="/logo.png"
             alt="Bangladesh Railway Train Journey"
             width={400}
             height={200}

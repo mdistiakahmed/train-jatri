@@ -38,7 +38,7 @@ const StationPage = async ({ params }: any) => {
         </p>
 
         <Image
-            src="/logo.PNG"
+            src="/logo.png"
             alt="Bangladesh Railway Train Journey"
             width={400}
             height={200}

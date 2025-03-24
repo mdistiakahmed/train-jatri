@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/topbar/Topbar";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +32,11 @@ export default function RootLayout({
         <Topbar />
 
         <div className="flex justify-between">
-            <div className="hidden md:block w-1/6 pt-36">
-            </div>
-            <main className="flex-1 md:mx-0">{children}</main>
-            <div className="hidden md:block w-1/6 pt-36">
-            </div>
-          </div>
+          <div className="hidden md:block w-1/6 pt-36"></div>
+          <main className="flex-1 md:mx-0">{children}</main>
+          <div className="hidden md:block w-1/6 pt-36"></div>
+        </div>
+        <Footer />
       </body>
     </html>
   );

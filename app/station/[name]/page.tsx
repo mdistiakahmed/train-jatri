@@ -29,12 +29,12 @@ const StationPage = async ({ params }: any) => {
   return (
     <div className="text-center">
       <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Train Schedule for {name}</h1>
-      <p className="mb-4">
-        Explore the comprehensive train schedule for {name} station. Find
-        information on train numbers, names, arrival and departure times, and
-        off-days. Plan your journey with ease.
-      </p>
+        <h1 className="text-2xl font-bold mb-4">Train Schedule for {name}</h1>
+        <p className="mb-4">
+          Explore the comprehensive train schedule for {name} station. Find
+          information on train numbers, names, arrival and departure times, and
+          off-days. Plan your journey with ease.
+        </p>
       </div>
 
       <div className="w-full overflow-x-auto max-w-screen p-4">

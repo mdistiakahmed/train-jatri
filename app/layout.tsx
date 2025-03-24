@@ -61,11 +61,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}`  }
       >
         <Topbar />
 
-        <div className="flex justify-between">
+        <div className={`flex justify-between bg-[url('/snowflakes.png')] bg-center`}>
           <div className="hidden md:block w-1/6 pt-36"></div>
           <main className="flex-1">{children}</main>
           <div className="hidden md:block w-1/6 pt-36"></div>

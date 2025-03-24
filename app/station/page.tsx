@@ -4,32 +4,68 @@ import Head from 'next/head';
 
 const StationPage = () => {
   const stations = {
-    "Chittagong Region": [
-      "Chittagong",
-      "Feni",
-      "Laksham",
-      "Noakhali",
-      "Comilla"
-    ],
-    "Dhaka Region": [
+    "Dhaka to Chattogram Route": [
       "Dhaka",
-      "Narayanganj",
-      "Gazipur",
-      "Mymensingh",
-      "Brahmanbaria"
+      "Tejgaon",
+      "Dhaka Bimanbandar",
+      "Tongi",
+      "Pubail",
+      "Arikhola",
+      "Ghorashal",
+      "Jinardi",
+      "Narsingdi",
+      "Amirganj",
+      "Khanabari",
+      "Hatubhanga",
+      "Srinidi",
+      "Daulatkandi",
+      "Bhairab Bazar",
+      "Brahmanbaria",
+      "Paghachang",
+      "Bhatshala",
+      "Akhaura",
+      "Gangasagar",
+      "Imambari",
+      "Kasba",
+      "Mandabag",
+      "Saldanodi",
+      "Shashidal",
+      "Rajapur",
+      "Sadar Rasulpur",
+      "Cumilla",
+      "Mainamati",
+      "Lalmai",
+      "Alishwar",
+      "Laksam",
+      "Naoti",
+      "Nangolkot",
+      "Hasanpur",
+      "Gunabati",
+      "Sharishadi",
+      "Feni",
+      "Kalidaha",
+      "Fazilpur",
+      "Muhurigang",
+      "Chinky Astana",
+      "Mirsarai",
+      "Bortakia",
+      "Sitakunda",
+      "Barabkunda",
+      "Bhatiari",
+      "Faujdarhat",
+      "Kaibalyadham",
+      "Pahartali",
+      "Battali",
+      "Chattogram"
     ],
-    "Sylhet Region": [
-      "Sylhet",
-      "Sreemangal",
-      "Habiganj",
-      "Moulvibazar"
+    "Dhaka to Mymensingh Route": [
+      "Upcoming",
     ],
-    "Rajshahi Region": [
-      "Rajshahi",
-      "Natore",
-      "Pabna",
-      "Sirajganj",
-      "Bogra"
+    "Dhaka to Sylhet Route": [
+      "Upcoming",
+    ],
+    "Dhaka to Noakhali Route": [
+      "Upcoming",
     ],
   };
 
@@ -45,13 +81,14 @@ const StationPage = () => {
       </p>
 
       {Object.entries(stations).map(([region, stationList]) => (
-        <div key={region} className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">{region}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div key={region} className="mb-8 text-center align-center">
+          <h2 className="text-2xl font-semibold mb-4">
+            {region.split(' ')[0]} <span className="text-xl">→</span> {region.split(' ')[2]} Route
+          </h2>
+          <div className="grid grid-cols-1 gap-4">
             {stationList.map((station) => (
-              <Link key={station} href={`/station/${station.toLowerCase()}`} className="block p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-300">
-                <h3 className="text-lg font-semibold mb-2">{station} Train Schedule</h3>
-                <p className="text-sm text-gray-600">View train schedules for {station} station.</p>
+              <Link key={station} href={`/station/${station.toLowerCase()}`} className="block p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-300">
+                <h3 className="text-md font-semibold mb-2">{station} Train Schedule</h3>
               </Link>
             ))}
           </div>

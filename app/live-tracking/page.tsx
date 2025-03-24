@@ -86,7 +86,7 @@ const LiveTrackingPage = () => {
         <ul className="list-disc list-inside">
           <li className="mb-2">
             Ensure that you type the command correctly, with a space between
-            "TR" and the train number/code.
+            &quot;TR&quot; and the train number/code.
           </li>
           <li className="mb-2">Standard SMS charges may apply.</li>
           <li>

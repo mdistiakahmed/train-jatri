@@ -106,7 +106,7 @@ const Page = async ({ params }: any) => {
     }) at ${routes[routes.length - 1].arrival_time}.`;
 
     return (
-      <div>
+      <div className="bg-white">
         <h2 className="font-semibold  mb-4 text-center">{pathName}</h2>
         <p className="text-center">{description}</p>
       </div>
@@ -212,13 +212,13 @@ const Page = async ({ params }: any) => {
         </h1>
 
         <div className="mx-auto p-6 text-center">
-          <p className="p-2 border rounded-2xl">
+          <p className="p-2 border rounded-2xl bg-white">
             {forward.train_name} travels {forward.path} on every day of the week
             except {forwardOffDay}. It departs from {forwardSource} at{" "}
             {forwardDepartureTime}, and arrives at {forwardDestination} at{" "}
             {forwardArrivalTime}. It takes total {forwardHours}.
           </p>
-          <p className="p-2 mt-4 border rounded-2xl">
+          <p className="p-2 mt-4 border rounded-2xl bg-white">
             {reverse.train_name} travels {reverse.path} on every day of the week
             except {reverseOffDay}. It departs from {reverseSource} at{" "}
             {reverseDepartureTime}, and arrives at {reverseDestination} at{" "}
@@ -247,7 +247,7 @@ const Page = async ({ params }: any) => {
             <div className="flex flex-col items-center">
               {forward.routes.map((route: any, index: any) => (
                 <div key={route.city} className="flex flex-col items-center">
-                  <div className="border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
+                  <div className="bg-white border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
                     <div className="flex items-center mb-2">
                       {index === 0 ? (
                         <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
@@ -291,7 +291,7 @@ const Page = async ({ params }: any) => {
             <div className="flex flex-col items-center">
               {reverse.routes.map((route: any, index: any) => (
                 <div key={route.city} className="flex flex-col items-center">
-                  <div className="border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
+                  <div className="bg-white border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
                     <div className="flex items-center mb-2">
                       {index === 0 ? (
                         <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
@@ -356,7 +356,10 @@ const Page = async ({ params }: any) => {
           </h2>
           <div className="space-y-6">
             {faqData.map((faq, index) => (
-              <div key={index} className="border rounded-lg p-4 shadow-sm">
+              <div
+                key={index}
+                className="border rounded-lg p-4 shadow-sm bg-white"
+              >
                 <h3 className="text-lg font-semibold text-indigo-700 mb-2">
                   {faq.question}
                 </h3>

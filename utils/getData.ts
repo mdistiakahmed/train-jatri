@@ -68,6 +68,21 @@ export const getDataForTrain = async (name: string) => {
           await import("../data/train/dhaka-noakhali/upakul")
         ).trainData;
         break;
+      case "mohanogor-provati":
+        trainScheduleData = (
+          await import("../data/train/dhaka-chattogram/mohanagor-provati")
+        ).trainData;
+        break;
+      case "mohanogor-godhuli":
+        trainScheduleData = (
+          await import("../data/train/dhaka-chattogram/mohanagor-provati")
+        ).trainData;
+        break;
+      case "chattala-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-chattogram/chattala")
+        ).trainData;
+        break;
       default:
         break;
     }

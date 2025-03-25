@@ -6,9 +6,8 @@ const TrainsPage = () => {
   const trainRoutes = {
     "Dhaka-Chattogram": [
       "Mohanogor Provati",
-      "Chattola Express",
-      "Turna Express",
-      "Suborno Express",
+      "Mohanogor Godhuli",
+      "Chattala Express",
     ],
     "Dhaka-Noakhali": ["Upakul Express"],
     "Dhaka-Sylhet": [

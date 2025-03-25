@@ -47,7 +47,7 @@ const Topbar = () => {
                 Stations
               </Link>
               <Link
-                href="/schedule"
+                href="/routes"
                 className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
               >
                 Routes

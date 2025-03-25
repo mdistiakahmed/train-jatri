@@ -3,8 +3,37 @@ import { getDataForTrain } from "@/utils/getData";
 import { FaTrain, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Image from "next/image";
 
+export async function generateStaticParams() {
+  const routes: any = {
+    "dhaka-chattogram-route": [
+      "Mohanagar Provati",
+      "Mohanagar Godhuli",
+      "Chattala Express",
+    ],
+    "dhaka-sylhet-route": [
+      "Parabat Express",
+      "Jayantika Express",
+      "Kalni Express",
+      "Upaban Express",
+    ],
+
+    "dhaka-noakhali-route": ["Upakul Express"],
+    "sylhet-chattogram-route": ["Paharika Express", "Udayan Express"],
+  };
+
+  const trainNames: string[] = [];
+
+  for (const route in routes) {
+    trainNames.push(...routes[route]);
+  }
+
+  return trainNames.map((name: string) => ({
+    name: name.split(" ").join("-").toLowerCase(),
+  }));
+}
+
 export const generateMetadata = async ({ params }: any) => {
-  const { name } = params;
+  const { name } = await params;
   const trainData = await getDataForTrain(name);
 
   if (!trainData || !trainData.forward) {

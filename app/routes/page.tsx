@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import Image from 'next/image';
+import React from "react";
+import Link from "next/link";
+import Head from "next/head";
+import Image from "next/image";
 
 const SchedulePage = () => {
   const routes = {
@@ -30,30 +30,26 @@ const SchedulePage = () => {
 
   return (
     <div className="p-6 min-h-screen">
-      <Head>
-        <title>Train Schedules - Plan Your Journey | Train Jatri</title>
-        <meta name="description" content="Discover detailed train schedules for popular routes across Bangladesh. Find timings, stations, and plan your journey with Train Jatri." />
-      </Head>
-
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-8 text-center">
-          Explore Train Schedules
+          Explore Train Routes
         </h1>
 
         <p className="text-lg text-gray-700 mb-10 text-center">
-          Plan your travel with ease. Find comprehensive train schedules for popular routes across Bangladesh.
+          Plan your travel with ease. Find comprehensive train schedules for
+          popular routes across Bangladesh.
         </p>
 
         <Image
-            src="/logo.png"
-            alt="Bangladesh Railway Train Journey"
-            width={400}
-            height={200}
-            className="mx-auto my-8"
-          />
+          src="/logo.png"
+          alt="Bangladesh Railway Train Journey"
+          width={400}
+          height={200}
+          className="mx-auto my-8"
+        />
 
         {Object.entries(routes).map(([route, schedules]) => {
-          const words = route.split(' ');
+          const words = route.split(" ");
           const from = words[0];
           const to = words[2];
 
@@ -67,15 +63,21 @@ const SchedulePage = () => {
                 {schedules.map((schedule) => (
                   <Link
                     key={schedule}
-                    href={`/schedule/${schedule.toLowerCase().replace(/ /g, '-')}`}
+                    href={`/schedule/${schedule
+                      .toLowerCase()
+                      .replace(/ /g, "-")}`}
                     className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
                     <h3 className="text-xl font-semibold text-gray-800 mb-3">
                       {schedule}
                     </h3>
-                    <p className="text-gray-600">View detailed schedule for this route.</p>
+                    <p className="text-gray-600">
+                      View detailed schedule for this route.
+                    </p>
                     <div className="mt-4 flex justify-end">
-                      <span className="text-indigo-600 font-medium">View Schedule →</span>
+                      <span className="text-indigo-600 font-medium">
+                        View Schedule →
+                      </span>
                     </div>
                   </Link>
                 ))}

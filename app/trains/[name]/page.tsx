@@ -3,6 +3,37 @@ import { getDataForTrain } from "@/utils/getData";
 import { FaTrain, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Image from "next/image";
 
+export const generateMetadata = async ({ params }: any) => {
+  const { name } = params;
+  const trainData = await getDataForTrain(name);
+
+  if (!trainData || !trainData.forward) {
+    return {
+      title: "Train Details Not Found",
+      description: "Train details could not be found.",
+    };
+  }
+
+  const { forward } = trainData;
+
+  return {
+    title: `${forward.train_name}- Route & Schedule`,
+    description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+    openGraph: {
+      title: `${forward.train_name} - Route & Schedule`,
+      description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+      url: `https://www.trainjatri.com/trains/${name}`,
+      siteName: "Train Jatri",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${forward.train_name} - Route & Schedule`,
+      description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+    },
+  };
+};
+
 const Page = async ({ params }: any) => {
   const { name } = await params;
   const trainData = await getDataForTrain(name);

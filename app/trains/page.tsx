@@ -8,6 +8,7 @@ const TrainsPage = () => {
       "Mohanogor Provati",
       "Mohanogor Godhuli",
       "Chattala Express",
+      "Mohanagar Express",
     ],
     "Dhaka-Noakhali": ["Upakul Express"],
     "Dhaka-Sylhet": [
@@ -16,14 +17,8 @@ const TrainsPage = () => {
       "Kalni Express",
       "Upaban Express",
     ],
-    "Dhaka-Rajshahi": [
-      "Padma Express",
-      "Dhumketu Express",
-      "Silk City Express",
-      "Bonolota Express",
-    ],
+
     "Chattogram-Sylhet": ["Paharika Express", "Udayan Express"],
-    "Khulna-Rajshahi": ["Sagordari Express", "Rupsa Express"],
   };
 
   return (

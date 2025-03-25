@@ -83,6 +83,13 @@ export const getDataForTrain = async (name: string) => {
           await import("../data/train/dhaka-chattogram/chattala")
         ).trainData;
         break;
+
+      case "mohanagar-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-chattogram/mohanagar-express")
+        ).trainData;
+        break;
+
       default:
         break;
     }

@@ -226,6 +226,29 @@ const Page = async ({ params }: any) => {
           </p>
         </div>
 
+        <div className="mx-auto p-6 text-center text-xs ">
+          <h2 className="font-semibold text-indigo-700 mb-2 text-sm">
+            Live track this Train
+          </h2>
+          <div className="flex justify-between gap-2">
+            <div className="flex flex-col p-2 border rounded-lg">
+              <p className="font-bold italic">{forward.path} </p>
+              <p>
+                Type <b>TR {forward.train_number}</b> and send it to{" "}
+                <b>16318</b>.
+              </p>
+            </div>
+
+            <div className="flex flex-col p-2 border rounded-lg">
+              <p className="font-bold italic">{reverse.path}</p>
+              <p>
+                Type <b>TR {reverse.train_number}</b> and send it to{" "}
+                <b>16318</b>.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <Image
           src="/logo.png"
           alt="Bangladesh Railway Train Journey"

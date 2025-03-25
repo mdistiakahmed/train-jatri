@@ -90,6 +90,42 @@ export const getDataForTrain = async (name: string) => {
         ).trainData;
         break;
 
+      case "parabat-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-sylhet/parabat-express")
+        ).trainData;
+        break;
+
+      case "jayantika-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-sylhet/jayentika-express")
+        ).trainData;
+        break;
+
+      case "kalni-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-sylhet/kalni-express")
+        ).trainData;
+        break;
+
+      case "upaban-express":
+        trainScheduleData = (
+          await import("../data/train/dhaka-sylhet/upaban-express")
+        ).trainData;
+        break;
+
+      case "paharika-express":
+        trainScheduleData = (
+          await import("../data/train/chattogram-sylhet/paharika-express")
+        ).trainData;
+        break;
+
+      case "udayan-express":
+        trainScheduleData = (
+          await import("../data/train/chattogram-sylhet/udayan-express")
+        ).trainData;
+        break;
+
       default:
         break;
     }

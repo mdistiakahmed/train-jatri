@@ -10,7 +10,6 @@ const TrainsPage = () => {
       "Chattala Express",
       "Mohanagar Express",
     ],
-    "Dhaka-Noakhali": ["Upakul Express"],
     "Dhaka-Sylhet": [
       "Parabat Express",
       "Jayantika Express",
@@ -19,6 +18,7 @@ const TrainsPage = () => {
     ],
 
     "Chattogram-Sylhet": ["Paharika Express", "Udayan Express"],
+    "Dhaka-Noakhali": ["Upakul Express"],
   };
 
   return (

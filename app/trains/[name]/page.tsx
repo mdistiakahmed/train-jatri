@@ -1,6 +1,7 @@
 import React from "react";
 import { getDataForTrain } from "@/utils/getData";
 import { FaTrain, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import Image from "next/image";
 
 const Page = async ({ params }: any) => {
   const { name } = await params;
@@ -81,6 +82,97 @@ const Page = async ({ params }: any) => {
     );
   };
 
+  const faqData = [
+    {
+      question: `What are the operating days of ${forward.train_name} from ${forward.path}?`,
+      answer: `${forward.train_name} operates on ${forward.days.join(
+        ", "
+      )} from ${forward.path}.`,
+    },
+    {
+      question: `What is the total duration of the journey for ${forward.train_name} from ${forward.path}?`,
+      answer: `The total duration for ${forward.train_name} from ${forward.path} is ${forward.total_duration}.`,
+    },
+    {
+      question: `Where does ${forward.train_name} start and end from ${forward.path}?`,
+      answer: `${forward.train_name} starts at ${
+        forward.routes[0].city
+      } and ends at ${
+        forward.routes[forward.routes.length - 1].city
+      } that travels from ${forward.path}.`,
+    },
+    {
+      question: `What is the weekly offday for ${forward.train_name} that travels from ${forward.path}?`,
+      answer: `The weekly offday for ${forward.train_name} from ${
+        forward.path
+      } is ${
+        forward.days.length < 7
+          ? forward.days.reduce(
+              (offDay: any, day: any) =>
+                (offDay = [
+                  "Sun",
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                ].filter((d) => !forward.days.includes(d))[0]),
+              ""
+            )
+          : "No offday"
+      }.`,
+    },
+    ...forward.routes.slice(1).map((route: any) => ({
+      question: `When does ${forward.train_name} arrive at ${route.city} that travels from ${forward.path}?`,
+      answer: `${forward.train_name} arrives at ${route.city} at ${route.arrival_time} that travels from ${forward.path}.`,
+    })),
+    {
+      question: `What are the operating days of ${reverse.train_name} that travels from ${reverse.path}?`,
+      answer: `${reverse.train_name} operates on ${reverse.days.join(
+        ", "
+      )} that travels from ${reverse.path}.`,
+    },
+    {
+      question: `What is the total duration of the journey for ${reverse.train_name} that travels from ${reverse.path}?`,
+      answer: `The total duration for ${reverse.train_name} that travels from ${reverse.path} is ${reverse.total_duration}.`,
+    },
+    {
+      question: `Where does ${reverse.train_name} start and end that travels from ${reverse.path}?`,
+      answer: `${reverse.train_name} starts at ${
+        reverse.routes[0].city
+      } and ends at ${
+        reverse.routes[reverse.routes.length - 1].city
+      } that travels from ${reverse.path}.`,
+    },
+    {
+      question: `What is the weekly offday for ${reverse.train_name} that travels from ${reverse.path}?`,
+      answer: `The weekly offday for ${reverse.train_name} that travels from ${
+        reverse.path
+      } is ${
+        reverse.days.length < 7
+          ? reverse.days.reduce(
+              (offDay: any, day: any) =>
+                (offDay = [
+                  "Sun",
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                ].filter((d) => !reverse.days.includes(d))[0]),
+              ""
+            )
+          : "No offday"
+      }.`,
+    },
+    ...reverse.routes.slice(1).map((route: any) => ({
+      question: `When does ${reverse.train_name} arrive at ${route.city} that travels from ${reverse.path}?`,
+      answer: `${reverse.train_name} arrives at ${route.city} at ${route.arrival_time} that travels from ${reverse.path}.`,
+    })),
+  ];
+
   return (
     <div className="min-h-screen">
       <div className="mx-auto p-6">
@@ -102,6 +194,14 @@ const Page = async ({ params }: any) => {
             {reverseArrivalTime}. It takes total {reverseHours}.
           </p>
         </div>
+
+        <Image
+          src="/logo.png"
+          alt="Bangladesh Railway Train Journey"
+          width={400}
+          height={200}
+          className="mx-auto my-8"
+        />
 
         <div className="flex flex-col md:flex-row">
           {/* Left Side (Forward Route) */}
@@ -194,6 +294,14 @@ const Page = async ({ params }: any) => {
           </div>
         </div>
 
+        <Image
+          src="/logo.png"
+          alt="Bangladesh Railway Train Journey"
+          width={400}
+          height={200}
+          className="mx-auto my-8"
+        />
+
         <div className="my-5">
           {generateRouteDescription(
             forward.routes,
@@ -208,6 +316,23 @@ const Page = async ({ params }: any) => {
             reverse.train_name,
             reverse.path
           )}
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-8">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center border-b pb-2 border-gray-200">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faqData.map((faq, index) => (
+              <div key={index} className="border rounded-lg p-4 shadow-sm">
+                <h3 className="text-lg font-semibold text-indigo-700 mb-2">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-700">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

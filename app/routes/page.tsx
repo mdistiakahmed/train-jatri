@@ -68,12 +68,9 @@ const SchedulePage = () => {
                       .replace(/ /g, "-")}`}
                     className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
                   >
-                    <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                    <h3 className="text-md font-semibold text-gray-800 mb-3">
                       {schedule}
                     </h3>
-                    <p className="text-gray-600">
-                      View detailed schedule for this route.
-                    </p>
                     <div className="mt-4 flex justify-end">
                       <span className="text-indigo-600 font-medium">
                         View Schedule →

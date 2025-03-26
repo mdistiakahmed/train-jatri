@@ -62,6 +62,13 @@ const Topbar = () => {
           </div>
           <div className="hidden sm:ml-6 sm:flex items-center">
             <Link
+              href="https://eticket.railway.gov.bd/"
+              target="_blank"
+              className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+            >
+              Buy Ticket
+            </Link>
+            <Link
               href="/live-tracking"
               className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
             >
@@ -133,7 +140,7 @@ const Topbar = () => {
             Stations
           </Link>
           <Link
-            href="/schedule"
+            href="/routes"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
@@ -146,6 +153,15 @@ const Topbar = () => {
           >
             Places to visit
           </Link>
+          <Link
+            href="https://eticket.railway.gov.bd/"
+            target="_blank"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            onClick={closeMobileMenu}
+          >
+            Buy Ticket
+          </Link>
+
           <Link
             href="/live-tracking"
             className="block w-full px-4 py-2 mt-2 text-center border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"

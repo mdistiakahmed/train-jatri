@@ -19,26 +19,12 @@ export const generateMetadata = async ({ params }: any) => {
     };
   }
 
-  const intercityTrains =
-    routeData.trainScheduleData.find(
-      (category: any) => category.category === "Intercity"
-    )?.schedules || [];
-  const localTrains =
-    routeData.trainScheduleData.find(
-      (category: any) => category.category === "Local"
-    )?.schedules || [];
-
-  const trainNames = [
-    ...intercityTrains.map((train: any) => train.trainName),
-    ...localTrains.map((train: any) => train.trainName),
-  ].join(", ");
-
   return {
-    title: `Train Schedule: ${sourceCity} to ${destinationCity} - ${trainNames}`,
-    description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days for ${trainNames}.`,
+    title: `Train Schedule: ${sourceCity} to ${destinationCity}`,
+    description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days.`,
     openGraph: {
-      title: `Train Schedule: ${sourceCity} to ${destinationCity} - ${trainNames}`,
-      description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days for ${trainNames}.`,
+      title: `Train Schedule: ${sourceCity} to ${destinationCity}`,
+      description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days.`,
       url: `https://www.trainjatri.com/routes/${route}`,
       siteName: "Train Jatri",
       type: "website",
@@ -46,8 +32,8 @@ export const generateMetadata = async ({ params }: any) => {
     },
     twitter: {
       card: "summary_large_image",
-      title: `Train Schedule: ${sourceCity} to ${destinationCity} - ${trainNames}`,
-      description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days for ${trainNames}.`,
+      title: `Train Schedule: ${sourceCity} to ${destinationCity}`,
+      description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days.`,
       images: ["/train-jatri.jpg"],
     },
   };
@@ -102,8 +88,10 @@ const Page = async ({ params }: any) => {
             convenience.
           </p>
           <p className="text-lg  mb-8 text-center">
-            There are {intercityTrains.length} intercity trains and{" "}
-            {localTrains.length} local trains available for this route.
+            There are {intercityTrains.length} intercity trains on this route{" "}
+            {localTrains.length
+              ? `and ${localTrains.length} local trains available for this route.`
+              : ""}
           </p>
 
           <Image
@@ -190,6 +178,35 @@ const Page = async ({ params }: any) => {
                   </tbody>
                 </table>
               </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="my-6 space-y-4">
+          {intercityTrains.map((train: any, index: any) => (
+            <div key={index} className="p-4 rounded-lg shadow-md bg-white">
+              <p className="text-lg text-gray-800">
+                <span className="font-semibold text-indigo-700">
+                  {train.trainName}
+                </span>{" "}
+                departs from <span className="font-medium">{sourceCity}</span>{" "}
+                at <span className="font-medium">{train.departs}</span> and
+                after traveling{" "}
+                <span className="font-medium">{train.duration}</span> it arrives
+                in <span className="font-medium">{destinationCity}</span> at{" "}
+                <span className="font-medium">{train.arrives}</span>.
+                {train.offday === "None" ? (
+                  <span className="text-green-600 font-medium">
+                    {" "}
+                    This train runs all seven days of the week.
+                  </span>
+                ) : (
+                  <span className="text-red-600 font-medium">
+                    {" "}
+                    It is weekly off on {train.offday}.
+                  </span>
+                )}
+              </p>
             </div>
           ))}
         </div>

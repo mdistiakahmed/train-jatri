@@ -38,6 +38,11 @@ export const getDataForRoute = async (route: string) => {
           "../data/route/dhaka-to-brahmanbaria/data"
         );
         break;
+      case "brahmanbaria-to-dhaka":
+        trainScheduleData = await import(
+          "../data/route/brahmanbaria-to-dhaka/data"
+        );
+        break;
       case "dhaka-to-narshindi":
         trainScheduleData = await import(
           "../data/route/dhaka-to-narshindi/data"

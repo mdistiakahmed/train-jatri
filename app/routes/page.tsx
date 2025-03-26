@@ -6,6 +6,7 @@ const SchedulePage = () => {
   const routes = {
     "Dhaka to Chattogram Route": [
       "Dhaka to Brahmanbaria Train Schedule",
+      "Brahmanbaria to Dhaka Train Schedule",
       "Dhaka to Akhaura Train Schedule",
       "Dhaka to Cumilla Train Schedule",
       "Dhaka to Feni Train Schedule",

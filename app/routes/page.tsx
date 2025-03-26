@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Head from "next/head";
 import Image from "next/image";
 
 const SchedulePage = () => {
@@ -63,7 +62,7 @@ const SchedulePage = () => {
                 {schedules.map((schedule) => (
                   <Link
                     key={schedule}
-                    href={`/schedule/${schedule
+                    href={`/routes/${schedule
                       .toLowerCase()
                       .replace(/ /g, "-")}`}
                     className="block p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"

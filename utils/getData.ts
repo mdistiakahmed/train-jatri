@@ -1,3 +1,5 @@
+import { trainRoutes } from "@/app/trains/page";
+
 export const getDataForStation = async (name: string) => {
   try {
     if (!name) {
@@ -65,74 +67,19 @@ export const getDataForTrain = async (name: string) => {
       throw new Error(`No data file found for param: ${name}`);
     }
 
-    let trainScheduleData: any = [];
+    let trainScheduleData: any = null; // Initialize to null
+    const fileName = name.replace(/-/g, "_");
+    const filePath = `../data/train/${fileName}`;
 
-    switch (name.toLowerCase()) {
-      case "upakul-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-noakhali/upakul")
-        ).trainData;
-        break;
-      case "mohanogor-provati":
-        trainScheduleData = (
-          await import("../data/train/dhaka-chattogram/mohanagor-provati")
-        ).trainData;
-        break;
-      case "mohanogor-godhuli":
-        trainScheduleData = (
-          await import("../data/train/dhaka-chattogram/mohanagor-provati")
-        ).trainData;
-        break;
-      case "chattala-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-chattogram/chattala")
-        ).trainData;
-        break;
+    try {
+      const { trainData } = await import(filePath);
+      trainScheduleData = trainData;
+    } catch (importError) {
+      console.error(`Error importing ${fileName}:`, importError);
+    }
 
-      case "mohanagar-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-chattogram/mohanagar-express")
-        ).trainData;
-        break;
-
-      case "parabat-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-sylhet/parabat-express")
-        ).trainData;
-        break;
-
-      case "jayantika-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-sylhet/jayentika-express")
-        ).trainData;
-        break;
-
-      case "kalni-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-sylhet/kalni-express")
-        ).trainData;
-        break;
-
-      case "upaban-express":
-        trainScheduleData = (
-          await import("../data/train/dhaka-sylhet/upaban-express")
-        ).trainData;
-        break;
-
-      case "paharika-express":
-        trainScheduleData = (
-          await import("../data/train/chattogram-sylhet/paharika-express")
-        ).trainData;
-        break;
-
-      case "udayan-express":
-        trainScheduleData = (
-          await import("../data/train/chattogram-sylhet/udayan-express")
-        ).trainData;
-        break;
-
-      default:
-        break;
+    if (!trainScheduleData) {
+      throw new Error(`No data found for train: ${name}`);
     }
 
     return trainScheduleData;

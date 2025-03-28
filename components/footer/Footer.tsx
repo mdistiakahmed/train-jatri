@@ -98,9 +98,9 @@ const Footer = () => {
                   randzyx62@gmail.com
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <p className="text-sm text-gray-300">+880 1988 039480</p>
-              </li>
+              </li> */}
               <li>
                 <p className="text-sm text-gray-300">
                   Laksam Road, Cumilla, Bangladesh

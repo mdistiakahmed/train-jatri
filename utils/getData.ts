@@ -1,5 +1,3 @@
-import { trainRoutes } from "@/app/trains/page";
-
 export const getDataForStation = async (name: string) => {
   try {
     if (!name) {

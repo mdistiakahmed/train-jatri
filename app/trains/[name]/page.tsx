@@ -2,29 +2,13 @@ import React from "react";
 import { getDataForTrain } from "@/utils/getData";
 import { FaTrain, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Image from "next/image";
+import { trainRoutes } from "@/utils/trainNames";
 
 export async function generateStaticParams() {
-  const routes: any = {
-    "dhaka-chattogram-route": [
-      "Mohanagar Provati",
-      "Mohanagar Godhuli",
-      "Chattala Express",
-    ],
-    "dhaka-sylhet-route": [
-      "Parabat Express",
-      "Jayantika Express",
-      "Kalni Express",
-      "Upaban Express",
-    ],
-
-    "dhaka-noakhali-route": ["Upakul Express"],
-    "sylhet-chattogram-route": ["Paharika Express", "Udayan Express"],
-  };
-
   const trainNames: string[] = [];
 
-  for (const route in routes) {
-    trainNames.push(...routes[route]);
+  for (const route in trainRoutes) {
+    trainNames.push(...trainRoutes[route]);
   }
 
   return trainNames.map((name: string) => ({

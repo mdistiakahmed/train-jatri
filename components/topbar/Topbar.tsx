@@ -24,11 +24,11 @@ const Topbar = () => {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src="/train-jatri.jpg"
+                  src="/new_logo.png"
                   alt="Train Jatri Logo"
                   width={80}
                   height={40}
-                  className="w-20 h-10"
+                  className="w-20 h-15 rounded-lg"
                 />
               </Link>
             </div>

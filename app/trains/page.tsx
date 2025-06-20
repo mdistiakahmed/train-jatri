@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { uniqueTrainNames } from "@/utils/trainNames";
+import SearchButton from "@/components/SearchTrainComponent";
 
 const stripBracketContent = (name: string) => {
   return name.replace(/\s*\(.*?\)\s*/g, "").trim(); // Removes (number) and trims
@@ -26,6 +27,8 @@ const TrainsPage = () => {
           height={200}
           className="mx-auto my-8"
         />
+
+        <SearchButton />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {uniqueTrainNames.map((rawName) => {

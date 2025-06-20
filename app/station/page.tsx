@@ -3,69 +3,9 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import { allStationNames } from '../../data/Stations/0_all_station_name';
+import SearchStationButton from "@/components/SearchStationComponent";
 
 const StationPage = () => {
-
-  const x = allStationNames;
-  const stations = {
-    "Dhaka to Chattogram Route": [
-      "Dhaka",
-      "Tejgaon",
-      "Dhaka Bimanbandar",
-      "Tongi",
-      "Pubail",
-      "Arikhola",
-      "Ghorashal",
-      "Jinardi",
-      "Narsingdi",
-      "Amirganj",
-      "Khanabari",
-      "Hatubhanga",
-      "Srinidi",
-      "Daulatkandi",
-      "Bhairab Bazar",
-      "Brahmanbaria",
-      "Paghachang",
-      "Bhatshala",
-      "Akhaura",
-      "Gangasagar",
-      "Imambari",
-      "Kasba",
-      "Mandabag",
-      "Saldanodi",
-      "Shashidal",
-      "Rajapur",
-      "Sadar Rasulpur",
-      "Cumilla",
-      "Mainamati",
-      "Lalmai",
-      "Alishwar",
-      "Laksam",
-      "Naoti",
-      "Nangolkot",
-      "Hasanpur",
-      "Gunabati",
-      "Sharishadi",
-      "Feni",
-      "Kalidaha",
-      "Fazilpur",
-      "Muhurigang",
-      "Chinky Astana",
-      "Mirsarai",
-      "Bortakia",
-      "Sitakunda",
-      "Barabkunda",
-      "Bhatiari",
-      "Faujdarhat",
-      "Kaibalyadham",
-      "Pahartali",
-      "Battali",
-      "Chattogram",
-    ],
-    "Dhaka to Mymensingh Route": ["Upcoming"],
-    "Dhaka to Sylhet Route": ["Upcoming"],
-    "Dhaka to Noakhali Route": ["Upcoming"],
-  };
 
   return (
     <div className="p-4 text-center">
@@ -90,6 +30,8 @@ const StationPage = () => {
         height={200}
         className="mx-auto my-8"
       />
+
+      <SearchStationButton />
 
       {allStationNames.map((stationName, index) => (
         <div key={index} className="mb-8 text-center align-center">

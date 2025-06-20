@@ -71,8 +71,6 @@ export const getDataForStation = async (name: string) => {
 
       const { trainData } = await import(`../data/Stations/${fileName}.js`);
 
-      console.log(trainData);
-
       return trainData;
   } catch (error) {
       console.error(`Failed to load train data for: ${name}`);
@@ -80,31 +78,6 @@ export const getDataForStation = async (name: string) => {
   }
 };
 
-// export const getDataForStation = async (name: string) => {
-//   try {
-//     if (!name) {
-//       throw new Error(`No data file found for param: ${name}`);
-//     }
-
-//     let trainScheduleData;
-
-//     switch (name.toLowerCase()) {
-//       case "dhaka":
-//         trainScheduleData = await import("../data/station/dhaka/data");
-//         break;
-//       case "cumilla":
-//         trainScheduleData = await import("../data/station/cumilla/data");
-//         break;
-//       default:
-//         throw new Error(`No data file found for param: ${name}`);
-//     }
-
-//     return trainScheduleData;
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// };
 
 export const getDataForRoute = async (route: string) => {
   try {
@@ -147,205 +120,13 @@ export const getDataForTrain = async (name: string) => {
       throw new Error(`No data file found for param: ${name}`);
     }
 
-    let trainScheduleData: any = null; // Initialize to null
     const fileName = name.replace(/-/g, "_");
 
-    // Use a switch statement to return the correct data based on the file name
-    switch (fileName) {
-      case 'aghnibina_express':
-        trainScheduleData = aghnibina_express;
-        break;
-      case 'banalata_express':
-        trainScheduleData = banalata_express;
-        break;
-      case 'banglabandha_express':
-        trainScheduleData = banglabandha_express;
-        break;
-      case 'barendra_express':
-        trainScheduleData = barendra_express;
-        break;
-      case 'benapole_express':
-        trainScheduleData = benapole_express;
-        break;
-      case 'bhrammaputra_express':
-        trainScheduleData = bhrammaputra_express;
-        break;
-      case 'bijoy_express':
-        trainScheduleData = bijoy_express;
-        break;
-      case 'burimari_commuter':
-        trainScheduleData = burimari_commuter;
-        break;
-      case 'burimari_express':
-        trainScheduleData = burimari_express;
-        break;
-      case 'chapainawabganj_shuttle':
-        trainScheduleData = chapainawabganj_shuttle;
-        break;
-      case 'chattala_express':
-        trainScheduleData = chattala_express;
-        break;
-      case 'chilahati_express':
-        trainScheduleData = chilahati_express;
-        break;
-      case 'chitra_express':
-        trainScheduleData = chitra_express;
-        break;
-      case 'coxs_bazar_express':
-        trainScheduleData = coxs_bazar_express;
-        break;
-      case 'dhalarchar_express':
-        trainScheduleData = dhalarchar_express;
-        break;
-      case 'dhumketu_express':
-        trainScheduleData = dhumketu_express;
-        break;
-      case 'dolonchapa_express':
-        trainScheduleData = dolonchapa_express;
-        break;
-      case 'drutojan_express':
-        trainScheduleData = drutojan_express;
-        break;
-      case 'egarosindhur_godhuli':
-        trainScheduleData = egarosindhur_godhuli;
-        break;
-      case 'egarosindhur_provati':
-        trainScheduleData = egarosindhur_provati;
-        break;
-      case 'ekota_express':
-        trainScheduleData = ekota_express;
-        break;
-      case 'hawr_express':
-        trainScheduleData = hawr_express;
-        break;
-      case 'jahanabad_express':
-        trainScheduleData = jahanabad_express;
-        break;
-      case 'jamalpur_express':
-        trainScheduleData = jamalpur_express;
-        break;
-      case 'jamuna_express':
-        trainScheduleData = jamuna_express;
-        break;
-      case 'jayentika_express':
-        trainScheduleData = jayentika_express;
-        break;
-      case 'kalni_express':
-        trainScheduleData = kalni_express;
-        break;
-      case 'kanchon_intercity_commuter':
-        trainScheduleData = kanchon_intercity_commuter;
-        break;
-      case 'kapotaksha_express':
-        trainScheduleData = kapotaksha_express;
-        break;
-      case 'kishorganj_express':
-        trainScheduleData = kishorganj_express;
-        break;
-      case 'korotoa_express':
-        trainScheduleData = korotoa_express;
-        break;
-      case 'kurigram_express':
-        trainScheduleData = kurigram_express;
-        break;
-      case 'lalmoni_commuter':
-        trainScheduleData = lalmoni_commuter;
-        break;
-      case 'lalmoni_express':
-        trainScheduleData = lalmoni_express;
-        break;
-      case 'madhumati_express':
-        trainScheduleData = madhumati_express;
-        break;
-      case 'meghna_express':
-        trainScheduleData = meghna_express;
-        break;
-      case 'mohanagar_express':
-        trainScheduleData = mohanagar_express;
-        break;
-      case 'mohonganj_express':
-        trainScheduleData = mohonganj_express;
-        break;
-      case 'nilsagar_express':
-        trainScheduleData = nilsagar_express;
-        break;
-      case 'padma_express':
-        trainScheduleData = padma_express;
-        break;
-      case 'paharika_express':
-        trainScheduleData = paharika_express;
-        break;
-      case 'panchagarh_express':
-        trainScheduleData = panchagarh_express;
-        break;
-      case 'parabat_express':
-        trainScheduleData = parabat_express;
-        break;
-      case 'parjotak_express':
-        trainScheduleData = parjotak_express;
-        break;
-      case 'probal_express':
-        trainScheduleData = probal_express;
-        break;
-      case 'rangpur_express':
-        trainScheduleData = rangpur_express;
-        break;
-      case 'ruposhi_bangla_express':
-        trainScheduleData = ruposhi_bangla_express;
-        break;
-      case 'rupsha_express':
-        trainScheduleData = rupsha_express;
-        break;
-      case 'sagardari_express':
-        trainScheduleData = sagardari_express;
-        break;
-      case 'shaikat_express':
-        trainScheduleData = shaikat_express;
-        break;
-      case 'silkcity_express':
-        trainScheduleData = silkcity_express;
-        break;
-      case 'simanta_express':
-        trainScheduleData = simanta_express;
-        break;
-      case 'sirajganj_express':
-        trainScheduleData = sirajganj_express;
-        break;
-      case 'sonar_bangla_express':
-        trainScheduleData = sonar_bangla_express;
-        break;
-      case 'suborno_express':
-        trainScheduleData = suborno_express;
-        break;
-      case 'sundarban_express':
-        trainScheduleData = sundarban_express;
-        break;
-      case 'tista_express':
-        trainScheduleData = tista_express;
-        break;
-      case 'titumir_express':
-        trainScheduleData = titumir_express;
-        break;
-      case 'tungipara_express':
-        trainScheduleData = tungipara_express;
-        break;
-      case 'turna':
-        trainScheduleData = turna;
-        break;
-      case 'udayan_express':
-        trainScheduleData = udayan_express;
-        break;
-      case 'upaban_express':
-        trainScheduleData = upaban_express;
-        break;
-      case 'upakul_express':
-        trainScheduleData = upakul_express;
-        break;
-      default:
-        throw new Error(`No data found for train: ${name}`);
-    }
+      console.log(fileName);
 
-    return trainScheduleData;
+      const { trainData } = await import(`../data/train/${fileName}.js`);
+
+      return trainData;
   } catch (error) {
     console.error(error);
     throw error;

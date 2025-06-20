@@ -46,14 +46,15 @@ export const trainRouteData = {
     },
     {
       "city": "Bidyaganj",
-      "halt": "---",
+      "departure_time": "01:34 pm BST",
+      "halt": "02",
       "duration": "00:22",
       "arrival_time": "01:32 pm BST"
     },
     {
       "city": "Narundi",
       "halt": "---",
-      "duration": "---",
+      "duration": "00:09",
       "arrival_time": "01:25 pm BST"
     },
     {

@@ -77,9 +77,9 @@ export const trainData = {
       {
         "city": "Santahar",
         "departure_time": "02:00 am BST",
-        "halt": "15",
-        "duration": "00:29",
-        "arrival_time": "01:45 am BST"
+        "halt": "05",
+        "duration": "00:39",
+        "arrival_time": "01:55 am BST"
       },
       {
         "city": "Akkelpur",

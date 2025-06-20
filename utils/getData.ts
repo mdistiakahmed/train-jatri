@@ -62,33 +62,49 @@ import { trainData as udayan_express } from "@/data/train/udayan_express";
 import { trainData as upaban_express } from "@/data/train/upaban_express";
 import { trainData as upakul_express } from "@/data/train/upakul_express";
 
-
-
 export const getDataForStation = async (name: string) => {
   try {
     if (!name) {
-      throw new Error(`No data file found for param: ${name}`);
+        throw new Error(`No train name provided`);
     }
+      const fileName = name; // normalize: "Upakul Express" → "upukulexpress"
 
-    let trainScheduleData;
+      const { trainData } = await import(`../data/Stations/${fileName}.js`);
 
-    switch (name.toLowerCase()) {
-      case "dhaka":
-        trainScheduleData = await import("../data/station/dhaka/data");
-        break;
-      case "cumilla":
-        trainScheduleData = await import("../data/station/cumilla/data");
-        break;
-      default:
-        throw new Error(`No data file found for param: ${name}`);
-    }
+      console.log(trainData);
 
-    return trainScheduleData;
+      return trainData;
   } catch (error) {
-    console.error(error);
+      console.error(`Failed to load train data for: ${name}`);
     throw error;
   }
 };
+
+// export const getDataForStation = async (name: string) => {
+//   try {
+//     if (!name) {
+//       throw new Error(`No data file found for param: ${name}`);
+//     }
+
+//     let trainScheduleData;
+
+//     switch (name.toLowerCase()) {
+//       case "dhaka":
+//         trainScheduleData = await import("../data/station/dhaka/data");
+//         break;
+//       case "cumilla":
+//         trainScheduleData = await import("../data/station/cumilla/data");
+//         break;
+//       default:
+//         throw new Error(`No data file found for param: ${name}`);
+//     }
+
+//     return trainScheduleData;
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// };
 
 export const getDataForRoute = async (route: string) => {
   try {

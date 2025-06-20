@@ -53,16 +53,23 @@ export const trainRouteData = {
     },
     {
       "city": "Poradaha",
-      "departure_time": "03:23 am BST",
+      "departure_time": "03:18 am BST",
       "halt": "03",
+      "duration": "00:11",
+      "arrival_time": "03:15 am BST"
+    },
+    {
+      "city": "Alamdanga",
+      "departure_time": "03:36 am BST",
+      "halt": "02",
       "duration": "00:16",
-      "arrival_time": "03:20 am BST"
+      "arrival_time": "03:34 am BST"
     },
     {
       "city": "Chuadanga",
       "departure_time": "03:55 am BST",
       "halt": "03",
-      "duration": "00:29",
+      "duration": "00:16",
       "arrival_time": "03:52 am BST"
     },
     {

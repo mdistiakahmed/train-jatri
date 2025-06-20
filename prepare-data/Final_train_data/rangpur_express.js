@@ -132,7 +132,6 @@ export const trainData = {
     "days": [
       "Fri",
       "Sat",
-      "Sun",
       "Mon",
       "Tue",
       "Wed",

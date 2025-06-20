@@ -25,24 +25,31 @@ export const trainRouteData = {
       "arrival_time": "08:07 am BST"
     },
     {
+      "city": "Narsingdi",
+      "departure_time": "08:53 am BST",
+      "halt": "02",
+      "duration": "00:39",
+      "arrival_time": "08:51 am BST"
+    },
+    {
       "city": "Bhairab_Bazar",
-      "departure_time": "09:19 am BST",
+      "departure_time": "09:22 am BST",
       "halt": "03",
-      "duration": "01:04",
-      "arrival_time": "09:16 am BST"
+      "duration": "00:26",
+      "arrival_time": "09:19 am BST"
     },
     {
       "city": "Brahmanbaria",
-      "departure_time": "09:43 am BST",
+      "departure_time": "09:44 am BST",
       "halt": "04",
-      "duration": "00:20",
-      "arrival_time": "09:39 am BST"
+      "duration": "00:18",
+      "arrival_time": "09:40 am BST"
     },
     {
       "city": "Akhaura",
       "departure_time": "10:08 am BST",
       "halt": "03",
-      "duration": "00:22",
+      "duration": "00:21",
       "arrival_time": "10:05 am BST"
     },
     {

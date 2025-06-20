@@ -6,7 +6,6 @@ export const trainData = {
       "Sat",
       "Sun",
       "Mon",
-      "Tue",
       "Wed",
       "Thu"
     ],

@@ -59,7 +59,8 @@ export const trainRouteData = {
     },
     {
       "city": "Bidyaganj",
-      "halt": "---",
+      "departure_time": "09:15 pm BST",
+      "halt": "02",
       "duration": "00:36",
       "arrival_time": "09:13 pm BST"
     },
@@ -67,7 +68,7 @@ export const trainRouteData = {
       "city": "Piyarpur",
       "departure_time": "09:30 pm BST",
       "halt": "02",
-      "duration": "---",
+      "duration": "00:13",
       "arrival_time": "09:28 pm BST"
     },
     {

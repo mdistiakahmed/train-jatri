@@ -46,8 +46,8 @@ export const trainRouteData = {
     },
     {
       "city": "Gaibandha",
-      "departure_time": "12:23 pm BST",
-      "halt": "59",
+      "departure_time": "11:27 am BST",
+      "halt": "03",
       "duration": "00:29",
       "arrival_time": "11:24 am BST"
     },
@@ -55,7 +55,7 @@ export const trainRouteData = {
       "city": "Bonar_Para",
       "departure_time": "11:52 am BST",
       "halt": "03",
-      "duration": "00:34",
+      "duration": "00:22",
       "arrival_time": "11:49 am BST"
     },
     {

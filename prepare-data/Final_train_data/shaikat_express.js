@@ -53,10 +53,16 @@ export const trainData = {
         "arrival_time": "07:42 am BST"
       },
       {
+        "city": "HARBANG",
+        "halt": "---",
+        "duration": "00:37",
+        "arrival_time": "08:21 am BST"
+      },
+      {
         "city": "Chakaria",
         "departure_time": "08:37 am BST",
         "halt": "02",
-        "duration": "00:51",
+        "duration": "---",
         "arrival_time": "08:35 am BST"
       },
       {
@@ -125,10 +131,16 @@ export const trainData = {
         "arrival_time": "09:12 pm BST"
       },
       {
+        "city": "HARBANG",
+        "halt": "---",
+        "duration": "00:12",
+        "arrival_time": "09:26 pm BST"
+      },
+      {
         "city": "Satkania",
         "departure_time": "10:07 pm BST",
         "halt": "02",
-        "duration": "00:51",
+        "duration": "---",
         "arrival_time": "10:05 pm BST"
       },
       {

@@ -3,7 +3,6 @@ export const trainRouteData = {
   "days": [
     "Fri",
     "Sat",
-    "Sun",
     "Mon",
     "Tue",
     "Wed",

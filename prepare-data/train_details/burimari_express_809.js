@@ -86,10 +86,17 @@ export const trainRouteData = {
       "arrival_time": "06:10 pm BST"
     },
     {
+      "city": "Kankina",
+      "departure_time": "06:57 pm BST",
+      "halt": "02",
+      "duration": "00:05",
+      "arrival_time": "06:55 pm BST"
+    },
+    {
       "city": "Tushbhandar",
       "departure_time": "07:47 pm BST",
       "halt": "02",
-      "duration": "00:45",
+      "duration": "00:48",
       "arrival_time": "07:45 pm BST"
     },
     {

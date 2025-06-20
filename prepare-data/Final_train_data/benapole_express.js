@@ -54,16 +54,23 @@ export const trainData = {
       },
       {
         "city": "Chuadanga",
-        "departure_time": "03:29 pm BST",
-        "halt": "03",
-        "duration": "00:24",
-        "arrival_time": "03:26 pm BST"
+        "departure_time": "03:23 pm BST",
+        "halt": "02",
+        "duration": "00:19",
+        "arrival_time": "03:21 pm BST"
+      },
+      {
+        "city": "Alamdanga",
+        "departure_time": "03:41 pm BST",
+        "halt": "02",
+        "duration": "00:16",
+        "arrival_time": "03:39 pm BST"
       },
       {
         "city": "Poradaha",
         "departure_time": "04:00 pm BST",
         "halt": "03",
-        "duration": "00:28",
+        "duration": "00:16",
         "arrival_time": "03:57 pm BST"
       },
       {
@@ -168,16 +175,23 @@ export const trainData = {
       },
       {
         "city": "Poradaha",
-        "departure_time": "03:23 am BST",
+        "departure_time": "03:18 am BST",
         "halt": "03",
+        "duration": "00:11",
+        "arrival_time": "03:15 am BST"
+      },
+      {
+        "city": "Alamdanga",
+        "departure_time": "03:36 am BST",
+        "halt": "02",
         "duration": "00:16",
-        "arrival_time": "03:20 am BST"
+        "arrival_time": "03:34 am BST"
       },
       {
         "city": "Chuadanga",
         "departure_time": "03:55 am BST",
         "halt": "03",
-        "duration": "00:29",
+        "duration": "00:16",
         "arrival_time": "03:52 am BST"
       },
       {

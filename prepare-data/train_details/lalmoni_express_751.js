@@ -67,23 +67,23 @@ export const trainRouteData = {
     },
     {
       "city": "Azim Nagar",
-      "departure_time": "02:09 am BST",
+      "departure_time": "01:59 am BST",
       "halt": "02",
-      "duration": "01:12",
-      "arrival_time": "02:07 am BST"
+      "duration": "01:02",
+      "arrival_time": "01:57 am BST"
     },
     {
       "city": "Natore",
-      "departure_time": "02:38 am BST",
-      "halt": "03",
-      "duration": "00:26",
-      "arrival_time": "02:35 am BST"
+      "departure_time": "02:45 am BST",
+      "halt": "09",
+      "duration": "00:37",
+      "arrival_time": "02:36 am BST"
     },
     {
       "city": "Santahar",
       "departure_time": "03:40 am BST",
       "halt": "05",
-      "duration": "00:57",
+      "duration": "00:50",
       "arrival_time": "03:35 am BST"
     },
     {

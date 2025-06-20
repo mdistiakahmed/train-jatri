@@ -95,16 +95,16 @@ export const trainRouteData = {
     },
     {
       "city": "Natore",
-      "departure_time": "02:08 am BST",
+      "departure_time": "02:10 am BST",
       "halt": "03",
-      "duration": "00:35",
-      "arrival_time": "02:05 am BST"
+      "duration": "00:37",
+      "arrival_time": "02:07 am BST"
     },
     {
       "city": "Santahar",
       "departure_time": "03:10 am BST",
       "halt": "05",
-      "duration": "00:57",
+      "duration": "00:55",
       "arrival_time": "03:05 am BST"
     },
     {

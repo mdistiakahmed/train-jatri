@@ -2,8 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import { allStationNames } from '../../data/Stations/0_all_station_name';
 
 const StationPage = () => {
+
+  const x = allStationNames;
   const stations = {
     "Dhaka to Chattogram Route": [
       "Dhaka",
@@ -88,24 +91,19 @@ const StationPage = () => {
         className="mx-auto my-8"
       />
 
-      {Object.entries(stations).map(([region, stationList]) => (
-        <div key={region} className="mb-8 text-center align-center">
-          <h2 className="text-2xl font-semibold mb-4">
-            {region.split(" ")[0]} <span className="text-xl">→</span>{" "}
-            {region.split(" ")[2]} Route
-          </h2>
+      {allStationNames.map((stationName, index) => (
+        <div key={index} className="mb-8 text-center align-center">
           <div className="grid grid-cols-1 gap-4">
-            {stationList.map((station) => (
               <Link
-                key={station}
-                href={`/station/${station.toLowerCase()}`}
+                key={stationName}
+                href={`/station/${stationName}`}
                 className="block p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-300"
               >
                 <h3 className="text-md font-semibold mb-2">
-                  {station} Train Schedule
+                  {stationName} train schedule
                 </h3>
               </Link>
-            ))}
+            
           </div>
         </div>
       ))}

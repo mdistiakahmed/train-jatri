@@ -47,7 +47,8 @@ export const trainRouteData = {
     },
     {
       "city": "Bidyaganj",
-      "halt": "---",
+      "departure_time": "04:03 am BST",
+      "halt": "02",
       "duration": "00:13",
       "arrival_time": "04:01 am BST"
     },
@@ -55,7 +56,7 @@ export const trainRouteData = {
       "city": "Mymensingh",
       "departure_time": "04:30 am BST",
       "halt": "05",
-      "duration": "---",
+      "duration": "00:22",
       "arrival_time": "04:25 am BST"
     },
     {

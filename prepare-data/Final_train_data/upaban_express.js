@@ -155,14 +155,14 @@ export const trainData = {
       {
         "city": "Sreemangal",
         "departure_time": "01:44 am BST",
-        "halt": "1437",
+        "halt": "03",
         "duration": "00:19",
         "arrival_time": "01:41 am BST"
       },
       {
         "city": "Shaistaganj",
         "departure_time": "02:33 am BST",
-        "halt": "1437",
+        "halt": "03",
         "duration": "00:46",
         "arrival_time": "02:30 am BST"
       },
@@ -174,9 +174,16 @@ export const trainData = {
         "arrival_time": "04:03 am BST"
       },
       {
+        "city": "Narsingdi",
+        "departure_time": "04:36 am BST",
+        "halt": "02",
+        "duration": "00:28",
+        "arrival_time": "04:34 am BST"
+      },
+      {
         "city": "Biman_Bandar",
         "halt": "---",
-        "duration": "01:06",
+        "duration": "00:36",
         "arrival_time": "05:12 am BST"
       },
       {

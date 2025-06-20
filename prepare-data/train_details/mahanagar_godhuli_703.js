@@ -67,10 +67,17 @@ export const trainRouteData = {
       "arrival_time": "07:05 pm BST"
     },
     {
+      "city": "Narsingdi",
+      "departure_time": "07:38 pm BST",
+      "halt": "02",
+      "duration": "00:28",
+      "arrival_time": "07:36 pm BST"
+    },
+    {
       "city": "Dhaka",
       "departure_time": null,
       "halt": null,
-      "duration": "01:37",
+      "duration": "01:07",
       "arrival_time": "08:45 pm BST"
     }
   ],

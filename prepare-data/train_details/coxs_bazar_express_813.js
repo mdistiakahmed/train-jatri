@@ -5,7 +5,6 @@ export const trainRouteData = {
     "Sat",
     "Sun",
     "Mon",
-    "Tue",
     "Wed",
     "Thu"
   ],

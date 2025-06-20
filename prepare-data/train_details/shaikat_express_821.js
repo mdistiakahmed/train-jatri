@@ -52,10 +52,16 @@ export const trainRouteData = {
       "arrival_time": "07:42 am BST"
     },
     {
+      "city": "HARBANG",
+      "halt": "---",
+      "duration": "00:37",
+      "arrival_time": "08:21 am BST"
+    },
+    {
       "city": "Chakaria",
       "departure_time": "08:37 am BST",
       "halt": "02",
-      "duration": "00:51",
+      "duration": "---",
       "arrival_time": "08:35 am BST"
     },
     {

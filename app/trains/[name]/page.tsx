@@ -2,50 +2,44 @@ import React from "react";
 import { getDataForTrain } from "@/utils/getData";
 import { FaTrain, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import Image from "next/image";
-//import { trainRoutes } from "@/utils/trainNames";
+import { uniqueTrainNames } from '@/utils/trainNames';
 
-// export async function generateStaticParams() {
-//   const trainNames: string[] = [];
+export async function generateStaticParams() {
+  return uniqueTrainNames.map((name: string) => ({
+    name: name.split(" ").join("-").toLowerCase(),
+  }));
+}
 
-// //   for (const route in trainRoutes) {
-// //     trainNames.push(...trainRoutes[route]);
-// //   }
+export const generateMetadata = async ({ params }: any) => {
+  const { name } = await params;
+  const trainData = await getDataForTrain(name);
 
-// //   return trainNames.map((name: string) => ({
-// //     name: name.split(" ").join("-").toLowerCase(),
-// //   }));
-// }
+  if (!trainData || !trainData.forward) {
+    return {
+      title: "Train Details Not Found",
+      description: "Train details could not be found.",
+    };
+  }
 
-// export const generateMetadata = async ({ params }: any) => {
-//   const { name } = await params;
-//   const trainData = await getDataForTrain(name);
+  const { forward } = trainData;
 
-//   if (!trainData || !trainData.forward) {
-//     return {
-//       title: "Train Details Not Found",
-//       description: "Train details could not be found.",
-//     };
-//   }
-
-//   const { forward } = trainData;
-
-//   return {
-//     title: `${forward.train_name}- Route & Schedule`,
-//     description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
-//     openGraph: {
-//       title: `${forward.train_name} - Route & Schedule`,
-//       description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
-//       url: `https://www.trainjatri.com/trains/${name}`,
-//       siteName: "Train Jatri",
-//       type: "website",
-//     },
-//     twitter: {
-//       card: "summary_large_image",
-//       title: `${forward.train_name} - Route & Schedule`,
-//       description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
-//     },
-//   };
-// };
+  return {
+    title: `${forward.train_name}- Route & Schedule`,
+    description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+    openGraph: {
+      title: `${forward.train_name} - Route & Schedule`,
+      description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+      url: `https://www.trainjatri.com/trains/${name}`,
+      siteName: "Train Jatri",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${forward.train_name} - Route & Schedule`,
+      description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+    },
+  };
+};
 
 const Page = async ({ params }: any) => {
   const { name } = await params;

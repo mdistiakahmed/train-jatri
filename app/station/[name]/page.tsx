@@ -3,6 +3,43 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 
+import { allStationNames } from './../../../data/Stations/0_all_station_name';
+
+export async function generateStaticParams() {
+  return allStationNames.map((name: string) => ({
+    name: name.split(" ").join("-").toLowerCase(),
+  }));
+}
+
+export const generateMetadata = async ({ params }: any) => {
+   const { name } = await params;
+  const trainData = await getDataForStation(name);
+
+  if (!trainData || !trainData.forward) {
+    return {
+      title: "Train Details Not Found",
+      description: "Train details could not be found.",
+    };
+  }
+
+  return {
+    title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+    description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
+    openGraph: {
+      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+      description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
+      url: `https://www.trainjatri.com/station/${name}`,
+      siteName: "Train Jatri",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+      description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
+    },
+  };
+};
+
 const StationPage = async ({ params }: any) => {
   const { name } = await params;
 

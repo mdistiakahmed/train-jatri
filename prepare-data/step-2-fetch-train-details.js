@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import fetch from "node-fetch"; // If you're using node-fetch
 import { trainNameOptions } from "./trainNames.mjs"; // Corrected import
+import { fileURLToPath } from 'url';
 
 async function fetchTrainRoutes(trainName, trainNumber) {
   try {
@@ -35,7 +36,9 @@ async function fetchTrainRoutes(trainName, trainNumber) {
 }
 
 async function processTrainData() {
-  const trainDetailsDir = "D:\\train-jatri\\prepare-data\\train_details";
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  const trainDetailsDir = path.join(__dirname, 'train_details');
 
   // Create the 'train_details' directory if it doesn't exist
   if (!fs.existsSync(trainDetailsDir)) {

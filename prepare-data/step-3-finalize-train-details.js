@@ -1,10 +1,13 @@
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url"; // Import pathToFileURL
+import { fileURLToPath } from 'url';
 
 async function combineTrainData() {
-  const trainDetailsDir = "D:\\train-jatri\\prepare-data\\train_details";
-  const finalTrainDataDir = "D:\\train-jatri\\prepare-data\\Final_train_data";
+  const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+  const trainDetailsDir = path.join(__dirname, 'train_details');
+  const finalTrainDataDir = path.join(__dirname, 'Final_train_data');
 
   if (!fs.existsSync(finalTrainDataDir)) {
     fs.mkdirSync(finalTrainDataDir);

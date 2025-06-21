@@ -34,6 +34,9 @@ for (const file of files) {
 
   ['forward', 'reverse'].forEach((direction) => {
     const data = trainData[direction];
+    if(!data) {
+      return;
+    }
     const trainName = data.train_name;
     const trainNumber = data.train_number;
     const days = data.days;

@@ -47,6 +47,15 @@ export const trainData = {
       "arrival_time_at_destination": "12:50 pm"
     },
     {
+      "train_name": "MAHANAGAR PROVATI",
+      "train_number": 704,
+      "offday": "No OffDay",
+      "from": "Dhaka",
+      "to": "Chattogram",
+      "arrival_time_at_current": "08:07 am",
+      "arrival_time_at_destination": "01:35 pm"
+    },
+    {
       "train_name": "BURIMARI EXPRESS",
       "train_number": 809,
       "offday": "Wednesday",

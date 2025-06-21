@@ -299,6 +299,15 @@ export const trainData = {
       "arrival_time_at_destination": "10:30 pm"
     },
     {
+      "train_name": "MAHANAGAR PROVATI",
+      "train_number": 704,
+      "offday": "No OffDay",
+      "from": "Dhaka",
+      "to": "Chattogram",
+      "arrival_time_at_current": "---",
+      "arrival_time_at_destination": "01:35 pm"
+    },
+    {
       "train_name": "MOHONGANJ EXPRESS",
       "train_number": 789,
       "offday": "Wednesday",
@@ -587,6 +596,15 @@ export const trainData = {
       "to": "Dhaka",
       "arrival_time_at_current": "08:30 pm",
       "arrival_time_at_destination": "08:30 pm"
+    },
+    {
+      "train_name": "MAHANAGAR GODHULI",
+      "train_number": 703,
+      "offday": "No OffDay",
+      "from": "Chattogram",
+      "to": "Dhaka",
+      "arrival_time_at_current": "08:45 pm",
+      "arrival_time_at_destination": "08:45 pm"
     },
     {
       "train_name": "PADMA EXPRESS",

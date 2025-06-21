@@ -28,25 +28,45 @@ async function combineTrainData() {
   });
 
   for (const trainName in trainMap) {
-    if (trainMap[trainName].length === 2) {
-      const file1 = trainMap[trainName][0];
-      const file2 = trainMap[trainName][1];
+    if (trainMap[trainName].length === 2 || trainName === 'mahanagar_provati' || trainName === 'mahanagar_godhuli') {
+      let file1, file2, filePath1, filePath2, trainData;
 
-      const filePath1 = path.join(trainDetailsDir, file1);
-      const filePath2 = path.join(trainDetailsDir, file2);
+      if (trainName === 'mahanagar_provati' || trainName === 'mahanagar_godhuli') {
+        file1 = trainMap[trainName][0];
+        filePath1 = path.join(trainDetailsDir, file1);
+      } else {
+        file1 = trainMap[trainName][0];
+        file2 = trainMap[trainName][1];
+        filePath1 = path.join(trainDetailsDir, file1);
+        filePath2 = path.join(trainDetailsDir, file2);
+      }
 
       try {
         // Convert file paths to file:// URLs
         const fileUrl1 = pathToFileURL(filePath1).toString();
-        const fileUrl2 = pathToFileURL(filePath2).toString();
+        const fileUrl2 = filePath2 ? pathToFileURL(filePath2).toString() : null;
 
         const data1 = await import(fileUrl1);
-        const data2 = await import(fileUrl2);
+        const data2 = fileUrl2 ? await import(fileUrl2) : null;
 
-        const trainData = {
-          forward: data1.trainRouteData,
-          reverse: data2.trainRouteData,
-        };
+        if(trainName === 'mahanagar_provati') {
+          trainData = {
+            forward: data1.trainRouteData,
+            reverse: null,
+          };
+        } 
+        else if(trainName === 'mahanagar_godhuli') {
+          trainData = {
+            forward: null,
+            reverse: data1.trainRouteData,
+          };
+        }
+        else {
+          trainData = {
+            forward: data1.trainRouteData,
+            reverse: data2.trainRouteData,
+          };
+        }
 
         const outputFileName = `${trainName}.js`;
         const outputFilePath = path.join(finalTrainDataDir, outputFileName);

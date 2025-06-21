@@ -82,6 +82,7 @@ export const allStationNames = [
   "gomdandi",
   "gopalganj",
   "gouripurmyn",
+  "gunabati",
   "hajiganj",
   "harashpur",
   "harbang",

@@ -45,7 +45,7 @@ const Page = async ({ params }: any) => {
   const { name } = await params;
   const trainData = await getDataForTrain(name);
 
-  if (!trainData || !trainData.forward || !trainData.reverse) {
+  if (!trainData) {
     return <div>Train data not found.</div>;
   }
 
@@ -73,6 +73,9 @@ const Page = async ({ params }: any) => {
   const shortDaysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const getOffDay = (days: string[]) => {
+    if(!days) {
+        return null;
+    }
     const offDayIndex = shortDaysOfWeek.findIndex((day) => !days.includes(day));
     if (offDayIndex !== -1) {
       return `${daysOfWeek[offDayIndex]} (${banglaDaysOfWeek[offDayIndex]})`;
@@ -80,22 +83,22 @@ const Page = async ({ params }: any) => {
     return "কোন বন্ধের দিন নেই";
   };
 
-  const forwardOffDay = getOffDay(forward.days);
-  const reverseOffDay = getOffDay(reverse.days);
+  const forwardOffDay = getOffDay(forward?.days);
+  const reverseOffDay = getOffDay(reverse?.days);
 
-  const forwardSource = forward.routes[0].city;
-  const forwardDestination = forward.routes[forward.routes.length - 1].city;
-  const forwardDepartureTime = forward.routes[0].departure_time;
+  const forwardSource = forward?.routes[0].city;
+  const forwardDestination = forward?.routes[forward.routes.length - 1].city;
+  const forwardDepartureTime = forward?.routes[0].departure_time;
   const forwardArrivalTime =
-    forward.routes[forward.routes.length - 1].arrival_time;
-  const forwardHours = forward.total_duration;
+    forward?.routes[forward.routes.length - 1].arrival_time;
+  const forwardHours = forward?.total_duration;
 
-  const reverseSource = reverse.routes[0].city;
-  const reverseDestination = reverse.routes[reverse.routes.length - 1].city;
-  const reverseDepartureTime = reverse.routes[0].departure_time;
+  const reverseSource = reverse?.routes[0].city;
+  const reverseDestination = reverse?.routes[reverse.routes.length - 1].city;
+  const reverseDepartureTime = reverse?.routes[0].departure_time;
   const reverseArrivalTime =
-    reverse.routes[reverse.routes.length - 1].arrival_time;
-  const reverseHours = reverse.total_duration;
+    reverse?.routes[reverse.routes.length - 1].arrival_time;
+  const reverseHours = reverse?.total_duration;
 
   const generateRouteDescription = (
     routes: any[],
@@ -120,52 +123,62 @@ const Page = async ({ params }: any) => {
     );
   };
 
-  const faqData = [
-    {
-      question: `What are the operating days of ${forward.train_name} from ${forward.path}?`,
-      answer: `${forward.train_name} operates on ${forward.days.join(
-        ", "
-      )} from ${forward.path}.`,
-    },
-    {
-      question: `What is the total duration of the journey for ${forward.train_name} from ${forward.path}?`,
-      answer: `The total duration for ${forward.train_name} from ${forward.path} is ${forward.total_duration}.`,
-    },
-    {
-      question: `Where does ${forward.train_name} start and end from ${forward.path}?`,
-      answer: `${forward.train_name} starts at ${
-        forward.routes[0].city
-      } and ends at ${
-        forward.routes[forward.routes.length - 1].city
-      } that travels from ${forward.path}.`,
-    },
-    {
-      question: `What is the weekly offday for ${forward.train_name} that travels from ${forward.path}?`,
-      answer: `The weekly offday for ${forward.train_name} from ${
-        forward.path
-      } is ${
-        forward.days.length < 7
-          ? forward.days.reduce(
-              (offDay: any, day: any) =>
-                (offDay = [
-                  "Sun",
-                  "Mon",
-                  "Tue",
-                  "Wed",
-                  "Thu",
-                  "Fri",
-                  "Sat",
-                ].filter((d) => !forward.days.includes(d))[0]),
-              ""
-            )
-          : "No offday"
-      }.`,
-    },
-    ...forward.routes.slice(1).map((route: any) => ({
-      question: `When does ${forward.train_name} arrive at ${route.city} that travels from ${forward.path}?`,
-      answer: `${forward.train_name} arrives at ${route.city} at ${route.arrival_time} that travels from ${forward.path}.`,
-    })),
-    {
+  let faqForwardQuestion: any = [];
+  let faqReverseQuestion: any = [];
+
+  if(forward != null) {
+    faqForwardQuestion = [
+        {
+        question: `What are the operating days of ${forward.train_name} from ${forward.path}?`,
+        answer: `${forward.train_name} operates on ${forward.days.join(
+            ", "
+        )} from ${forward.path}.`,
+        },
+        {
+        question: `What is the total duration of the journey for ${forward.train_name} from ${forward.path}?`,
+        answer: `The total duration for ${forward.train_name} from ${forward.path} is ${forward.total_duration}.`,
+        },
+        {
+        question: `Where does ${forward.train_name} start and end from ${forward.path}?`,
+        answer: `${forward.train_name} starts at ${
+            forward.routes[0].city
+        } and ends at ${
+            forward.routes[forward.routes.length - 1].city
+        } that travels from ${forward.path}.`,
+        },
+        {
+        question: `What is the weekly offday for ${forward.train_name} that travels from ${forward.path}?`,
+        answer: `The weekly offday for ${forward.train_name} from ${
+            forward.path
+        } is ${
+            forward.days.length < 7
+            ? forward.days.reduce(
+                (offDay: any, day: any) =>
+                    (offDay = [
+                    "Sun",
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    ].filter((d) => !forward.days.includes(d))[0]),
+                ""
+                )
+            : "No offday"
+        }.`,
+        },
+        ...forward.routes.slice(1).map((route: any) => ({
+        question: `When does ${forward.train_name} arrive at ${route.city} that travels from ${forward.path}?`,
+        answer: `${forward.train_name} arrives at ${route.city} at ${route.arrival_time} that travels from ${forward.path}.`,
+        })),
+    ]
+  }
+
+
+  if(reverse != null) {
+    faqReverseQuestion = [
+        {
       question: `What are the operating days of ${reverse.train_name} that travels from ${reverse.path}?`,
       answer: `${reverse.train_name} operates on ${reverse.days.join(
         ", "
@@ -209,50 +222,73 @@ const Page = async ({ params }: any) => {
       question: `When does ${reverse.train_name} arrive at ${route.city} that travels from ${reverse.path}?`,
       answer: `${reverse.train_name} arrives at ${route.city} at ${route.arrival_time} that travels from ${reverse.path}.`,
     })),
+    ]
+  }
+
+  const faqData = [
+   ...faqForwardQuestion,
+   ...faqReverseQuestion
+    
   ];
+
+  
 
   return (
     <div className="min-h-screen">
       <div className="mx-auto p-6">
         <h1 className="text-xl font-bold text-gray-800 mb-8 text-center capitalize flex items-center justify-center">
-          <FaTrain className="mr-2" /> {forward.train_name}
+          <FaTrain className="mr-2" /> {forward?.train_name ??  reverse.train_name}
         </h1>
 
         <div className="mx-auto p-6 text-center">
-          <p className="p-2 border rounded-2xl bg-white">
-            {forward.train_name} travels {forward.path} on every day of the week
-            except {forwardOffDay}. It departs from {forwardSource} at{" "}
-            {forwardDepartureTime}, and arrives at {forwardDestination} at{" "}
-            {forwardArrivalTime}. It takes total {forwardHours}.
-          </p>
-          <p className="p-2 mt-4 border rounded-2xl bg-white">
-            {reverse.train_name} travels {reverse.path} on every day of the week
-            except {reverseOffDay}. It departs from {reverseSource} at{" "}
-            {reverseDepartureTime}, and arrives at {reverseDestination} at{" "}
-            {reverseArrivalTime}. It takes total {reverseHours}.
-          </p>
+            {forward && (
+                <p className="p-2 border rounded-2xl bg-white">
+                    {forward.train_name} travels {forward.path} on every day of the week
+                    except {forwardOffDay}. It departs from {forwardSource} at{" "}
+                    {forwardDepartureTime}, and arrives at {forwardDestination} at{" "}
+                    {forwardArrivalTime}. It takes total {forwardHours}.
+                </p>
+            )}
+
+            {reverse && (
+                <p className="p-2 mt-4 border rounded-2xl bg-white">
+                    {reverse.train_name} travels {reverse.path} on every day of the week
+                    except {reverseOffDay}. It departs from {reverseSource} at{" "}
+                    {reverseDepartureTime}, and arrives at {reverseDestination} at{" "}
+                    {reverseArrivalTime}. It takes total {reverseHours}.
+                </p>
+            )}
+          
+          
         </div>
 
         <div className="mx-auto p-6 text-center text-xs ">
           <h2 className="font-semibold text-indigo-700 mb-2 text-sm">
             Live track this Train
           </h2>
-          <div className="flex justify-between gap-2">
-            <div className="flex flex-col p-2 border rounded-lg">
-              <p className="font-bold italic">{forward.path} </p>
-              <p>
-                Type <b>TR {forward.train_number}</b> and send it to{" "}
-                <b>16318</b>.
-              </p>
-            </div>
+          <div className={`flex gap-2 ${!forward || !reverse  ? 'justify-center' : 'justify-between'}`}>
+            {forward ? (
+                <div className="flex flex-col p-2 border rounded-lg">
+                    <p className="font-bold italic">{forward.path} </p>
+                    <p>
+                        Type <b>TR {forward.train_number}</b> and send it to{" "}
+                        <b>16318</b>.
+                    </p>
+                </div>
+            ) : null}
 
-            <div className="flex flex-col p-2 border rounded-lg">
-              <p className="font-bold italic">{reverse.path}</p>
-              <p>
-                Type <b>TR {reverse.train_number}</b> and send it to{" "}
-                <b>16318</b>.
-              </p>
-            </div>
+            {reverse ? (
+                <div className="flex flex-col p-2 border rounded-lg">
+                    <p className="font-bold italic">{reverse.path}</p>
+                    <p>
+                        Type <b>TR {reverse.train_number}</b> and send it to{" "}
+                        <b>16318</b>.
+                    </p>
+                </div>
+            ) : null}
+            
+
+            
           </div>
         </div>
 
@@ -266,7 +302,9 @@ const Page = async ({ params }: any) => {
 
         <div className="flex flex-col md:flex-row">
           {/* Left Side (Forward Route) */}
-          <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+
+          {forward ? (
+            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <h2 className="font-semibold  mb-4 text-center flex flex-col">
               <span className="text-2xl text-[#046ce6]">{forward.path}</span>
               <span className="text-xl text-[#fe1226]">
@@ -309,9 +347,12 @@ const Page = async ({ params }: any) => {
               ))}
             </div>
           </div>
+          ) : null}
+          
 
           {/* Right Side (Reverse Route) */}
-          <div className="md:w-1/2 order-first md:order-last">
+          {reverse ? (
+            <div className="md:w-1/2 order-first md:order-last">
             <h2 className="text-2xl flex flex-col font-semibold text-indigo-700 mb-4 text-center">
               <span className="text-2xl text-[#046ce6]">{reverse.path}</span>
               <span className="text-xl text-[#fe1226]">
@@ -353,6 +394,8 @@ const Page = async ({ params }: any) => {
               ))}
             </div>
           </div>
+          ) : null}
+          
         </div>
 
         <Image
@@ -363,22 +406,28 @@ const Page = async ({ params }: any) => {
           className="mx-auto my-8"
         />
 
-        <div className="my-5">
-          {generateRouteDescription(
-            forward.routes,
-            forward.train_name,
-            forward.path
-          )}
-        </div>
+        {forward ? (
+            <div className="my-5">
+            {generateRouteDescription(
+                forward.routes,
+                forward.train_name,
+                forward.path
+            )}
+            </div>
+        ) : null}
+        
 
-        <div className="my-5">
-          {generateRouteDescription(
-            reverse.routes,
-            reverse.train_name,
-            reverse.path
-          )}
-        </div>
+        {reverse ? (
+            <div className="my-5">
+            {generateRouteDescription(
+                reverse.routes,
+                reverse.train_name,
+                reverse.path
+            )}
+            </div>
 
+        ) : null}
+        
         {/* FAQ Section */}
         <div className="mt-8">
           <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center border-b pb-2 border-gray-200">

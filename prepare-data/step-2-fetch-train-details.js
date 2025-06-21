@@ -9,7 +9,7 @@ async function fetchTrainRoutes(trainName, trainNumber) {
     const apiUrl = "https://railspaapi.shohoz.com/v1.0/web/train-routes";
     const payload = {
       model: trainNumber.toString(),
-      departure_date_time: "2025-03-27",
+      departure_date_time: "2025-06-19",
     };
 
     const response = await fetch(apiUrl, {

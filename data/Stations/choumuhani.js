@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Noakhali",
       "to": "Dhaka",
       "arrival_time_at_current": "06:23 am",
+      "departure_time_at_current": "06:25 am",
       "arrival_time_at_destination": "11:20 am"
     }
   ],
@@ -19,6 +20,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Noakhali",
       "arrival_time_at_current": "08:04 pm",
+      "departure_time_at_current": "08:06 pm",
       "arrival_time_at_destination": "08:40 pm"
     }
   ]

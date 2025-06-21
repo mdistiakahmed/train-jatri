@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Kurigram",
       "arrival_time_at_current": "05:10 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "05:10 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rangpur",
       "arrival_time_at_current": "07:20 pm",
+      "departure_time_at_current": "07:20 pm",
       "arrival_time_at_destination": "07:00 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Rangpur",
       "to": "Dhaka",
       "arrival_time_at_current": "07:50 pm",
+      "departure_time_at_current": "07:30 pm",
       "arrival_time_at_destination": "06:00 am"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Kurigram",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "07:10 am",
       "arrival_time_at_destination": "05:05 pm"
     }
   ]

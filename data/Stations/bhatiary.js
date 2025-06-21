@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Jamalpur_Town",
       "arrival_time_at_current": "09:31 am",
+      "departure_time_at_current": "09:33 am",
       "arrival_time_at_destination": "06:00 pm"
     }
   ],
@@ -19,6 +20,7 @@ export const trainData = {
       "from": "Jamalpur_Town",
       "to": "Chattogram",
       "arrival_time_at_current": "04:25 am",
+      "departure_time_at_current": "04:27 am",
       "arrival_time_at_destination": "05:00 am"
     }
   ]

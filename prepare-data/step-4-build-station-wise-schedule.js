@@ -56,6 +56,7 @@ for (const file of files) {
     for (const stop of route) {
       const station = stop.city;
       const arrival = stop.arrival_time || '---';
+      const departure = stop.departure_time || '---';
 
       if (!stationMap[station]) {
         stationMap[station] = { forward: [], reverse: [] };
@@ -68,6 +69,7 @@ for (const file of files) {
         from: startStation,
         to: destStation,
         arrival_time_at_current: arrival.replace(/\s*BST$/, ''),
+        departure_time_at_current: departure.replace(/\s*BST$/, ''),
         arrival_time_at_destination: destArrival.replace(/\s*BST$/, ''),
       });
     }

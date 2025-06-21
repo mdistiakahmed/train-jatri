@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Lalmonirhat",
       "to": "Birol",
       "arrival_time_at_current": "06:50 am",
+      "departure_time_at_current": "07:00 am",
       "arrival_time_at_destination": "10:30 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Lalmonirhat",
       "arrival_time_at_current": "06:58 am",
+      "departure_time_at_current": "07:00 am",
       "arrival_time_at_destination": "07:20 am"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Santahar",
       "to": "Burimari",
       "arrival_time_at_current": "01:22 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "04:00 pm"
     }
   ],
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Lalmonirhat",
       "to": "Dhaka",
       "arrival_time_at_current": "10:06 am",
+      "departure_time_at_current": "10:08 am",
       "arrival_time_at_destination": "07:45 pm"
     },
     {
@@ -46,6 +50,7 @@ export const trainData = {
       "from": "Birol",
       "to": "Lalmonirhat",
       "arrival_time_at_current": "02:13 pm",
+      "departure_time_at_current": "02:25 pm",
       "arrival_time_at_destination": "02:50 pm"
     },
     {
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Burimari",
       "to": "Santahar",
       "arrival_time_at_current": "07:01 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "10:40 pm"
     }
   ]

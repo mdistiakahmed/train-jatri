@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Sirajganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "08:31 am",
+      "departure_time_at_current": "08:33 am",
       "arrival_time_at_destination": "10:15 am"
     }
   ],

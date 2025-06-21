@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Lalmonirhat",
       "arrival_time_at_current": "12:53 am",
+      "departure_time_at_current": "12:55 am",
       "arrival_time_at_destination": "07:20 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "01:51 am",
+      "departure_time_at_current": "01:53 am",
       "arrival_time_at_destination": "04:00 am"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "09:28 am",
+      "departure_time_at_current": "09:31 am",
       "arrival_time_at_destination": "11:40 am"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Khulna",
       "to": "Dhaka",
       "arrival_time_at_current": "02:06 pm",
+      "departure_time_at_current": "02:09 pm",
       "arrival_time_at_destination": "06:05 pm"
     },
     {
@@ -44,6 +48,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "06:06 pm",
+      "departure_time_at_current": "06:09 pm",
       "arrival_time_at_destination": "08:20 pm"
     }
   ],
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "01:05 am",
+      "departure_time_at_current": "01:08 am",
       "arrival_time_at_destination": "04:40 am"
     },
     {
@@ -64,6 +70,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "09:14 am",
+      "departure_time_at_current": "09:17 am",
       "arrival_time_at_destination": "01:10 pm"
     },
     {
@@ -73,6 +80,7 @@ export const trainData = {
       "from": "Lalmonirhat",
       "to": "Dhaka",
       "arrival_time_at_current": "03:37 pm",
+      "departure_time_at_current": "03:39 pm",
       "arrival_time_at_destination": "07:45 pm"
     },
     {
@@ -82,6 +90,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "05:38 pm",
+      "departure_time_at_current": "05:40 pm",
       "arrival_time_at_destination": "09:15 pm"
     },
     {
@@ -91,6 +100,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Khulna",
       "arrival_time_at_current": "10:47 pm",
+      "departure_time_at_current": "10:50 pm",
       "arrival_time_at_destination": "04:40 am"
     }
   ]

@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Cox's Bazar",
       "arrival_time_at_current": "06:39 am",
+      "departure_time_at_current": "06:41 am",
       "arrival_time_at_destination": "09:50 am"
     }
   ],
@@ -19,6 +20,7 @@ export const trainData = {
       "from": "Cox's Bazar",
       "to": "Chattogram",
       "arrival_time_at_current": "11:10 pm",
+      "departure_time_at_current": "11:12 pm",
       "arrival_time_at_destination": "11:50 pm"
     }
   ]

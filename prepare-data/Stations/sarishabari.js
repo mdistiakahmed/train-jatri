@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Bhuapur",
       "arrival_time_at_current": "03:21 pm",
+      "departure_time_at_current": "03:24 pm",
       "arrival_time_at_destination": "04:45 pm"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Tarakandi",
       "arrival_time_at_current": "04:33 pm",
+      "departure_time_at_current": "04:35 pm",
       "arrival_time_at_destination": "05:00 pm"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Tarakandi",
       "arrival_time_at_current": "10:58 pm",
+      "departure_time_at_current": "11:01 pm",
       "arrival_time_at_destination": "11:30 pm"
     }
   ],
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Tarakandi",
       "to": "Dhaka",
       "arrival_time_at_current": "02:15 am",
+      "departure_time_at_current": "02:18 am",
       "arrival_time_at_destination": "08:00 am"
     },
     {
@@ -46,6 +50,7 @@ export const trainData = {
       "from": "Tarakandi",
       "to": "Dhaka",
       "arrival_time_at_current": "05:45 pm",
+      "departure_time_at_current": "05:47 pm",
       "arrival_time_at_destination": "10:55 pm"
     },
     {
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Bhuapur",
       "to": "Dhaka",
       "arrival_time_at_current": "06:27 pm",
+      "departure_time_at_current": "06:30 pm",
       "arrival_time_at_destination": "11:55 pm"
     }
   ]

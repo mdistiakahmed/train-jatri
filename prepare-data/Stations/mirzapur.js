@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Sirajganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "08:12 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "10:15 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "03:57 pm",
+      "departure_time_at_current": "03:59 pm",
       "arrival_time_at_destination": "08:20 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "11:08 am",
+      "departure_time_at_current": "11:10 am",
       "arrival_time_at_destination": "01:10 pm"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Sirajganj_Bazar",
       "arrival_time_at_current": "05:42 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "08:10 pm"
     }
   ]

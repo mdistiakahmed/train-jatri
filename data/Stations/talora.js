@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Santahar",
       "to": "Panchagarh",
       "arrival_time_at_current": "11:28 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "08:40 pm"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rangpur",
       "arrival_time_at_current": "03:13 pm",
+      "departure_time_at_current": "03:15 pm",
       "arrival_time_at_destination": "07:00 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Panchagarh",
       "to": "Santahar",
       "arrival_time_at_current": "03:43 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "04:15 pm"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Rangpur",
       "to": "Dhaka",
       "arrival_time_at_current": "11:40 pm",
+      "departure_time_at_current": "11:42 pm",
       "arrival_time_at_destination": "06:00 am"
     }
   ]

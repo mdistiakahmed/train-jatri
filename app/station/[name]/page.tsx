@@ -15,7 +15,7 @@ export const generateMetadata = async ({ params }: any) => {
    const { name } = await params;
   const trainData = await getDataForStation(name);
 
-  if (!trainData || !trainData.forward) {
+  if (!trainData) {
     return {
       title: "Train Details Not Found",
       description: "Train details could not be found.",
@@ -97,6 +97,9 @@ const StationPage = async ({ params }: any) => {
                       Arrival
                     </th>
                     <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
+                      Departure
+                    </th>
+                    <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
                       Off Day
                     </th>
                     <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
@@ -121,6 +124,9 @@ const StationPage = async ({ params }: any) => {
                       </td>
                       <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
                         {train.arrival_time_at_current}
+                      </td>
+                      <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
+                        {train.departure_time_at_current}
                       </td>
                       <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
                         {train.offday}
@@ -158,6 +164,9 @@ const StationPage = async ({ params }: any) => {
                       Arrival
                     </th>
                     <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
+                      Departure
+                    </th>
+                    <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
                       Off Day
                     </th>
                     <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap">
@@ -182,6 +191,9 @@ const StationPage = async ({ params }: any) => {
                       </td>
                       <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
                         {train.arrival_time_at_current}
+                      </td>
+                      <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
+                        {train.departure_time_at_current}
                       </td>
                       <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
                         {train.offday}

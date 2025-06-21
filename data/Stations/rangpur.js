@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Kurigram",
       "arrival_time_at_current": "03:58 am",
+      "departure_time_at_current": "04:03 am",
       "arrival_time_at_destination": "05:10 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Lalmonirhat",
       "to": "Birol",
       "arrival_time_at_current": "07:33 am",
+      "departure_time_at_current": "07:38 am",
       "arrival_time_at_destination": "10:30 am"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Santahar",
       "to": "Panchagarh",
       "arrival_time_at_current": "03:48 pm",
+      "departure_time_at_current": "03:58 pm",
       "arrival_time_at_destination": "08:40 pm"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rangpur",
       "arrival_time_at_current": "07:00 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "07:00 pm"
     }
   ],
@@ -46,6 +50,7 @@ export const trainData = {
       "from": "Kurigram",
       "to": "Dhaka",
       "arrival_time_at_current": "08:13 am",
+      "departure_time_at_current": "08:23 am",
       "arrival_time_at_destination": "05:05 pm"
     },
     {
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Panchagarh",
       "to": "Santahar",
       "arrival_time_at_current": "10:35 am",
+      "departure_time_at_current": "10:40 am",
       "arrival_time_at_destination": "04:15 pm"
     },
     {
@@ -64,6 +70,7 @@ export const trainData = {
       "from": "Birol",
       "to": "Lalmonirhat",
       "arrival_time_at_current": "01:20 pm",
+      "departure_time_at_current": "01:27 pm",
       "arrival_time_at_destination": "02:50 pm"
     },
     {
@@ -73,6 +80,7 @@ export const trainData = {
       "from": "Rangpur",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "08:00 pm",
       "arrival_time_at_destination": "06:00 am"
     }
   ]

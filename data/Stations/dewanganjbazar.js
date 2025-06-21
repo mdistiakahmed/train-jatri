@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Dewanganj_Bazar",
       "arrival_time_at_current": "12:50 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "12:50 pm"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Dewanganj_Bazar",
       "arrival_time_at_current": "11:50 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "11:50 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Dewanganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "06:40 am",
       "arrival_time_at_destination": "12:15 pm"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Dewanganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "03:00 pm",
       "arrival_time_at_destination": "08:30 pm"
     }
   ]

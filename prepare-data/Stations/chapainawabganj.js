@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Chapainawabganj",
       "arrival_time_at_current": "11:50 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "11:50 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Chapainawabganj",
       "arrival_time_at_current": "07:15 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "07:15 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Chapainawabganj",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "06:00 am",
       "arrival_time_at_destination": "11:35 am"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Chapainawabganj",
       "to": "Rajshahi",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "02:15 pm",
       "arrival_time_at_destination": "03:40 pm"
     }
   ]

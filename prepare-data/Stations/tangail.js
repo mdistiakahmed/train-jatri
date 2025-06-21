@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "12:32 am",
+      "departure_time_at_current": "12:34 am",
       "arrival_time_at_destination": "04:00 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Sirajganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "07:40 am",
+      "departure_time_at_current": "07:48 am",
       "arrival_time_at_destination": "10:15 am"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "07:47 am",
+      "departure_time_at_current": "07:49 am",
       "arrival_time_at_destination": "11:40 am"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Panchagarh",
       "arrival_time_at_current": "12:03 pm",
+      "departure_time_at_current": "12:05 pm",
       "arrival_time_at_destination": "09:00 pm"
     },
     {
@@ -44,6 +48,7 @@ export const trainData = {
       "from": "Khulna",
       "to": "Dhaka",
       "arrival_time_at_current": "03:52 pm",
+      "departure_time_at_current": "03:54 pm",
       "arrival_time_at_destination": "06:05 pm"
     },
     {
@@ -53,6 +58,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Rajshahi",
       "arrival_time_at_current": "04:26 pm",
+      "departure_time_at_current": "04:28 pm",
       "arrival_time_at_destination": "08:20 pm"
     },
     {
@@ -62,6 +68,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Panchagarh",
       "arrival_time_at_current": "10:32 pm",
+      "departure_time_at_current": "10:34 pm",
       "arrival_time_at_destination": "07:10 am"
     },
     {
@@ -71,6 +78,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Lalmonirhat",
       "arrival_time_at_current": "11:32 pm",
+      "departure_time_at_current": "11:34 pm",
       "arrival_time_at_destination": "07:20 am"
     }
   ],
@@ -82,6 +90,7 @@ export const trainData = {
       "from": "Panchagarh",
       "to": "Dhaka",
       "arrival_time_at_current": "05:12 am",
+      "departure_time_at_current": "05:14 am",
       "arrival_time_at_destination": "07:20 am"
     },
     {
@@ -91,6 +100,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "10:42 am",
+      "departure_time_at_current": "10:44 am",
       "arrival_time_at_destination": "01:10 pm"
     },
     {
@@ -100,6 +110,7 @@ export const trainData = {
       "from": "Panchagarh",
       "to": "Dhaka",
       "arrival_time_at_current": "04:18 pm",
+      "departure_time_at_current": "04:28 pm",
       "arrival_time_at_destination": "06:55 pm"
     },
     {
@@ -109,6 +120,7 @@ export const trainData = {
       "from": "Lalmonirhat",
       "to": "Dhaka",
       "arrival_time_at_current": "05:10 pm",
+      "departure_time_at_current": "05:18 pm",
       "arrival_time_at_destination": "07:45 pm"
     },
     {
@@ -118,6 +130,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Sirajganj_Bazar",
       "arrival_time_at_current": "06:11 pm",
+      "departure_time_at_current": "06:13 pm",
       "arrival_time_at_destination": "08:10 pm"
     },
     {
@@ -127,6 +140,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Dhaka",
       "arrival_time_at_current": "07:00 pm",
+      "departure_time_at_current": "07:02 pm",
       "arrival_time_at_destination": "09:15 pm"
     },
     {
@@ -136,6 +150,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Khulna",
       "arrival_time_at_current": "09:26 pm",
+      "departure_time_at_current": "09:28 pm",
       "arrival_time_at_destination": "04:40 am"
     }
   ]

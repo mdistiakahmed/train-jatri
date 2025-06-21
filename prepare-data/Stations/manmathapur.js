@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Parbatipur",
       "to": "Panchagarh",
       "arrival_time_at_current": "07:50 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "12:00 pm"
     }
   ],
@@ -19,6 +20,7 @@ export const trainData = {
       "from": "Panchagarh",
       "to": "Parbatipur",
       "arrival_time_at_current": "06:54 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "07:15 pm"
     }
   ]

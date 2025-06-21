@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Sylhet",
       "arrival_time_at_current": "03:25 am",
+      "departure_time_at_current": "03:27 am",
       "arrival_time_at_destination": "05:00 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Sylhet",
       "arrival_time_at_current": "02:48 pm",
+      "departure_time_at_current": "02:50 pm",
       "arrival_time_at_destination": "03:55 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Sylhet",
       "to": "Dhaka",
       "arrival_time_at_current": "12:28 am",
+      "departure_time_at_current": "12:30 am",
       "arrival_time_at_destination": "05:40 am"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Sylhet",
       "to": "Chattogram",
       "arrival_time_at_current": "10:58 pm",
+      "departure_time_at_current": "11:00 pm",
       "arrival_time_at_destination": "05:35 am"
     }
   ]

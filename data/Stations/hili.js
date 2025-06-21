@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Chilahati",
       "arrival_time_at_current": "09:56 am",
+      "departure_time_at_current": "09:58 am",
       "arrival_time_at_destination": "01:00 pm"
     }
   ],
@@ -19,6 +20,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Rajshahi",
       "arrival_time_at_current": "07:33 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "11:10 am"
     }
   ]

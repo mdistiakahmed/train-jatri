@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Chilahati",
       "arrival_time_at_current": "02:00 am",
+      "departure_time_at_current": "02:03 am",
       "arrival_time_at_destination": "02:45 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Khulna",
       "to": "Chilahati",
       "arrival_time_at_current": "06:01 am",
+      "departure_time_at_current": "06:23 am",
       "arrival_time_at_destination": "06:45 am"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Chilahati",
       "arrival_time_at_current": "12:30 pm",
+      "departure_time_at_current": "12:33 pm",
       "arrival_time_at_destination": "01:00 pm"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Chilahati",
       "arrival_time_at_current": "03:16 pm",
+      "departure_time_at_current": "03:26 pm",
       "arrival_time_at_destination": "04:00 pm"
     },
     {
@@ -44,6 +48,7 @@ export const trainData = {
       "from": "Khulna",
       "to": "Chilahati",
       "arrival_time_at_current": "04:24 pm",
+      "departure_time_at_current": "04:27 pm",
       "arrival_time_at_destination": "05:00 pm"
     },
     {
@@ -53,6 +58,7 @@ export const trainData = {
       "from": "Rajshahi",
       "to": "Chilahati",
       "arrival_time_at_current": "08:58 pm",
+      "departure_time_at_current": "09:01 pm",
       "arrival_time_at_destination": "09:30 pm"
     }
   ],
@@ -64,6 +70,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Rajshahi",
       "arrival_time_at_current": "05:18 am",
+      "departure_time_at_current": "05:21 am",
       "arrival_time_at_destination": "11:10 am"
     },
     {
@@ -73,6 +80,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Dhaka",
       "arrival_time_at_current": "06:18 am",
+      "departure_time_at_current": "06:21 am",
       "arrival_time_at_destination": "02:55 pm"
     },
     {
@@ -82,6 +90,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Khulna",
       "arrival_time_at_current": "08:48 am",
+      "departure_time_at_current": "08:51 am",
       "arrival_time_at_destination": "06:25 pm"
     },
     {
@@ -91,6 +100,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Rajshahi",
       "arrival_time_at_current": "03:21 pm",
+      "departure_time_at_current": "03:24 pm",
       "arrival_time_at_destination": "09:30 pm"
     },
     {
@@ -100,6 +110,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Khulna",
       "arrival_time_at_current": "06:48 pm",
+      "departure_time_at_current": "06:51 pm",
       "arrival_time_at_destination": "04:10 am"
     },
     {
@@ -109,6 +120,7 @@ export const trainData = {
       "from": "Chilahati",
       "to": "Dhaka",
       "arrival_time_at_current": "08:18 pm",
+      "departure_time_at_current": "08:21 pm",
       "arrival_time_at_destination": "05:25 am"
     }
   ]

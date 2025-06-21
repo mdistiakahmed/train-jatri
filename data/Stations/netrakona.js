@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Mohanganj",
       "arrival_time_at_current": "02:40 am",
+      "departure_time_at_current": "02:43 am",
       "arrival_time_at_destination": "04:10 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Mohanganj",
       "arrival_time_at_current": "05:33 pm",
+      "departure_time_at_current": "05:36 pm",
       "arrival_time_at_destination": "06:40 pm"
     }
   ],
@@ -28,6 +30,7 @@ export const trainData = {
       "from": "Mohanganj",
       "to": "Dhaka",
       "arrival_time_at_current": "08:47 am",
+      "departure_time_at_current": "08:52 am",
       "arrival_time_at_destination": "01:55 pm"
     },
     {
@@ -37,6 +40,7 @@ export const trainData = {
       "from": "Mohanganj",
       "to": "Dhaka",
       "arrival_time_at_current": "11:50 pm",
+      "departure_time_at_current": "11:53 pm",
       "arrival_time_at_destination": "04:55 am"
     }
   ]

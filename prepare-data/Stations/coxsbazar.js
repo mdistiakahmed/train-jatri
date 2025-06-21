@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Cox's Bazar",
       "arrival_time_at_current": "09:50 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "09:50 am"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Cox's Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "12:30 pm",
       "arrival_time_at_destination": "09:00 pm"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Cox's Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "07:45 pm",
       "arrival_time_at_destination": "04:20 am"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Cox's Bazar",
       "to": "Chattogram",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "10:20 am",
       "arrival_time_at_destination": "02:10 pm"
     }
   ],
@@ -46,6 +50,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Cox's Bazar",
       "arrival_time_at_current": "07:20 am",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "07:20 am"
     },
     {
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Cox's Bazar",
       "arrival_time_at_current": "02:40 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "02:40 pm"
     },
     {
@@ -64,6 +70,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Cox's Bazar",
       "arrival_time_at_current": "07:00 pm",
+      "departure_time_at_current": "---",
       "arrival_time_at_destination": "07:00 pm"
     },
     {
@@ -73,6 +80,7 @@ export const trainData = {
       "from": "Cox's Bazar",
       "to": "Chattogram",
       "arrival_time_at_current": "---",
+      "departure_time_at_current": "08:00 pm",
       "arrival_time_at_destination": "11:50 pm"
     }
   ]

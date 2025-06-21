@@ -8,6 +8,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Dewanganj_Bazar",
       "arrival_time_at_current": "11:03 am",
+      "departure_time_at_current": "11:05 am",
       "arrival_time_at_destination": "12:50 pm"
     },
     {
@@ -17,6 +18,7 @@ export const trainData = {
       "from": "Chattogram",
       "to": "Jamalpur_Town",
       "arrival_time_at_current": "05:06 pm",
+      "departure_time_at_current": "05:08 pm",
       "arrival_time_at_destination": "06:00 pm"
     },
     {
@@ -26,6 +28,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Tarakandi",
       "arrival_time_at_current": "09:28 pm",
+      "departure_time_at_current": "09:30 pm",
       "arrival_time_at_destination": "11:30 pm"
     },
     {
@@ -35,6 +38,7 @@ export const trainData = {
       "from": "Dhaka",
       "to": "Dewanganj_Bazar",
       "arrival_time_at_current": "09:58 pm",
+      "departure_time_at_current": "10:00 pm",
       "arrival_time_at_destination": "11:50 pm"
     }
   ],
@@ -46,6 +50,7 @@ export const trainData = {
       "from": "Tarakandi",
       "to": "Dhaka",
       "arrival_time_at_current": "03:46 am",
+      "departure_time_at_current": "03:48 am",
       "arrival_time_at_destination": "08:00 am"
     },
     {
@@ -55,6 +60,7 @@ export const trainData = {
       "from": "Dewanganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "08:16 am",
+      "departure_time_at_current": "08:18 am",
       "arrival_time_at_destination": "12:15 pm"
     },
     {
@@ -64,6 +70,7 @@ export const trainData = {
       "from": "Dewanganj_Bazar",
       "to": "Dhaka",
       "arrival_time_at_current": "04:26 pm",
+      "departure_time_at_current": "04:28 pm",
       "arrival_time_at_destination": "08:30 pm"
     },
     {
@@ -73,6 +80,7 @@ export const trainData = {
       "from": "Jamalpur_Town",
       "to": "Chattogram",
       "arrival_time_at_current": "08:30 pm",
+      "departure_time_at_current": "08:32 pm",
       "arrival_time_at_destination": "05:00 am"
     }
   ]

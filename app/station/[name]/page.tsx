@@ -23,10 +23,10 @@ export const generateMetadata = async ({ params }: any) => {
   }
 
   return {
-    title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+    title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
     description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
     openGraph: {
-      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
       description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
       url: `https://www.trainjatri.com/station/${name}`,
       siteName: "Train Jatri",
@@ -34,11 +34,33 @@ export const generateMetadata = async ({ params }: any) => {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Train Route and Schedule`,
+      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
       description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
     },
   };
 };
+
+
+const generateForwardTrainDescription = (station: any,  forward_trains: any) => {
+
+  return (
+    <div className="bg-white">
+      {forward_trains.map((train: any, index: number) => {
+        const description = `${train.train_name} (${train.train_number}) departs from ${station} at ${train.departure_time_at_current} (arrives at ${train.arrival_time_at_current}). It reaches its destination, ${train.to}, at ${train.arrival_time_at_destination}.`;
+
+        return (
+          <div key={index} className="mb-4 p-4 border rounded shadow-sm">
+            <p className="text-sm text-gray-700 text-center">{description}</p>
+            <p className="text-xs text-gray-500 text-center mt-1">
+              Offday: {train.offday}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 
 const StationPage = async ({ params }: any) => {
   const { name } = await params;
@@ -61,10 +83,12 @@ const StationPage = async ({ params }: any) => {
     );
   }
 
+  const stationName = name.charAt(0).toUpperCase() + name.slice(1);
+
   return (
     <div className="text-center">
       <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Train Schedule for {name.charAt(0).toUpperCase() + name.slice(1)}</h1>
+        <h1 className="text-2xl font-bold mb-4">Train Schedule for {stationName} Station</h1>
         <p className="mb-4">
           Explore the comprehensive train schedule for {name} station. Find
           information on train numbers, names, arrival and departure times, and
@@ -82,7 +106,7 @@ const StationPage = async ({ params }: any) => {
 
       <div className="w-full overflow-x-auto max-w-screen p-4">
           <div className="mb-6">
-            <h3 className="text-lg my-5">Forward Trains</h3>
+            <h3 className="text-lg my-5">Forward Trains - {stationName} Train Schedule</h3>
             <div className="w-full overflow-x-auto max-w-full">
               <table className="min-w-max w-full bg-white rounded-lg shadow-md">
                 <thead>
@@ -149,7 +173,7 @@ const StationPage = async ({ params }: any) => {
 
 
           <div className="my-10">
-            <h3 className="text-lg my-5">Downwards Trains</h3>
+            <h3 className="text-lg my-5">Downwards Trains - {stationName} Train Schedule</h3>
             <div className="w-full overflow-x-auto max-w-full">
               <table className="min-w-max w-full bg-white rounded-lg shadow-md">
                 <thead>
@@ -212,6 +236,21 @@ const StationPage = async ({ params }: any) => {
                 </tbody>
               </table>
             </div>
+          </div>
+
+
+          <div className="pt-20">
+            <h2 className="text-2xl font-bold mb-4">
+                {stationName} Station Train Schedule (forward trains)
+            </h2>
+            {generateForwardTrainDescription(trainData.station, trainData.forward_trains)}
+          </div>
+
+          <div className="pt-20">
+            <h2 className="text-2xl font-bold mb-4">
+                {stationName} Station Train Schedule (Downwards trains)
+            </h2>
+            {generateForwardTrainDescription(trainData.station, trainData.reverse_trains)}
           </div>
       </div>
     </div>

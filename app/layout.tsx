@@ -70,7 +70,7 @@ export default function RootLayout({
         >
           <div className="hidden md:block w-1/6 pt-36"></div>
           <main className="flex-1">
-            <p className="whitespace-nowrap text-end py-4 text-xs italic">Last Updated: 21th June, 2025</p>
+            <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
             {children}
           </main>
           <div className="hidden md:block w-1/6 pt-36"></div>

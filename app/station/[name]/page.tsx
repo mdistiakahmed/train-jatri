@@ -91,7 +91,7 @@ const StationPage = async ({ params }: any) => {
         <h1 className="text-2xl font-bold mb-4">Train Schedule for {stationName} Station</h1>
         <p className="mb-4">
             The {stationName} train schedule provides detailed information to help you plan your rail 
-            journey with confidence. Whether you're a daily commuter, an occasional traveler, 
+            journey with confidence. Whether you&apos;re a daily commuter, an occasional traveler, 
             or planning a long-distance trip, having access to the latest train schedule from {stationName} is essential.
             This comprehensive timetable includes all scheduled trains that stop at {stationName},
             along with key details such as train numbers, train names, exact arrival and departure times,

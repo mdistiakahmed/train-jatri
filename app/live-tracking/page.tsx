@@ -1,5 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
+import SearchTrainLocation from "@/components/search/SearchTrainLocation";
+import { trainDataSummary } from '@/data/trainDataSummary';
+
+interface TrainInfo {
+  name: string;
+  forwardPath: string;
+  forwardTrainNumber: string;
+  reversePath: string;
+  reverseTrainNumber: string;
+}
 
 export const metadata: Metadata = {
   title: "Live Train Tracking - Train Jatri",
@@ -19,7 +29,7 @@ export const metadata: Metadata = {
     description:
       "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
     type: "website",
-    url: "https://www.trainjatri.com/live-tracking", // Replace with your actual page URL
+    url: "https://www.trainjatri.com/live-tracking",
   },
   twitter: {
     title: "Live Train Tracking - Train Jatri",
@@ -29,15 +39,26 @@ export const metadata: Metadata = {
 };
 
 const LiveTrackingPage = () => {
+  // Sort trains alphabetically by name
+  const sortedTrains = [...trainDataSummary].sort((a, b) => 
+    a.name.localeCompare(b.name)
+  ) as TrainInfo[];
+
   return (
-    <div className="p-4 my-10 mx-auto">
-      <h1 className="text-3xl font-bold mb-6">Live Train Tracking</h1>
+    <div className="p-4 my-2 mx-auto max-w-7xl ">
+      <h1 className="text-3xl font-bold mb-6 text-center">Bangladesh Railway Live Train Tracking</h1>
 
       <p className="mb-4 text-lg text-gray-700">
-        Stay updated on the real-time location of trains across Bangladesh with
-        our live tracking feature. Simply send an SMS with the train number or
-        code to get instant updates.
+        Step 1: Search and select the train you want to track.
       </p>
+      <p className="mb-4 text-lg text-gray-700">
+        Step 2: Send an SMS with the train number or code to 16318.
+      </p>
+      <p className="mb-4 text-lg text-gray-700">
+        Step 3: Receive the update SMS with the current location and status of the train.
+      </p>
+
+      <SearchTrainLocation />
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">
@@ -94,6 +115,42 @@ const LiveTrackingPage = () => {
             availability of real-time data.
           </li>
         </ul>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-3xl font-bold mb-6 text-center">All Available Trains</h2>
+        <p className="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+          Find your train and track its location by sending an SMS with the train number to 16318.
+        </p>
+        
+        <div className="max-w-3xl mx-auto space-y-4">
+          {sortedTrains.map((train, index) => (
+            <div 
+              key={`${train.name}-${index}`} 
+              className="bg-white p-4 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <h3 className="text-lg font-semibold mb-3 text-blue-800 capitalize">How to Track {train.name}</h3>
+              
+              <div className="space-y-3">
+                <div>
+                  <p className="text-sm font-medium text-gray-700">{train.forwardPath}:</p>
+                  <code className="text-sm font-mono bg-gray-50 p-2 rounded block w-full mt-1">
+                    TR {train.forwardTrainNumber} to 16318
+                  </code>
+                </div>
+                
+                {train.reverseTrainNumber && (
+                  <div>
+                    <p className="text-sm font-medium text-gray-700">{train.reversePath}:</p>
+                    <code className="text-sm font-mono bg-gray-50 p-2 rounded block w-full mt-1">
+                      TR {train.reverseTrainNumber} to 16318
+                    </code>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );

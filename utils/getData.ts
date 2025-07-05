@@ -90,12 +90,12 @@ export const getDataForRoute = async (route: string) => {
     switch (route.toLowerCase()) {
       case "dhaka-to-brahmanbaria":
         trainScheduleData = await import(
-          "../data/route/dhaka-to-brahmanbaria/data"
+          "../data/routes/dhaka_to_brahmanbaria.js"
         );
         break;
       case "brahmanbaria-to-dhaka":
         trainScheduleData = await import(
-          "../data/route/brahmanbaria-to-dhaka/data"
+          "../data/routes/brahmanbaria_to_dhaka.js"
         );
         break;
       case "dhaka-to-narshindi":

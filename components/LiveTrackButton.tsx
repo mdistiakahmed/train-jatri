@@ -6,7 +6,7 @@ interface LiveTrackButtonProps {
   trainNumber: number;
 }
 
-const LiveTrackButton: React.FC<LiveTrackButtonProps> = ({ trainNumber }) => {
+const LiveTrackButton: React.FC<any> = ({ trainNumber }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -36,7 +36,7 @@ const LiveTrackButton: React.FC<LiveTrackButtonProps> = ({ trainNumber }) => {
             <div className="bg-gray-100 p-4 rounded-md mb-4">
               <code className="text-sm">Type: TR {trainNumber}</code>
               <br />
-              <code className="text-sm">Send to: 13643</code>
+              <code className="text-sm">Send to: 16318</code>
             </div>
             <button
               onClick={closeModal}

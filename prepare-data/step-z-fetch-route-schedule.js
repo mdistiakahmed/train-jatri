@@ -11,12 +11,28 @@ const __dirname = dirname(__filename);
 const paths = [
   { from: "Dhaka", to: "Brahmanbaria" },
   { from: "Brahmanbaria", to: "Dhaka" },
+  { from: "Dhaka", to: "Narsingdi" },
+  { from: "Narsingdi", to: "Dhaka" },
+  { from: "Dhaka", to: "Mymensingh" },
+  { from: "Mymensingh", to: "Dhaka" },
+  { from: "Dhaka", to: "Joydebpur" },
+  { from: "Joydebpur", to: "Dhaka" },
+  { from: "Dhaka", to: "Jamalpur_Town" },
+  { from: "Jamalpur_Town", to: "Dhaka" },
+  { from: "Dhaka", to: "Cumilla" },
+  { from: "Cumilla", to: "Dhaka" },
+  { from: "Dhaka", to: "Quasba" },
+  { from: "Quasba", to: "Dhaka" },
+  { from: "Dhaka", to: "Akhaura" },
+  { from: "Akhaura", to: "Dhaka" },
+  { from: "Dhaka", to: "Sylhet" },
+  { from: "Sylhet", to: "Dhaka" },
   // Add more routes as needed
 ];
 
 // API configuration
 const API_BASE_URL = 'https://railspaapi.shohoz.com/v1.0/web/bookings';
-const BEARER_TOKEN = 'eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE3NTE2OTMyMzAsImV4cCI6MTc1MTc3OTYzMCwiaXNzIjoiaHR0cDovL3RyYWluLWlhbS5zaG9ob3ouY29tIiwiYXVkIjoic2hvaG96LmlhbS50cmFpbiIsImNsaWVudF9pZCI6InRyYWluLXRpY2tldC11c2VyIiwiY2xpZW50X3RlbmFudF9pZCI6IjY3YTUxNjNjLTU2NWQtNGNhMC1iMTE3LTg3YzcwMWY2NTRmOSIsImNsaWVudF92ZXJ0aWNhbF9pZCI6IjA2OGU4MDRmLTJkYjctNDQ4OS05OTYzLTc4OWZiN2UwMmJkZiIsInN1YiI6ImExMWZjNjA5LTc1N2QtNDgyMy05Y2I3LWU1MjQ1NWU3OTljNSIsImF1dGhfdGltZSI6MTc1MTY5MzIzMCwiaWRwIjoibG9jYWwiLCJwaG9uZV9udW1iZXIiOiIwMTk4ODAzOTQ4MCIsImVtYWlsIjoiaXN0aW5pc2hhdEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6IjAxOTg4MDM5NDgwIiwiZGlzcGxheV9uYW1lIjoiTUQuIElTVElBSyBBSE1FRCIsImxvY2FsZSI6ImJuLUJEIiwibmlkbiI6IjQyMDcyMDAyNDkiLCJuaWRudCI6Ik5JRCIsInJvbGUiOlsidXNlciIsImFub255bW91cyJdLCJzY29wZSI6WyJzaG9ob3ouaWFtLnRyYWluIiwib2ZmbGluZV9hY2Nlc3MiXSwiYW1yIjpbInB3ZCJdfQ.aJE871s27Lmuf-6EatOviBvMxakF89atjl717DTbE4LgXqCK1AZHlfhgVh2Gmy4kpyLedL5zhGSqzmIXO0QPSRaQ8xqkvxsTvUq441DXfGffcvYqPjV6UCteHAI8mW2GoYCB9QgS7XfbhElEo3M4T43VXkgJ72JE-QKAxFGrDOrUYjELgYjkxtJhJRSOOUTZ8K7JVb9pPfixgTORO2SlRWYvbbhe9oLUQ3WmL_JaZh5ssXkqxp6ntHpyNTQWRm6MUWHwk_GbkmSaM7JJYNQrtSS1RtfgoNWEaQfe0PPgS6EEin8VdTgi4CBzBvJ8aG_J9R6dJ1DDesh7kOeWmm06zg'; // Replace with your actual token
+const BEARER_TOKEN = 'GET_TOKEN_FROM_WEBSITE';
 
 // Function to format date as DD-Mon-YYYY
 function formatDate(date) {

@@ -76,42 +76,22 @@ const HomePage = () => {
             Popular Train Routes in Bangladesh
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Link
-              href="/search?from=Dhaka&to=Narsingdi"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Dhaka to Narsingdi Train Schedule
-            </Link>
-            <Link
-              href="/search?from=Dhaka&to=Joydebpur"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Dhaka to Joydebpur Train Schedule
-            </Link>
-            <Link
-              href="/search?from=Dhaka&to=Brahmanbaria"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Dhaka to Brahmanbaria Train Schedule
-            </Link>
-            <Link
-              href="/search?from=Chittagong&to=Dhaka"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Chittagong to Dhaka Train Schedule
-            </Link>
-            <Link
-              href="/search?from=Khulna&to=Dhaka"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Khulna to Dhaka Train Schedule
-            </Link>
-            <Link
-              href="/search?from=Sylhet&to=Dhaka"
-              className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
-            >
-              Sylhet to Dhaka Train Schedule
-            </Link>
+            {[
+              { from: "Dhaka", to: "Quasba" },
+              { from: "Quasba", to: "Dhaka" },
+              { from: "Dhaka", to: "Cumilla" },
+              { from: "Cumilla", to: "Dhaka" },
+              { from: "Dhaka", to: "Brahmanbaria" },
+              { from: "Brahmanbaria", to: "Dhaka" },
+            ].map((route, index) => (
+              <Link
+                key={index}
+                href={`/routes/${route.from}-to-${route.to}-train-schedule`.toLowerCase()}
+                className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 block text-blue-600 hover:underline"
+              >
+                {`${route.from} to ${route.to} Train Schedule`}
+              </Link>
+            ))}
           </div>
         </section>
       </main>

@@ -46,17 +46,20 @@ const LiveTrackingPage = () => {
 
   return (
     <div className="p-4 my-2 mx-auto max-w-7xl ">
-      <h1 className="text-3xl font-bold mb-6 text-center">Bangladesh Railway Live Train Tracking</h1>
+      <div className="bg-white md:p-6 rounded-lg">
+        <h1 className="text-2xl font-bold mb-6 text-center">Bangladesh Railway Live Train Tracking</h1>
 
-      <p className="mb-4 text-lg text-gray-700">
-        Step 1: Search and select the train you want to track.
-      </p>
-      <p className="mb-4 text-lg text-gray-700">
-        Step 2: Send an SMS with the train number or code to 16318.
-      </p>
-      <p className="mb-4 text-lg text-gray-700">
-        Step 3: Receive the update SMS with the current location and status of the train.
-      </p>
+        <p className="mb-4 text-lg text-gray-700">
+          Step 1: Search and select the train you want to track.
+        </p>
+        <p className="mb-4 text-lg text-gray-700">
+          Step 2: Send an SMS with the train number (eg: <code className="bg-gray-200 px-2 py-1 rounded mx-1">TR 701</code>) to <code className="bg-gray-200 px-2 py-1 rounded mx-1">16318</code>.
+        </p>
+        <p className="mb-4 text-lg text-gray-700">
+          Step 3: Receive the update SMS with the current location and status of the train.
+        </p>
+      </div>
+      
 
       <SearchTrainLocation />
 

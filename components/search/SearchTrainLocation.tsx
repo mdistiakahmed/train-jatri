@@ -75,7 +75,7 @@ const SearchTrainLocation = () => {
   };
 
   return (
-    <div className="p-4 my-10 mx-auto max-w-4xl">
+    <div className="p-4 my-10 mx-auto max-w-4xl bg-white">
       <div className="mb-8" ref={searchContainerRef}>
         <div className="relative">
           <input
@@ -83,8 +83,8 @@ const SearchTrainLocation = () => {
             value={searchTerm}
             onChange={handleInputChange}
             onFocus={handleInputFocus}
-            placeholder="Search for a train..."
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            placeholder="Search train name for tracking..."
+            className="w-full p-3 border-2 border-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           />
           {isDropdownOpen && searchResults.length > 0 && (
             <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto">

@@ -2,6 +2,7 @@ import React from "react";
 import { getDataForRoute } from "@/utils/getData";
 import LiveTrackButton from "@/components/LiveTrackButton";
 import { paths } from "@/utils/trainRoutes";
+import Link from 'next/link';
 
 export async function generateStaticParams() {
   const routes = paths;
@@ -238,6 +239,62 @@ const Page = async ({ params }: any) => {
             There are {routeData.trainData.length} trains available on this route.
           </p>
         </div>
+
+        {/* People Also Search For Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">People Also Search For</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {paths
+              .filter(route => !(
+                (route.from.toLowerCase() === sourceCity.toLowerCase() && route.to.toLowerCase() === destinationCity.toLowerCase()) ||
+                (route.from.toLowerCase() === destinationCity.toLowerCase() && route.to.toLowerCase() === sourceCity.toLowerCase())
+              ))
+              .slice(0, 9)
+              .map((suggestion, index) => (
+                <Link 
+                  key={index}
+                  href={`/routes/${suggestion.from.toLowerCase()}-to-${suggestion.to.toLowerCase().replace(/_/g, '-')}-train-schedule`}
+                  className="p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                >
+                  <div className="flex items-center">
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-800">
+                        {suggestion.from.replace(/_/g, ' ')} to {suggestion.to.replace(/_/g, ' ')}
+                      </h3>
+                      <p className="text-sm text-gray-500 mt-1">Check train schedule & availability</p>
+                    </div>
+                    <svg 
+                      className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M9 5l7 7-7 7" 
+                      />
+                    </svg>
+                  </div>
+                </Link>
+              ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <Link 
+              href="/routes"
+              className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
+            >
+              Explore More Routes
+              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+
       </div>
     </div>
   );

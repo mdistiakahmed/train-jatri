@@ -87,10 +87,10 @@ export const getDataForRoute = async (route: string) => {
 
     // Convert route to match file name format (e.g., 'dhaka-to-brahmanbaria' -> 'dhaka_to_brahmanbaria')
     const fileName = route.toLowerCase().replace(/-/g, '_');
-    const filePath = `../data/routes/${fileName}.js`;
     
     try {
-      const module = await import(filePath);
+      // Use dynamic import with template literals
+      const module = await import(`@/data/routes/${fileName}.js`);
       return { trainData: module.trainData };
     } catch (importError) {
       console.error(`Failed to import route data for ${route}:`, importError);

@@ -1,6 +1,14 @@
 import React from "react";
 import { getDataForRoute } from "@/utils/getData";
 import LiveTrackButton from "@/components/LiveTrackButton";
+import { paths } from "@/utils/trainRoutes";
+
+export async function generateStaticParams() {
+  const routes = paths;
+  return routes.map((route) => ({
+    route: route.from + "-to-" + route.to + "-train-schedule",
+  }));
+}
 
 export const generateMetadata = async ({ params }: any) => {
   const { route } = await params;

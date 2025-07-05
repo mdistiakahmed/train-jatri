@@ -4,7 +4,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { allStationNames } from '../../data/Stations/0_all_station_name';
 import SearchStationButton from "@/components/SearchStationComponent";
-import { uniqueTrainNames } from "@/utils/trainNames";
 
 const StationPage = () => {
 

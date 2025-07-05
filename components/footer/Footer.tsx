@@ -55,15 +55,23 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/search?from=Dhaka&to=Narsingdi"
+                  href="/routes/dhaka-to-quasba-train-schedule"
                   className="text-sm text-gray-300 hover:text-white"
                 >
-                  Dhaka to Narsingdi
+                  Dhaka to Quasba
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/search?from=Dhaka&to=Joydebpur"
+                  href="/routes/dhaka-to-brahmanbaria-train-schedule"
+                  className="text-sm text-gray-300 hover:text-white"
+                >
+                  Dhaka to Brahmanbaria
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/routes/dhaka-to-joydebpur-train-schedule"
                   className="text-sm text-gray-300 hover:text-white"
                 >
                   Dhaka to Joydebpur
@@ -71,18 +79,10 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/search?from=Chittagong&to=Dhaka"
+                  href="/routes/dhaka-to-cumilla-train-schedule"
                   className="text-sm text-gray-300 hover:text-white"
                 >
-                  Chittagong to Dhaka
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/search?from=Khulna&to=Dhaka"
-                  className="text-sm text-gray-300 hover:text-white"
-                >
-                  Khulna to Dhaka
+                  Dhaka to Cumilla
                 </Link>
               </li>
             </ul>

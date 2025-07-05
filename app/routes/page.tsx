@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const paths = [
+export const paths = [
   { from: "Dhaka", to: "Quasba" },
   { from: "Quasba", to: "Dhaka" },
   { from: "Dhaka", to: "Cumilla" },

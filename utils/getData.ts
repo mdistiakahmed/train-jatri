@@ -82,34 +82,22 @@ export const getDataForStation = async (name: string) => {
 export const getDataForRoute = async (route: string) => {
   try {
     if (!route) {
-      throw new Error(`No data file found for param: ${route}`);
+      throw new Error(`No route provided`);
     }
 
-    let trainScheduleData: any = [];
-
-    switch (route.toLowerCase()) {
-      case "dhaka-to-brahmanbaria":
-        trainScheduleData = await import(
-          "../data/routes/dhaka_to_brahmanbaria.js"
-        );
-        break;
-      case "brahmanbaria-to-dhaka":
-        trainScheduleData = await import(
-          "../data/routes/brahmanbaria_to_dhaka.js"
-        );
-        break;
-      case "dhaka-to-narshindi":
-        trainScheduleData = await import(
-          "../data/route/dhaka-to-narshindi/data"
-        );
-        break;
-      default:
-        break;
+    // Convert route to match file name format (e.g., 'dhaka-to-brahmanbaria' -> 'dhaka_to_brahmanbaria')
+    const fileName = route.toLowerCase().replace(/-/g, '_');
+    const filePath = `../data/routes/${fileName}.js`;
+    
+    try {
+      const module = await import(filePath);
+      return { trainData: module.trainData };
+    } catch (importError) {
+      console.error(`Failed to import route data for ${route}:`, importError);
+      throw new Error(`No data found for route: ${route}`);
     }
-
-    return trainScheduleData;
   } catch (error) {
-    console.error(error);
+    console.error('Error in getDataForRoute:', error);
     throw error;
   }
 };

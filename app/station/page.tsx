@@ -4,6 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { allStationNames } from '../../data/Stations/0_all_station_name';
 import SearchStationButton from "@/components/SearchStationComponent";
+import { uniqueTrainNames } from "@/utils/trainNames";
 
 const StationPage = () => {
 
@@ -33,22 +34,26 @@ const StationPage = () => {
 
       <SearchStationButton />
 
-      {allStationNames.map((stationName, index) => (
-        <div key={index} className="mb-8 text-center align-center">
-          <div className="grid grid-cols-1 gap-4">
-              <Link
-                key={stationName}
-                href={`/station/${stationName}`}
-                className="block p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-300"
-              >
-                <h3 className="text-md font-semibold mb-2">
-                  {stationName} train schedule
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
+        {allStationNames.map((stationName, index) => (
+          <Link
+            key={stationName}
+            href={`/station/${stationName}`}
+            className="p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100 hover:border-blue-100"
+          >
+            <div className="flex items-center">
+              <div className="ml-4">
+                <h3 className="text-md font-medium text-gray-800">
+                  {stationName}
                 </h3>
-              </Link>
-            
-          </div>
-        </div>
-      ))}
+                <p className="text-sm text-gray-500 mt-1">View all trains</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+
     </div>
   );
 };

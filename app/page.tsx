@@ -1,14 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { paths } from "./routes/page";
 import { uniqueTrainNames } from "@/utils/trainNames";
-
-export const metadata = {
-  title: 'Train Jatri - Bangladesh Railway Schedules & Booking',
-  description: 'Find train schedules, book tickets, and get real-time updates for all major train routes in Bangladesh. Plan your journey with Train Jatri.',
-  keywords: 'Bangladesh Railway, train schedule, train booking, Bangladesh trains, railway tickets',
-};
+import { paths } from "@/utils/trainRoutes";
 
 // Major stations in Bangladesh
 const majorStations = [
@@ -173,6 +167,32 @@ const HomePage = () => {
                 <p className="text-sm text-gray-500 mt-1">View schedule & book tickets</p>
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Disclaimer Section */}
+        <section className="mt-16 pt-8 border-t border-gray-200">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-semibold  mb-4">About Our Data</h2>
+            <div className="prose prose-indigo ">
+              <p>
+                At Train Jatri, we are committed to providing accurate and up-to-date train schedule information to our users. 
+                Our data is collected from official Bangladesh Railway sources and government websites to ensure reliability.
+              </p>
+              <p className="mt-4">
+                We update our database on a regular basis, typically every month, to reflect any changes in train schedules, 
+                routes, or government regulations. However, please note that train schedules are subject to change due to 
+                various factors including maintenance, weather conditions, or operational requirements.
+              </p>
+              <p className="mt-4">
+                While we strive for accuracy, we recommend cross-verifying important travel information with official 
+                Bangladesh Railway sources before making travel arrangements. Train Jatri is not responsible for any 
+                inconvenience or loss resulting from schedule changes or inaccuracies in the information provided.
+              </p>
+              <p className="mt-4 text-sm text-gray-500">
+                Last updated: 21th June, 2025
+              </p>
+            </div>
           </div>
         </section>
       </main>

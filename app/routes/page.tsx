@@ -1,28 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { paths } from "@/utils/trainRoutes";
 
-export const paths = [
-  { from: "Dhaka", to: "Quasba" },
-  { from: "Quasba", to: "Dhaka" },
-  { from: "Dhaka", to: "Cumilla" },
-  { from: "Cumilla", to: "Dhaka" },
-  { from: "Dhaka", to: "Brahmanbaria" },
-  { from: "Brahmanbaria", to: "Dhaka" },
-  { from: "Dhaka", to: "Narsingdi" },
-  { from: "Narsingdi", to: "Dhaka" },
-  { from: "Dhaka", to: "Mymensingh" },
-  { from: "Mymensingh", to: "Dhaka" },
-  { from: "Dhaka", to: "Joydebpur" },
-  { from: "Joydebpur", to: "Dhaka" },
-  { from: "Dhaka", to: "Jamalpur_Town" },
-  { from: "Jamalpur_Town", to: "Dhaka" },
-  { from: "Dhaka", to: "Akhaura" },
-  { from: "Akhaura", to: "Dhaka" },
-  { from: "Dhaka", to: "Sylhet" },
-  { from: "Sylhet", to: "Dhaka" },
-  // Add more routes as needed
-];
 
 const SchedulePage = () => {
   const routeItems = paths.map(path => ({

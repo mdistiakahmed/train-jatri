@@ -146,8 +146,8 @@ const StationPage = async ({ params }: any) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {trainData.forward_trains.map((train: any) => (
-                    <tr key={train.trainNumber} className="border-b">
+                  {trainData.forward_trains.map((train: any, index: number) => (
+                    <tr key={index} className="border-b">
                       <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap">
                         {train.train_name}
                       </td>

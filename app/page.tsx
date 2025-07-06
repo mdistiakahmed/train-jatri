@@ -43,7 +43,7 @@ const HomePage = () => {
             alt="Bangladesh Railway Network - Train Jatri"
             width={600}
             height={300}
-            className="mx-auto rounded-lg shadow-xl"
+            className="mx-auto rounded-lg"
             priority
           />
         </section>

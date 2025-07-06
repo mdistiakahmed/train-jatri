@@ -31,11 +31,13 @@ export const generateMetadata = async ({ params }: any) => {
       url: `https://www.trainjatri.com/station/${name}`,
       siteName: "Train Jatri",
       type: "website",
+      images: "/logo.png",
     },
     twitter: {
       card: "summary_large_image",
       title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
       description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
+      images: "/logo.png",
     },
   };
 };

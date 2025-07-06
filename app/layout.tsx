@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Train Jatri - Bangladesh Railway Schedule & Live Tracking",
     description:
       "Find accurate Bangladesh Railway train schedules, live tracking, ticket information, and more. Plan your journey across Bangladesh with ease. Get real-time updates for all train routes.",
-    images: "/train-jatri.jpg",
+    images: "/logo.png",
     url: "https://www.trainjatri.com",
     siteName: "Train Jatri",
     type: "website",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Train Jatri - Bangladesh Railway Schedule & Live Tracking",
     description:
       "Find accurate Bangladesh Railway train schedules, live tracking, ticket information, and more. Plan your journey across Bangladesh with ease. Get real-time updates for all train routes.",
-    images: ["/train-jatri.jpg"],
+    images: ["/logo.png"],
   },
 };
 

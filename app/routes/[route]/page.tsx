@@ -36,13 +36,13 @@ export const generateMetadata = async ({ params }: any) => {
       url: `https://www.trainjatri.com/routes/${route}`,
       siteName: "Train Jatri",
       type: "website",
-      images: "/train-jatri.jpg",
+      images: "/logo.png",
     },
     twitter: {
       card: "summary_large_image",
       title: `Train Schedule: ${sourceCity} to ${destinationCity}`,
       description: `Train schedule from ${sourceCity} to ${destinationCity}. Check departure, arrival times, and off days.`,
-      images: ["/train-jatri.jpg"],
+      images: "/logo.png",
     },
   };
 };

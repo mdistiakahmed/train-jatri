@@ -30,11 +30,13 @@ export const metadata: Metadata = {
       "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
     type: "website",
     url: "https://www.trainjatri.com/live-tracking",
+    images: "/logo.png",
   },
   twitter: {
     title: "Live Train Tracking - Train Jatri",
     description:
       "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
+    images: "/logo.png",
   },
 };
 

@@ -32,11 +32,13 @@ export const generateMetadata = async ({ params }: any) => {
       url: `https://www.trainjatri.com/trains/${name}`,
       siteName: "Train Jatri",
       type: "website",
+      images: "/logo.png",
     },
     twitter: {
       card: "summary_large_image",
       title: `${forward.train_name} - Route & Schedule`,
       description: `Details of ${forward.train_name}, including route, schedule, and off days. Travels ${forward.path}.`,
+      images: "/logo.png",
     },
   };
 };

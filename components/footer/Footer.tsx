@@ -90,28 +90,39 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact & Support</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:randzyx62@gmail.com"
+            <li>
+                <Link
+                  href="/about-us"
                   className="text-sm text-gray-300 hover:text-white"
                 >
-                  randzyx62@gmail.com
-                </a>
+                  About Us
+                </Link>
               </li>
-              {/* <li>
-                <p className="text-sm text-gray-300">+880 1988 039480</p>
-              </li> */}
               <li>
-                <p className="text-sm text-gray-300">
-                  Laksam Road, Cumilla, Bangladesh
-                </p>
+                <Link
+                  href="/contact"
+                  className="text-sm text-gray-300 hover:text-white"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-sm text-gray-300 hover:text-white"
+                >
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Train Jatri. All rights reserved.
+            &copy; {new Date().getFullYear()} Train Jatri. All rights reserved. | 
+            <Link href="/privacy-policy" className="hover:text-white ml-1">
+              Privacy Policy
+            </Link>
           </p>
         </div>
       </div>

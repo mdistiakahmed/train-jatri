@@ -64,7 +64,7 @@ const HomePage = () => {
               </p>
             </Link>
             <Link
-              href="/stations"
+              href="/station"
               className="block p-6 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-300 border border-green-100"
             >
               <h3 className="text-xl font-semibold mb-3 text-green-800">Station Schedules</h3>

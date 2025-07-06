@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 export default function AboutUs() {
   return (
-    <main className="min-h-screen bg-white text-gray-800">
+    <main className="min-h-screen bg-white ">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-blue-900 mb-4">About Train Jatri</h1>
-          <p className="text-lg text-gray-700">
+          <p className="text-lg ">
             Your trusted companion for navigating Bangladesh Railway. Our mission is to make train travel easier, smarter, and more reliable.
           </p>
         </div>
@@ -31,24 +31,24 @@ export default function AboutUs() {
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
         {/* Mission */}
         <div>
-          <h2 className="text-2xl font-semibold text-blue-800 mb-4">🎯 Our Mission</h2>
-          <p className="text-gray-700 mb-4 leading-relaxed">
+          <h2 className="text-2xl font-semibold mb-4">🎯 Our Mission</h2>
+          <p className="mb-4 leading-relaxed">
             At Train Jatri, we are dedicated to simplifying train travel in Bangladesh. Our mission is to provide accurate, up-to-date information about Bangladesh Railway schedules, routes, and services to help travelers plan their journeys with confidence.
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            We understand the challenges of train travel in Bangladesh, and we're committed to making the process smoother, more transparent, and more accessible for everyone.
+          <p className="leading-relaxed">
+            We understand the challenges of train travel in Bangladesh, and we&apos;re committed to making the process smoother, more transparent, and more accessible for everyone.
           </p>
         </div>
 
         {/* Our Team */}
         <section className="bg-gray-50 p-8 rounded-xl shadow-sm mt-12">
-        <h2 className="text-3xl font-semibold text-blue-800 mb-6">👥 Our Team</h2>
+        <h2 className="text-3xl font-semibold mb-6">👥 Our Team</h2>
 
-        <p className="text-gray-700 leading-relaxed mb-6">
+        <p className="leading-relaxed mb-6">
             Train Jatri is built and maintained by a passionate team of professionals who care deeply about improving train travel in Bangladesh. We bring together diverse expertise to create a reliable and user-centric platform.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
             <h3 className="text-xl font-medium text-blue-700 mb-2">🛠️ Software Engineers</h3>
             <p className="text-sm leading-relaxed">
@@ -75,9 +75,9 @@ export default function AboutUs() {
 
         {/* What We Offer */}
         <section className="bg-gray-50 p-8 rounded-xl shadow-sm">
-        <h2 className="text-3xl font-semibold text-blue-800 mb-6">📦 What We Offer</h2>
+        <h2 className="text-3xl font-semibold mb-6">📦 What We Offer</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-start space-x-4">
             <span className="text-blue-600 text-xl mt-1">🕒</span>
             <div>
@@ -143,9 +143,9 @@ export default function AboutUs() {
 
         {/* Our Commitment */}
         <section className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-        <h2 className="text-3xl font-semibold text-blue-800 mb-6">🤝 Our Commitment</h2>
+        <h2 className="text-3xl font-semibold mb-6">🤝 Our Commitment</h2>
 
-        <div className="space-y-6 text-gray-700">
+        <div className="space-y-6">
             <p className="leading-relaxed">
             At Train Jatri, we hold ourselves to the highest standards of accuracy, reliability, and user experience. Our platform is built with the goal of empowering train travelers across Bangladesh with the information they need — when they need it.
             </p>
@@ -155,7 +155,7 @@ export default function AboutUs() {
             </p>
 
             <p className="leading-relaxed">
-            Transparency and trust are the core pillars of our service. We know how frustrating travel uncertainty can be — which is why we're committed to clarity and consistency across all our tools.
+            Transparency and trust are the core pillars of our service. We know how frustrating travel uncertainty can be — which is why we&apos;re committed to clarity and consistency across all our tools.
             </p>
 
             <p className="leading-relaxed">
@@ -177,7 +177,7 @@ export default function AboutUs() {
         {/* Contact */}
         <div>
           <h2 className="text-2xl font-semibold text-blue-800 mb-4">📬 Connect With Us</h2>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="leading-relaxed">
             Have questions or need assistance? Visit our{" "}
             <a href="/contact" className="text-blue-600 hover:underline font-medium">
               Contact page

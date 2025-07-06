@@ -35,26 +35,26 @@ const Topbar = () => {
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link
                 href="/trains"
-                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium  hover:text-gray-900 hover:border-gray-300"
               >
                 Trains
               </Link>
 
               <Link
                 href="/station"
-                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium  hover:text-gray-900 hover:border-gray-300"
               >
                 Stations
               </Link>
               <Link
                 href="/routes"
-                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium  hover:text-gray-900 hover:border-gray-300"
               >
                 Routes
               </Link>
               <Link
                 href="/places-to-visit"
-                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium hover:text-gray-900 hover:border-gray-300"
               >
                 Places to visit
               </Link>
@@ -64,7 +64,7 @@ const Topbar = () => {
             <Link
               href="https://eticket.railway.gov.bd/"
               target="_blank"
-              className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-900 hover:border-gray-300"
+              className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium  hover:text-gray-900 hover:border-gray-300"
             >
               Buy Ticket
             </Link>
@@ -127,28 +127,28 @@ const Topbar = () => {
         <div className="pt-2 pb-3 space-y-1">
           <Link
             href="/trains"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium  hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
             Trains
           </Link>
           <Link
             href="/station"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium  hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
             Stations
           </Link>
           <Link
             href="/routes"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium  hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
             Routes
           </Link>
           <Link
             href="/places-to-visit"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium  hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
             Places to visit
@@ -156,7 +156,7 @@ const Topbar = () => {
           <Link
             href="https://eticket.railway.gov.bd/"
             target="_blank"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+            className="block px-3 py-2 rounded-md text-base font-medium  hover:bg-gray-50 hover:text-gray-900"
             onClick={closeMobileMenu}
           >
             Buy Ticket

@@ -247,8 +247,8 @@ const Page = async ({ params }: any) => {
                 <p className="p-2 border rounded-2xl bg-white">
                     {forward.train_name} travels {forward.path} on every day of the week
                     except {forwardOffDay}. It departs from {forwardSource} at{" "}
-                    {forwardDepartureTime}, and arrives at {forwardDestination} at{" "}
-                    {forwardArrivalTime}. It takes total {forwardHours}.
+                    {forwardDepartureTime.replace(' BST', '')}, and arrives at {forwardDestination} at{" "}
+                    {forwardArrivalTime.replace(' BST', '')}. It takes total {forwardHours}.
                 </p>
             )}
 
@@ -256,8 +256,8 @@ const Page = async ({ params }: any) => {
                 <p className="p-2 mt-4 border rounded-2xl bg-white">
                     {reverse.train_name} travels {reverse.path} on every day of the week
                     except {reverseOffDay}. It departs from {reverseSource} at{" "}
-                    {reverseDepartureTime}, and arrives at {reverseDestination} at{" "}
-                    {reverseArrivalTime}. It takes total {reverseHours}.
+                    {reverseDepartureTime.replace(' BST', '')}, and arrives at {reverseDestination} at{" "}
+                    {reverseArrivalTime.replace(' BST', '')}. It takes total {reverseHours}.
                 </p>
             )}
           
@@ -302,100 +302,113 @@ const Page = async ({ params }: any) => {
           className="mx-auto my-8"
         />
 
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col">
           {/* Left Side (Forward Route) */}
 
           {forward ? (
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-            <h2 className="font-semibold  mb-4 text-center flex flex-col">
-              <span className="text-2xl text-[#046ce6]">{forward.path}</span>
-              <span className="text-xl text-[#fe1226]">
-                বন্ধের দিন: {getOffDay(forward.days)}
-              </span>
-            </h2>
+            <div className="mb-8">
+              <h2 className="font-semibold mb-4 text-center flex flex-col">
+                <span className="text-2xl text-[#046ce6]">{forward.path}</span>
+                <span className="text-xl text-[#fe1226]">
+                  বন্ধের দিন: {getOffDay(forward.days)}
+                </span>
+              </h2>
 
-            <div className="flex flex-col items-center">
-              {forward.routes.map((route: any, index: any) => (
-                <div key={route.city} className="flex flex-col items-center">
-                  <div className="bg-white border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
-                    <div className="flex items-center mb-2">
-                      {index === 0 ? (
-                        <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
-                      ) : index === forward.routes.length - 1 ? (
-                        <FaMapMarkerAlt className="text-red-600 mr-1 text-lg" />
-                      ) : (
-                        <FaMapMarkerAlt className="text-indigo-600 mr-1" />
-                      )}
-                      <span className="font-semibold">{route.city}</span>
-                    </div>
-                    {index === 0
-                      ? route.departure_time && (
-                          <div className="flex items-center">
-                            <FaClock className="text-gray-500 mr-1" />
-                            <span>{route.departure_time}</span>
+              <div className="w-full overflow-x-auto">
+                <table className="min-w-max w-full bg-white rounded-lg shadow-md">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Station
+                      </th>
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Arrival
+                      </th>
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Departure
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {forward.routes.map((route: any, index: number) => (
+                      <tr key={index} className="border-b">
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          <div className="flex items-center justify-center">
+                            {index === 0 ? (
+                              <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
+                            ) : index === forward.routes.length - 1 ? (
+                              <FaMapMarkerAlt className="text-red-600 mr-1 text-lg" />
+                            ) : (
+                              <FaMapMarkerAlt className="text-indigo-600 mr-1" />
+                            )}
+                            {route.city}
                           </div>
-                        )
-                      : route.arrival_time && (
-                          <div className="flex items-center">
-                            <FaClock className="text-gray-500 mr-1" />
-                            <span>{route.arrival_time}</span>
-                          </div>
-                        )}
-                  </div>
-                  {index < forward.routes.length - 1 && (
-                    <div className="h-8 w-px bg-gray-300"></div>
-                  )}
-                </div>
-              ))}
+                        </td>
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          {route.arrival_time ? route.arrival_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                        </td>
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          {route.departure_time ? route.departure_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
           ) : null}
-          
 
           {/* Right Side (Reverse Route) */}
           {reverse ? (
-            <div className="md:w-1/2 order-first md:order-last">
-            <h2 className="text-2xl flex flex-col font-semibold text-indigo-700 mb-4 text-center">
-              <span className="text-2xl text-[#046ce6]">{reverse.path}</span>
-              <span className="text-xl text-[#fe1226]">
-                বন্ধের দিন: {getOffDay(reverse.days)}
-              </span>
-            </h2>
-            <div className="flex flex-col items-center">
-              {reverse.routes.map((route: any, index: any) => (
-                <div key={route.city} className="flex flex-col items-center">
-                  <div className="bg-white border rounded-md p-4 m-2 min-w-[150px] flex flex-col items-center">
-                    <div className="flex items-center mb-2">
-                      {index === 0 ? (
-                        <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
-                      ) : index === reverse.routes.length - 1 ? (
-                        <FaMapMarkerAlt className="text-red-600 mr-1 text-lg" />
-                      ) : (
-                        <FaMapMarkerAlt className="text-indigo-600 mr-1" />
-                      )}
-                      <span className="font-semibold">{route.city}</span>
-                    </div>
-                    {index === 0
-                      ? route.departure_time && (
-                          <div className="flex items-center">
-                            <FaClock className="text-gray-500 mr-1" />
-                            <span>{route.departure_time}</span>
+            <div className="">
+              <h2 className="text-2xl flex flex-col font-semibold text-indigo-700 mb-4 text-center">
+                <span className="text-2xl text-[#046ce6]">{reverse.path}</span>
+                <span className="text-xl text-[#fe1226]">
+                  বন্ধের দিন: {getOffDay(reverse.days)}
+                </span>
+              </h2>
+              <div className="w-full overflow-x-auto">
+                <table className="min-w-max w-full bg-white rounded-lg shadow-md">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Station
+                      </th>
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Arrival
+                      </th>
+                      <th className="py-2 px-4 border-b text-xs sm:text-sm whitespace-nowrap text-center">
+                        Departure
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {reverse.routes.map((route: any, index: number) => (
+                      <tr key={index} className="border-b">
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          <div className="flex items-center justify-center">
+                            {index === 0 ? (
+                              <FaMapMarkerAlt className="text-green-600 mr-1 text-lg" />
+                            ) : index === reverse.routes.length - 1 ? (
+                              <FaMapMarkerAlt className="text-red-600 mr-1 text-lg" />
+                            ) : (
+                              <FaMapMarkerAlt className="text-indigo-600 mr-1" />
+                            )}
+                            {route.city}
                           </div>
-                        )
-                      : route.arrival_time && (
-                          <div className="flex items-center">
-                            <FaClock className="text-gray-500 mr-1" />
-                            <span>{route.arrival_time}</span>
-                          </div>
-                        )}
-                  </div>
-                  {index < reverse.routes.length - 1 && (
-                    <div className="h-8 w-px bg-gray-300"></div>
-                  )}
-                </div>
-              ))}
+                        </td>
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          {route.arrival_time ? route.arrival_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                        </td>
+                        <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
+                          {route.departure_time ? route.departure_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
           ) : null}
           
         </div>

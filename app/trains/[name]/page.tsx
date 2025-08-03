@@ -345,10 +345,10 @@ const Page = async ({ params }: any) => {
                           </div>
                         </td>
                         <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
-                          {route.arrival_time ? route.arrival_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                          {route.arrival_time ? route.arrival_time.replace(' BST', ''): '-'}
                         </td>
                         <td className="py-2 px-4 text-xs sm:text-sm whitespace-nowrap text-center">
-                          {route.departure_time ? route.departure_time.replace(' BST', '').replace(/^(\d{1,2}):(\d{2})$/, (match, p1, p2) => `${parseInt(p1) % 12 || 12}:${p2} ${parseInt(p1) < 12 ? 'AM' : 'PM'}`) : '-'}
+                          {route.departure_time ? route.departure_time.replace(' BST', ''): '-'}
                         </td>
                       </tr>
                     ))}

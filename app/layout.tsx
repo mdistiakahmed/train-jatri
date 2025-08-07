@@ -61,6 +61,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+        <head>
+            <script 
+                async 
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9851111861096184"
+                crossOrigin="anonymous">
+            </script>
+      </head>
       <GoogleAnalytics gaId="G-HV8MP6T8X7" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Topbar />

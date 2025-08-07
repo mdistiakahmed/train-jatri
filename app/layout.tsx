@@ -5,6 +5,7 @@ import "./globals.css";
 import Topbar from "@/components/topbar/Topbar";
 import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import AdSense from "@/components/AdSense";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,19 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <Script
-          id="adsbygoogle-script"
-          strategy="afterInteractive"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          crossOrigin="anonymous"
-          data-ad-client="ca-pub-9851111861096184"
-          onLoad={() => {
-            // Initialize AdSense only once
-            if (!window.adsbygoogle || !window.adsbygoogle.loaded) {
-              (window.adsbygoogle = window.adsbygoogle || []).push({});
-            }
-          }}
-        />
+        <AdSense />
       </head>
       <GoogleAnalytics gaId="G-HV8MP6T8X7" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

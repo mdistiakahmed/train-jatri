@@ -64,22 +64,17 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          id="adsbygoogle-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-9851111861096184"
-              });
-            `,
-          }}
-        />
-        <Script
           id="adsbygoogle-script"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           crossOrigin="anonymous"
           data-ad-client="ca-pub-9851111861096184"
+          onLoad={() => {
+            // Initialize AdSense only once
+            if (!window.adsbygoogle || !window.adsbygoogle.loaded) {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            }
+          }}
         />
       </head>
       <GoogleAnalytics gaId="G-HV8MP6T8X7" />

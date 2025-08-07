@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Topbar from "@/components/topbar/Topbar";
 import Footer from "@/components/footer/Footer";
@@ -61,12 +62,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <head>
-            <script 
-                async 
-                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9851111861096184"
-                crossOrigin="anonymous">
-            </script>
+      <head>
+        <Script
+          id="adsbygoogle-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-9851111861096184",
+                enable_page_level_ads: true
+              });
+            `,
+          }}
+        />
+        <Script
+          strategy="lazyOnload"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9851111861096184"
+          crossOrigin="anonymous"
+        />
       </head>
       <GoogleAnalytics gaId="G-HV8MP6T8X7" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>

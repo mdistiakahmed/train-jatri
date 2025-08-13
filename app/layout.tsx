@@ -6,6 +6,7 @@ import Topbar from "@/components/topbar/Topbar";
 import Footer from "@/components/footer/Footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import AdSense from "@/components/AdSense";
+import GoogleAdWithSuspense from "@/components/google-ads/GoogleAd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,12 +74,34 @@ export default function RootLayout({
         <div
           className={`flex justify-between bg-[url('/snowflakes.png')] bg-center`}
         >
-          <div className="hidden md:block w-1/6 pt-36"></div>
+          <div className="hidden md:block w-1/6 pt-36">
+            <GoogleAdWithSuspense>
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: "block" }}
+                  data-ad-client="ca-pub-9851111861096184"
+                  data-ad-slot="2756248511"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
+              </GoogleAdWithSuspense>
+          </div>
           <main className="flex-1">
             <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
             {children}
           </main>
-          <div className="hidden md:block w-1/6 pt-36"></div>
+          <div className="hidden md:block w-1/6 pt-36">
+              <GoogleAdWithSuspense>
+                <ins
+                  className="adsbygoogle"
+                  style={{ display: "block" }}
+                  data-ad-client="ca-pub-9851111861096184"
+                  data-ad-slot="6224720234"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                ></ins>
+              </GoogleAdWithSuspense>
+          </div>
         </div>
         <Footer />
       </body>

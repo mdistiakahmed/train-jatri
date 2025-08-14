@@ -74,7 +74,7 @@ export default function RootLayout({
         <div
           className={`flex justify-between bg-[url('/snowflakes.png')] bg-center`}
         >
-          <div className="hidden md:block w-1/6 pt-36">
+          <div className="hidden md:block w-1/6 pt-36 md:flex md:justify-center">
             <GoogleAdWithSuspense>
                 <ins
                   className="adsbygoogle"
@@ -90,7 +90,7 @@ export default function RootLayout({
             <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
             {children}
           </main>
-          <div className="hidden md:block w-1/6 pt-36">
+          <div className="hidden md:block w-1/6 pt-36 md:flex md:justify-center">
               <GoogleAdWithSuspense>
                 <ins
                   className="adsbygoogle"

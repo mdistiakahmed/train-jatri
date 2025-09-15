@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     title: 'Dhaka Metro Rail Schedule & Timings | Train Jatri',
     description: 'Dhaka Metro Rail schedule for Uttara North to Motijheel with first and last train times, weekday, Friday, weekend and holiday timings. Updated metro rail timings with frequency information.',
     type: 'website',
+    images: "/metro.png",
+    url: "https://www.trainjatri.com/metro-rail",
+    siteName: "Train Jatri",
   },
 };
 

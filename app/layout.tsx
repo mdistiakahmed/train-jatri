@@ -75,7 +75,7 @@ export default function RootLayout({
           className={`flex justify-between bg-[url('/snowflakes.png')] bg-center`}
         >
           <div className="hidden md:block w-1/6 pt-36 ">
-            <GoogleAdWithSuspense>
+            {/* <GoogleAdWithSuspense>
                 <ins
                   className="adsbygoogle"
                   style={{ display: "block" }}
@@ -84,14 +84,14 @@ export default function RootLayout({
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 ></ins>
-              </GoogleAdWithSuspense>
+              </GoogleAdWithSuspense> */}
           </div>
           <main className="flex-1">
             <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
             {children}
           </main>
           <div className="hidden md:block w-1/6 pt-36 pl-8">
-              <GoogleAdWithSuspense>
+              {/* <GoogleAdWithSuspense>
                 <ins
                   className="adsbygoogle"
                   style={{ display: "block" }}
@@ -100,7 +100,7 @@ export default function RootLayout({
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 ></ins>
-              </GoogleAdWithSuspense>
+              </GoogleAdWithSuspense> */}
           </div>
         </div>
         <Footer />

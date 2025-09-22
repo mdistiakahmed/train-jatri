@@ -72,15 +72,7 @@ const HomePage = () => {
                 View all train schedules for major railway stations in Bangladesh.
               </p>
             </Link>
-            <Link
-              href="/routes"
-              className="block p-6 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors duration-300 border border-purple-100"
-            >
-              <h3 className="text-xl font-semibold mb-3 text-purple-800">Popular Routes</h3>
-              <p className="text-gray-600">
-                Explore schedules for the most popular train routes across the country.
-              </p>
-            </Link>
+
             <Link
               href="/live-tracking"
               className="block p-6 bg-red-50 rounded-lg hover:bg-red-100 transition-colors duration-300 border border-red-100"
@@ -148,27 +140,6 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* Popular Routes Section */}
-        <section>
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-semibold">Popular Train Routes</h2>
-            <Link href="/routes" className="text-blue-600 hover:underline">
-              View All Routes →
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {paths.slice(0, 6).map((route, index) => (
-              <Link
-                key={index}
-                href={`/routes/${route.from}-to-${route.to}-train-schedule`.toLowerCase()}
-                className="p-4 bg-white rounded-md shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100"
-              >
-                <h3 className="font-semibold text-gray-800">{route.from} to {route.to}</h3>
-                <p className="text-sm text-gray-500 mt-1">View schedule & book tickets</p>
-              </Link>
-            ))}
-          </div>
-        </section>
 
         {/* Disclaimer Section */}
         <section className="mt-16 pt-8 border-t border-gray-200">

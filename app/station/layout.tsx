@@ -41,32 +41,6 @@ export default function RootLayout({
           </div>
         </section>
 
-        {/* Popular Routes Section */}
-        <section className="bg-white p-8 rounded-xl border border-gray-200">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Popular Train Routes</h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Find the best routes between major cities. Check schedules, travel times, and book tickets for your next adventure.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-              {paths.splice(0, 9).map((route, index) => (
-                <Link key={index} href={`/routes/${route.from.toLocaleLowerCase()}-to-${route.to.toLocaleLowerCase()}-train-schedule`} className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                  <h3 className="font-medium text-gray-800">{route.from} to {route.to}</h3>
-                </Link>
-              ))}
-            </div>
-            <Link 
-              href="/routes"
-              className="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
-            >
-              View All Routes
-              <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </Link>
-          </div>
-        </section>
-
         {/* Places to Visit Section */}
         <section className="bg-gradient-to-r from-green-50 to-teal-50 p-8 rounded-xl">
           <div className="max-w-4xl mx-auto text-center">

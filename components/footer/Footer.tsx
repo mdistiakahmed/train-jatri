@@ -50,43 +50,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Popular Routes</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/routes/dhaka-to-quasba-train-schedule"
-                  className="text-sm text-gray-300 hover:text-white"
-                >
-                  Dhaka to Quasba
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/routes/dhaka-to-brahmanbaria-train-schedule"
-                  className="text-sm text-gray-300 hover:text-white"
-                >
-                  Dhaka to Brahmanbaria
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/routes/dhaka-to-joydebpur-train-schedule"
-                  className="text-sm text-gray-300 hover:text-white"
-                >
-                  Dhaka to Joydebpur
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/routes/dhaka-to-cumilla-train-schedule"
-                  className="text-sm text-gray-300 hover:text-white"
-                >
-                  Dhaka to Cumilla
-                </Link>
-              </li>
-            </ul>
-          </div>
+
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact & Support</h3>
             <ul className="space-y-2">

@@ -178,7 +178,7 @@ export default function MetroRailPage() {
 
           <h3 className="mt-4 text-xl font-semibold text-gray-800 mt-8 mb-3">About Dhaka Metro Rail</h3>
           <p>
-            The <strong>Dhaka Metro Rail</strong> (MRT Line-6) is Bangladesh's first metro rail service, designed to reduce traffic congestion and provide a modern, efficient, and environment-friendly transport system. Covering the key route between Uttara North and Motijheel, it has become one of the most reliable public transportation systems in Dhaka city.
+            The <strong>Dhaka Metro Rail</strong> (MRT Line-6) is Bangladesh&apos;s first metro rail service, designed to reduce traffic congestion and provide a modern, efficient, and environment-friendly transport system. Covering the key route between Uttara North and Motijheel, it has become one of the most reliable public transportation systems in Dhaka city.
           </p>
         </div>
 

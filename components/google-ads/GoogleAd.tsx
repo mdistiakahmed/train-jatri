@@ -67,7 +67,7 @@ const GoogleAd = ({ children }: Props) => {
       style={{
         overflow: 'hidden',
         width: '100%',
-        height: 'auto',
+        maxHeight: height,
         minHeight: height,
         display: 'flex',
         justifyContent: 'center',

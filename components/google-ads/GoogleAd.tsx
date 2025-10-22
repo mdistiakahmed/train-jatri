@@ -28,12 +28,26 @@ const DesktopAdSize: AdSizeWithWidthHeight = { width: 728, height: 90 };
 const MobileAdSize: AdSizeWithWidthHeight = { width: 320, height: 50 };
 
 const GoogleAd = ({ children }: Props) => {
-  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
+  const [isMobile, setIsMobile] = useState<boolean>(true);
 
+  // ✅ Detect mobile screen using window.innerWidth
   useEffect(() => {
-    if (isMobile !== undefined) return;
-    setIsMobile(window?.matchMedia('(max-width: 768px)')?.matches);
-  }, [isMobile]);
+    if (typeof window === "undefined") return;
+
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkIsMobile();
+
+    // Listen for resize to adapt dynamically
+    window.addEventListener("resize", checkIsMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
 
   useEffect(() => {
     if (isMobile === undefined) return;

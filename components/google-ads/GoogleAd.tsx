@@ -57,8 +57,8 @@ const GoogleAd = ({ children }: Props) => {
     }
   }, [isMobile]);
 
-  const appliedAdSize = isMobile ? MobileAdSize : DesktopAdSize;
-  const adSlotNo = isMobile ? FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'] : FIXED_AD_SLOT_ID_BY_NAME['ad-slot-1'];
+  const appliedAdSize = isMobile ? MobileAdSize : MobileAdSize;
+  const adSlotNo = isMobile ? FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'] : FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'];
   const height = `${appliedAdSize.height}px`;
   const width = `${appliedAdSize.width}px`;
 

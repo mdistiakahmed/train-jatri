@@ -1,9 +1,8 @@
 "use client";
-import React, { Fragment, ReactNode, Suspense, useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 declare global {
@@ -12,30 +11,78 @@ declare global {
   }
 }
 
+interface AdSizeWithWidthHeight {
+  width: number;
+  height: number;
+}
+
+const FIXED_AD_SLOT_ID_BY_NAME: Record<string, string> = {
+  'ad-slot-1': '1301835385', // Desktop
+  'ad-slot-2': '5160101609'  // Mobile
+};
+
+const ADSENSE_CLIENT_ID = "ca-pub-9851111861096184";
+const isLocalEnv = process.env.NODE_ENV === 'development';
+
+const DesktopAdSize: AdSizeWithWidthHeight = { width: 728, height: 90 };
+const MobileAdSize: AdSizeWithWidthHeight = { width: 320, height: 50 };
+
 const GoogleAd = ({ children }: Props) => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
+    if (isMobile !== undefined) return;
+    setIsMobile(window?.matchMedia('(max-width: 768px)')?.matches);
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile === undefined) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error(err);
     }
-  }, [pathname, searchParams]);
+  }, [isMobile]);
 
-  return <Fragment>{children}</Fragment>;
-};
+  if (isMobile === undefined) {
+    return <div style={{ height: '100px', maxWidth: '730px', width: '100%', margin: '0 auto' }} />;
+  }
 
-// Wrap the GoogleAd component with Suspense
-const SuspenseWrapper = ({ children }: { children: ReactNode }) => {
-  return <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>;
-};
+  const appliedAdSize = isMobile ? MobileAdSize : DesktopAdSize;
+  const adSlotNo = isMobile ? FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'] : FIXED_AD_SLOT_ID_BY_NAME['ad-slot-1'];
+  const height = `${appliedAdSize.height}px`;
+  const width = `${appliedAdSize.width}px`;
 
-export default function GoogleAdWithSuspense(props: Props) {
   return (
-    <SuspenseWrapper>
-      <GoogleAd {...props} />
-    </SuspenseWrapper>
+    <div
+      style={{
+        overflow: 'hidden',
+        width: '100%',
+        height: 'auto',
+        minHeight: height,
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '1rem 0',
+      }}
+    >
+      {isLocalEnv && (
+        <div style={{ width, height, textAlign: 'center', border: '1px solid red', padding: '10px' }}>
+          Type: <b>{isMobile ? 'Mobile' : 'Desktop'}</b> | Dimension: <b>{width} x {height}</b>
+        </div>
+      )}
+
+      {!isLocalEnv && (
+        <ins
+          className="adsbygoogle ads-container"
+          style={{ display: 'inline-block', width, height }}
+          data-ad-client={ADSENSE_CLIENT_ID}
+          data-ad-slot={adSlotNo}
+        />
+      )}
+
+      {children}
+    </div>
   );
-}
+};
+
+export default GoogleAd;

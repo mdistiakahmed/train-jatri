@@ -88,6 +88,18 @@ export default function RootLayout({
           </div>
           <main className="flex-1">
             <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
+            <div className="w-full md:w-[80vw] h-[100px] md:h-[200px]  mx-auto my-4">
+                <GoogleAdWithSuspense>
+                  <ins
+                    className="adsbygoogle"
+                    style={{ display: "block" }}
+                    data-ad-client="ca-pub-9851111861096184"
+                    data-ad-slot="1301835385"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                  ></ins>
+                </GoogleAdWithSuspense>
+            </div>
             {children}
           </main>
           <div className="hidden md:block w-1/6 pt-36 pl-8">

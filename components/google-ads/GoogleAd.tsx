@@ -50,17 +50,12 @@ const GoogleAd = ({ children }: Props) => {
 
 
   useEffect(() => {
-    if (isMobile === undefined) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (err) {
       console.error(err);
     }
   }, [isMobile]);
-
-  if (isMobile === undefined) {
-    return <div style={{ height: '100px', maxWidth: '730px', width: '100%', margin: '0 auto' }} />;
-  }
 
   const appliedAdSize = isMobile ? MobileAdSize : DesktopAdSize;
   const adSlotNo = isMobile ? FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'] : FIXED_AD_SLOT_ID_BY_NAME['ad-slot-1'];

@@ -89,7 +89,7 @@ export default function RootLayout({
           <main className="flex-1">
             <p className="whitespace-nowrap text-end py-4 text-xs italic mr-4">Last Updated: 21th June, 2025</p>
             <div
-              className="overflow-hidden w-full min-h-[80px] max-h-[80px] md:min-h-[120px] md:max-h-[120px] flex items-center justify-center"
+              className="overflow-hidden w-full min-h-[400px] max-h-[400px] md:min-h-[400px] md:max-h-[400px] flex items-center justify-center"
             >
                 <GoogleAd />
             </div>

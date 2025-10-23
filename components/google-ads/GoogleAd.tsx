@@ -42,15 +42,7 @@ const GoogleAd = ({ children }: Props) => {
 
   return (
     <div
-      style={{
-        overflow: 'hidden',
-        width: '100%',
-        maxHeight: '400px',
-        minHeight: '400px',
-        display: 'flex',
-        justifyContent: 'center',
-        margin: '1rem 0',
-      }}
+      className="overflow-hidden min-w-full md:min-w-[728px] w-full min-h-[400px] max-h-[400px] md:min-h-[400px] md:max-h-[400px] flex items-center justify-center"
     >
       {isLocalEnv && (
         <div style={{ width, height, textAlign: 'center', border: '1px solid red', padding: '10px' }}>

@@ -24,8 +24,30 @@ const FIXED_AD_SLOT_ID_BY_NAME: Record<string, string> = {
 const ADSENSE_CLIENT_ID = "ca-pub-9851111861096184";
 const isLocalEnv = process.env.NODE_ENV === 'development';
 
+const DesktopAdSize: AdSizeWithWidthHeight = { width: 728, height: 430 };
+const MobileAdSize: AdSizeWithWidthHeight = { width: 320, height: 430 };
 
 const GoogleAd = ({ children }: Props) => {
+  const [isMobile, setIsMobile] = useState<boolean>(true);
+
+  // ✅ Detect mobile screen using window.innerWidth
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkIsMobile();
+
+    // Listen for resize to adapt dynamically
+    window.addEventListener("resize", checkIsMobile);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
 
   useEffect(() => {
     try {
@@ -33,31 +55,37 @@ const GoogleAd = ({ children }: Props) => {
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  }, [isMobile]);
 
-
-  const adSlotNo = '1301835385';
-  const height = `400px`;
-  const width = `100%`;
+  const appliedAdSize = isMobile ? MobileAdSize : DesktopAdSize;
+  const adSlotNo = isMobile ? FIXED_AD_SLOT_ID_BY_NAME['ad-slot-2'] : FIXED_AD_SLOT_ID_BY_NAME['ad-slot-1'];
+  const height = `${appliedAdSize.height}px`;
+  const width = `${appliedAdSize.width}px`;
 
   return (
     <div
-      className="overflow-hidden min-w-full md:min-w-[728px] w-full min-h-[400px] max-h-[400px] md:min-h-[400px] md:max-h-[400px] flex items-center justify-center"
+      style={{
+        overflow: 'hidden',
+        width: '100%',
+        maxHeight: '430px',
+        minHeight: '430px',
+        display: 'flex',
+        justifyContent: 'center',
+        margin: '1rem 0',
+      }}
     >
       {isLocalEnv && (
         <div style={{ width, height, textAlign: 'center', border: '1px solid red', padding: '10px' }}>
-           Dimension: <b>{width} x {height}</b>
+          Type: <b>{isMobile ? 'Mobile' : 'Desktop'}</b> | Dimension: <b>{width} x {height}</b>
         </div>
       )}
 
       {!isLocalEnv && (
         <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
+          className="adsbygoogle ads-container"
+          style={{ display: 'inline-block', width, height }}
           data-ad-client={ADSENSE_CLIENT_ID}
           data-ad-slot={adSlotNo}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
         />
       )}
 

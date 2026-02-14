@@ -141,6 +141,7 @@ export const groupTrainsByDestination = (trainData: any, currentStation: string)
   
   // Process forward trains
   trainData.forward_trains.forEach((train: any) => {
+    if (!train.to) return; 
     const routeKey = `${currentStation} to ${train.to}`;
     
     if (!groupedRoutes[routeKey]) {
@@ -152,6 +153,7 @@ export const groupTrainsByDestination = (trainData: any, currentStation: string)
   
   // Process reverse trains
   trainData.reverse_trains.forEach((train: any) => {
+    if (!train.to) return; 
     const routeKey = `${currentStation} to ${train.to}`;
     
     if (!groupedRoutes[routeKey]) {
@@ -166,6 +168,7 @@ export const groupTrainsByDestination = (trainData: any, currentStation: string)
   groupedRoutes[route].sort((a, b) => {
       const convertToMinutes = (time: string) => {
         const [timePart, modifier] = time.trim().split(" "); // "02:10 am"
+        if (!timePart || !modifier) return 0;
         let [hours, minutes] = timePart.split(":").map(Number);
 
         if (modifier.toLowerCase() === "pm" && hours !== 12) {
@@ -269,6 +272,7 @@ export const GroupedTrainSchedules = ({groupedRoutes}: {groupedRoutes: { [key: s
 };
 
 export const formatTrainNameForUrl = (trainName: string) => {
+  if(!trainName) return '';
   return trainName.toLowerCase().replace(/\s+/g, '-');
 };
 

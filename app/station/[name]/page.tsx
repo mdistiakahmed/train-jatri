@@ -243,6 +243,83 @@ const GroupedTrainSchedules = ({groupedRoutes}: {groupedRoutes: { [key: string]:
   );
 };
 
+const StationSEOIntro = ({ stationName, trainData }: any) => {
+  const totalTrains =
+    trainData.forward_trains.length + trainData.reverse_trains.length;
+
+  const uniqueDestinations = Array.from(
+    new Set([
+      ...trainData.forward_trains.map((t: any) => t.to),
+      ...trainData.reverse_trains.map((t: any) => t.to),
+    ])
+  );
+
+
+  const popularDestinations = uniqueDestinations.slice(0, 5).join(", ");
+
+  return (
+    <div className="mb-6 text-left text-gray-700 leading-7">
+      <p className="mb-4">
+        <strong>{stationName} Railway Station</strong> is an important railway
+        station in Bangladesh where a total of <strong>{totalTrains}</strong>{" "}
+        trains operate regularly.
+      </p>
+
+      <p className="mb-4">
+        From {stationName}, passengers can travel directly to popular
+        destinations such as <strong>{popularDestinations}</strong> and other
+        major railway stations in Bangladesh.
+      </p>
+
+      <p>
+        This page provides the complete and updated train schedule of{" "}
+        {stationName} station including departure times, arrival times,
+        weekly off days, and route information to help you plan your journey
+        efficiently.
+      </p>
+    </div>
+  );
+};
+
+const generateForwardTrainsDescription = (stationName: string, forwardTrains: any[]) => {
+  if (forwardTrains.length === 0) return '';
+  
+  const trainDescriptions = forwardTrains.map(train => 
+    `${train.train_name}(${train.train_number}) departs from ${stationName} at ${train.departure_time_at_current} and arrives at ${train.to} at ${train.arrival_time_at_destination}.`
+  );
+  
+  return (
+    <div className="mb-4 text-sm text-gray-600 text-left">
+      <p className="mb-3">
+        There are total {forwardTrains.length} forward trains departing from {stationName} to various destinations. {trainDescriptions.join(' ')}
+      </p>
+      <p>
+        These forward trains from {stationName} connect to major destinations across Bangladesh. Check the complete schedule with departure times, arrival times, and weekly off days for planning your journey.
+      </p>
+    </div>
+  );
+};
+
+const generateReverseTrainsDescription = (stationName: string, reverseTrains: any[]) => {
+  if (reverseTrains.length === 0) return '';
+  
+  const trainDescriptions = reverseTrains.map(train => 
+    `${train.train_name}(${train.train_number}) arrives at {stationName} at ${train.arrival_time_at_current} from ${train.from}, departing at ${train.departure_time_at_current} and reaches ${train.to} at ${train.arrival_time_at_destination}.`
+  );
+  
+  return (
+    <div className="mb-4 text-sm text-gray-600 text-left">
+      <p className="mb-3">
+        There are total {reverseTrains.length} downward trains arriving at {stationName} from various stations. {trainDescriptions.join(' ')}
+      </p>
+      <p>
+        These downward trains provide connections back to {stationName} from different parts of Bangladesh. View the complete timetable with arrival times, departure times, and weekly off days for convenient travel planning.
+      </p>
+    </div>
+  );
+};
+
+
 
 const StationPage = async ({ params }: any) => {
   const { name } = await params;
@@ -274,19 +351,11 @@ const StationPage = async ({ params }: any) => {
 
       <div className="p-4">
         <h1 className="text-2xl font-bold mb-4">{stationName} Railway Station Train Schedule</h1>
-        <p className="mb-4">
-            The {stationName} train schedule provides detailed information to help you plan your rail 
-            journey with confidence. Whether you&apos;re a daily commuter, an occasional traveler, 
-            or planning a long-distance trip, having access to the latest train schedule from {stationName} is essential.
-            This comprehensive timetable includes all scheduled trains that stop at {stationName},
-            along with key details such as train numbers, train names, exact arrival and departure times,
-            and designated weekly off-days. 
-            
-            By reviewing the {stationName} train schedule, you can easily find the right train to your destination,
-            avoid delays, and ensure a smooth travel experience. 
-            Stay informed with accurate and up-to-date data on all forward and return routes connected to {stationName},
-            making your travel planning faster, easier, and more reliable.
-        </p>
+        <StationSEOIntro
+          stationName={stationName}
+          trainData={trainData}
+        />
+
 
         {/* Add Table of Contents */}
         <div className="w-full overflow-x-auto max-w-screen p-4">
@@ -305,6 +374,8 @@ const StationPage = async ({ params }: any) => {
       <div className="w-full overflow-x-auto max-w-screen p-4">
           <div className="mb-6" id="forward-trains">
             <h3 className="text-lg my-5">Forward Trains - {stationName} Train Schedule</h3>
+            {/* Add dynamic SEO text */}
+            {generateForwardTrainsDescription(stationName, trainData.forward_trains)}
             <div className="w-full overflow-x-auto max-w-full">
               <table className="min-w-max w-full bg-white rounded-lg shadow-md">
                 <thead>
@@ -372,6 +443,8 @@ const StationPage = async ({ params }: any) => {
 
           <div className="my-10">
             <h3 className="text-lg my-5">Downwards Trains - {stationName} Train Schedule</h3>
+            {/* Add dynamic SEO text */}
+            {generateReverseTrainsDescription(stationName, trainData.reverse_trains)}
             <div className="w-full overflow-x-auto max-w-full">
               <table className="min-w-max w-full bg-white rounded-lg shadow-md">
                 <thead>

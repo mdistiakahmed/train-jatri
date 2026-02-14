@@ -23,10 +23,10 @@ export const generateMetadata = async ({ params }: any) => {
   }
 
   return {
-    title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
+    title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule in Bangladesh`,
     description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
     openGraph: {
-      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule`,
+      title: `${name.charAt(0).toUpperCase() + name.slice(1)} Station Train Schedule in Bangladesh`,
       description: `Details of ${name} station train time schedule , weekly offday , source and destination arrival time.`,
       url: `https://www.trainjatri.com/station/${name}`,
       siteName: "Train Jatri",
@@ -90,7 +90,7 @@ const StationPage = async ({ params }: any) => {
   return (
     <div className="text-center">
       <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Train Schedule for {stationName} Station</h1>
+        <h1 className="text-2xl font-bold mb-4">{stationName} Railway Station Train Schedule</h1>
         <p className="mb-4">
             The {stationName} train schedule provides detailed information to help you plan your rail 
             journey with confidence. Whether you&apos;re a daily commuter, an occasional traveler, 

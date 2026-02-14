@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaQuestionCircle, FaRegCommentDots } from "react-icons/fa";
 
 export const JsonLdStructuredData = ({ stationName, trainData }: any) => {
   const structuredData = {
@@ -270,5 +270,175 @@ export const GroupedTrainSchedules = ({groupedRoutes}: {groupedRoutes: { [key: s
 
 export const formatTrainNameForUrl = (trainName: string) => {
   return trainName.toLowerCase().replace(/\s+/g, '-');
+};
+
+export const StationFAQ = ({ stationName, trainData }: { stationName: string; trainData: any }) => {
+  const uniqueDestinations = Array.from(
+    new Set([
+      ...trainData.forward_trains.map((t: any) => t.to),
+      ...trainData.reverse_trains.map((t: any) => t.from),
+    ])
+  );
+
+  const totalTrains = trainData.forward_trains.length + trainData.reverse_trains.length;
+
+  // Helper function to count trains between stations
+  const countTrainsBetweenStations = (from: string, to: string) => {
+    const forwardCount = trainData.forward_trains.filter(
+      (t: any) => t.from === from && t.to === to
+    ).length;
+    const reverseCount = trainData.reverse_trains.filter(
+      (t: any) => t.from === from && t.to === to
+    ).length;
+    return forwardCount + reverseCount;
+  };
+
+  // Helper function to get train departure info
+  const getTrainDepartureInfo = (trainName: string) => {
+    const forwardTrain = trainData.forward_trains.find(
+      (t: any) => t.train_name === trainName
+    );
+    const reverseTrain = trainData.reverse_trains.find(
+      (t: any) => t.train_name === trainName
+    );
+    
+    if (forwardTrain) {
+      return {
+        departure: forwardTrain.departure_time_at_current,
+        to: forwardTrain.to,
+        offday: forwardTrain.offday
+      };
+    }
+    if (reverseTrain) {
+      return {
+        departure: reverseTrain.departure_time_at_current,
+        to: reverseTrain.to,
+        offday: reverseTrain.offday
+      };
+    }
+    return null;
+  };
+
+  const faqData = [
+    {
+      question: `How many trains depart from ${stationName} station daily?`,
+      answer: `A total of ${trainData.forward_trains.length} trains depart from ${stationName} station to various destinations across Bangladesh. These include intercity, commuter, and passenger trains serving different routes throughout the day.`,
+    },
+    {
+      question: `Which are the most popular destinations from ${stationName} station?`,
+      answer: `Popular destinations from ${stationName} station include ${uniqueDestinations.slice(0, 5).join(', ')} and other major cities. Each route has specific train schedules with different departure times to suit passenger needs.`,
+    },
+    ...uniqueDestinations.slice(0, 5).map((destination: string) => {
+      const trainCount = countTrainsBetweenStations(stationName, destination);
+      return {
+        question: `How many trains from ${stationName} to ${destination}?`,
+        answer: `There are ${trainCount} trains available from ${stationName} to ${destination}. You can check the detailed schedule above for specific departure times, arrival times, and weekly off days for each train on this route.`,
+      };
+    }),
+    ...uniqueDestinations.slice(0, 5).map((destination: string) => ({
+      question: `What is ${stationName} to ${destination} train schedule?`,
+      answer: `The ${stationName} to ${destination} route has several trains operating throughout the day. You can check the detailed schedule above for specific departure and arrival times, along with weekly off days for each train on this route.`,
+    })),
+    ...trainData.forward_trains.map((train: any) => ({
+      question: `When does ${train.train_name} depart from ${stationName}?`,
+      answer: `${train.train_name}(${train.train_number}) departs from ${stationName} at ${train.departure_time_at_current} and arrives at ${train.to} at ${train.arrival_time_at_destination}. This train has weekly off day on ${train.offday}.`,
+    })),
+    ...trainData.reverse_trains.map((train: any) => ({
+      question: `When does ${train.train_name} arrive at ${stationName}?`,
+      answer: `${train.train_name}(${train.train_number}) arrives at ${stationName} at ${train.arrival_time_at_current} from ${train.from}. It then departs at ${train.departure_time_at_current} and reaches ${train.to} at ${train.arrival_time_at_destination}. Weekly off day is ${train.offday}.`,
+    })),
+    {
+      question: `How many intercity trains operate from ${stationName} station?`,
+      answer: `From ${stationName} station, there are ${
+        trainData.forward_trains.length +  trainData.reverse_trains.length
+      } intercity trains available to major cities across Bangladesh.`,
+    },
+    {
+      question: `Which trains from ${stationName} have no weekly off day?`,
+      answer: `Trains from ${stationName} that operate daily (no off day) include ${
+        trainData.forward_trains
+          .filter((t: any) => t.offday === 'No OffDay')
+          .map((t: any) => t.train_name)
+          .slice(0, 3)
+          .join(', ') || 'None'
+      }. These trains run every day of the week.`,
+    },
+    {
+      question: `What are the morning departure times from ${stationName} station?`,
+      answer: `Morning trains from ${stationName} include ${
+        trainData.forward_trains
+          .filter((t: any) => {
+            const time = t.departure_time_at_current.split(' ')[0];
+            const hour = parseInt(time.split(':')[0]);
+            return hour < 12;
+          })
+          .map((t: any) => `${t.train_name} at ${t.departure_time_at_current}`)
+          .slice(0, 3)
+          .join(', ') || 'None'
+      }. Morning departures are usually less crowded and recommended for comfortable travel.`,
+    },
+    {
+      question: `What are the evening departure times from ${stationName} station?`,
+      answer: `Evening trains from ${stationName} include ${
+        trainData.forward_trains
+          .filter((t: any) => {
+            const time = t.departure_time_at_current.split(' ')[0];
+            const hour = parseInt(time.split(':')[0]);
+            return hour >= 16;
+          })
+          .map((t: any) => `${t.train_name} at ${t.departure_time_at_current}`)
+          .slice(0, 3)
+          .join(', ') || 'None'
+      }. Evening trains are convenient for business travelers and those who prefer night travel.`,
+    },
+    {
+      question: `How can I book tickets for trains from ${stationName} station?`,
+      answer: `You can book train tickets from ${stationName} station through the official Bangladesh Railway website, mobile app, or at the station counter. It's recommended to book in advance especially for intercity trains to ensure seat availability.`,
+    },
+    {
+      question: `What facilities are available at ${stationName} railway station?`,
+      answer: `${stationName} railway station provides basic facilities including waiting rooms, ticket counters, and platform information. For specific facility details, passengers are advised to contact the station directly or check the official Bangladesh Railway website.`,
+    },
+    {
+      question: `What is the best time to travel from ${stationName} station?`,
+      answer: `The best time to travel from ${stationName} station depends on your destination and preferences. Morning trains are usually less crowded, while evening trains might be more convenient for business travelers. Check the complete schedule to choose the most suitable departure time.`,
+    },
+    {
+      question: `Are there any special trains during holidays from ${stationName} station?`,
+      answer: `During major holidays and festivals, Bangladesh Railway often operates special trains from ${stationName} station. These special trains are announced separately and may have different schedules. Passengers are advised to check official announcements during holiday seasons.`,
+    },
+  ];
+
+  return (
+     <div className="mt-12 max-w-4xl mx-auto text-left">
+    <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+      Frequently Asked Questions About {stationName} Railway Station
+    </h2>
+
+    <div className="space-y-8">
+      {faqData.map((faq, index) => (
+        <div key={index} className="  bg-white py-6">
+          
+          {/* Question */}
+          <div className="flex items-start gap-3 mb-2">
+            <FaQuestionCircle className="text-indigo-600 mt-1 shrink-0" />
+            <h3 className="text-lg font-semibold text-gray-800">
+              {faq.question}
+            </h3>
+          </div>
+
+          {/* Answer */}
+          <div className="flex items-start gap-3 ml-6">
+            <FaRegCommentDots className="text-gray-500 mt-1 shrink-0" />
+            <p className="text-gray-700 leading-7">
+              {faq.answer}
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+  );
 };
 

@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 import { allStationNames } from './../../../data/Stations/0_all_station_name';
-import { formatTrainNameForUrl, generateForwardTrainsDescription, generateReverseTrainsDescription, GroupedTrainSchedules, groupTrainsByDestination, JsonLdStructuredData, StationSEOIntro, TableOfContents } from "./components";
+import { formatTrainNameForUrl, generateForwardTrainsDescription, generateReverseTrainsDescription, GroupedTrainSchedules, groupTrainsByDestination, JsonLdStructuredData, StationFAQ, StationSEOIntro, TableOfContents } from "./components";
 import Link from "next/link";
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
@@ -253,6 +253,8 @@ const StationPage = async ({ params }: any) => {
       <div className="w-full overflow-x-auto max-w-screen p-4">
         <GroupedTrainSchedules groupedRoutes={groupedRoutes} />
       </div>
+
+      <StationFAQ stationName={stationName} trainData={trainData} />
     </div>
   );
 };

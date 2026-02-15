@@ -425,7 +425,7 @@ export const StationFAQ = ({ stationName, trainData }: { stationName: string; tr
           
           {/* Question */}
           <div className="flex items-start gap-3 mb-2">
-            <FaQuestionCircle className="text-indigo-600 mt-1 shrink-0" />
+            <FaQuestionCircle className="text-indigo-600 ml-4 mt-1 shrink-0" />
             <h3 className="text-lg font-semibold text-gray-800">
               {faq.question}
             </h3>

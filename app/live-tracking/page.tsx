@@ -12,9 +12,9 @@ interface TrainInfo {
 }
 
 export const metadata: Metadata = {
-  title: "Live Train Tracking - Train Jatri",
+  title: "Live Train Tracking Bangladesh | Real-Time Train Status BD",
   description:
-    "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
+    "Track Bangladesh Railway trains live. Get real-time train running status, delay information, and current location updates instantly.",
   keywords: [
     "live train tracking",
     "train location",
@@ -25,17 +25,17 @@ export const metadata: Metadata = {
     "train code",
   ],
   openGraph: {
-    title: "Live Train Tracking - Train Jatri",
+    title: "Live Train Tracking Bangladesh | Real-Time Train Status BD",
     description:
-      "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
+      "Track Bangladesh Railway trains live. Get real-time train running status, delay information, and current location updates instantly.",
     type: "website",
     url: "https://www.trainjatri.com/live-tracking",
     images: "/logo.png",
   },
   twitter: {
-    title: "Live Train Tracking - Train Jatri",
+    title: "Live Train Tracking Bangladesh | Real-Time Train Status BD",
     description:
-      "Track the real-time location of trains in Bangladesh using SMS. Get live train tracking updates by sending an SMS with the train number or code to 16318.",
+      "Track Bangladesh Railway trains live. Get real-time train running status, delay information, and current location updates instantly.",
     images: "/logo.png",
   },
 };

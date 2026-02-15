@@ -1,8 +1,24 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { uniqueTrainNames } from "@/utils/trainNames";
 import SearchButton from "@/components/SearchTrainComponent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Bangladesh Trains List | Intercity & Mail Express Trains",
+  description:
+    "Browse the complete list of Bangladesh Railway trains including Intercity, Mail Express, and local trains. View routes, schedules, and details for every train.",
+  openGraph: {
+    title: "All Bangladesh Trains List | Intercity & Mail Express Trains",
+    description:
+      "Browse the complete list of Bangladesh Railway trains including Intercity, Mail Express, and local trains. View routes, schedules, and details for every train.",
+    images: "/logo.png",
+    url: "https://www.trainjatri.com/trains",
+    siteName: "Train Jatri",
+    type: "website",
+  },
+};
+
 
 const stripBracketContent = (name: string) => {
   return name.replace(/\s*\(.*?\)\s*/g, "").trim(); // Removes (number) and trims

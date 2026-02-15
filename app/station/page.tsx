@@ -4,6 +4,23 @@ import Head from "next/head";
 import Image from "next/image";
 import { allStationNames } from '../../data/Stations/0_all_station_name';
 import SearchStationButton from "@/components/SearchStationComponent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bangladesh Railway Station List | All Train Stations in BD",
+  description:
+    "Find the complete list of Bangladesh Railway stations including Dhaka, Chittagong, Sylhet, Khulna and more. Explore station details and train connections.",
+   openGraph: {
+    title: "Bangladesh Railway Station List | All Train Stations in BD",
+    description:
+      "Find the complete list of Bangladesh Railway stations including Dhaka, Chittagong, Sylhet, Khulna and more. Explore station details and train connections.",
+    images: "/logo.png",
+    url: "https://www.trainjatri.com/station",
+    siteName: "Train Jatri",
+    type: "website",
+  },
+};
+
 
 const StationPage = () => {
 

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Topbar from "@/components/topbar/Topbar";
 import Footer from "@/components/footer/Footer";
@@ -19,13 +18,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Train Jatri - Bangladesh Railway Schedule & Live Tracking",
+  title: "Train Jatri | Bangladesh Railway Schedule & Train Routes",
   description:
-    "Find accurate Bangladesh Railway train schedules, live tracking, ticket information, and more. Plan your journey across Bangladesh with ease. Get real-time updates for all train routes.",
+    "Train Jatri provides accurate Bangladesh Railway train schedules, routes, and station information. Easily find train timings, departure details, and plan your journey across Bangladesh.",
   keywords: [
     "Bangladesh Railway",
     "train schedule",
-    "train tracking",
     "train tickets",
     "Bangladesh trains",
     "railway information",
@@ -35,14 +33,13 @@ export const metadata: Metadata = {
     "Khulna train",
     "train jatri",
     "Bangladesh railway schedule",
-    "train live tracking Bangladesh",
     "Bangladesh train ticket",
     "railway schedule Bangladesh",
   ],
   openGraph: {
-    title: "Train Jatri - Bangladesh Railway Schedule & Live Tracking",
+    title: "Train Jatri | Bangladesh Railway Schedule & Train Routes",
     description:
-      "Find accurate Bangladesh Railway train schedules, live tracking, ticket information, and more. Plan your journey across Bangladesh with ease. Get real-time updates for all train routes.",
+      "Train Jatri provides accurate Bangladesh Railway train schedules, routes, and station information. Easily find train timings, departure details, and plan your journey across Bangladesh.",
     images: "/logo.png",
     url: "https://www.trainjatri.com",
     siteName: "Train Jatri",
@@ -50,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Train Jatri - Bangladesh Railway Schedule & Live Tracking",
+    title: "Train Jatri | Bangladesh Railway Schedule & Train Routes",
     description:
-      "Find accurate Bangladesh Railway train schedules, live tracking, ticket information, and more. Plan your journey across Bangladesh with ease. Get real-time updates for all train routes.",
+      "Train Jatri provides accurate Bangladesh Railway train schedules, routes, and station information. Easily find train timings, departure details, and plan your journey across Bangladesh.",
     images: ["/logo.png"],
   },
 };

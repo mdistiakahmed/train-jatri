@@ -1,11 +1,18 @@
 import React from "react";
 import Link from "next/link";
-import { FaTrain, FaMapMarkerAlt, FaClock, FaInfoCircle, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-
+import {
+  FaTrain,
+  FaMapMarkerAlt,
+  FaClock,
+  FaInfoCircle,
+  FaFacebook,
+  FaTwitter,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,29 +25,30 @@ const Footer = () => {
               <span className="text-red-500 text-xs">.com</span>
             </div>
             <p className="text-gray-400 text-sm">
-              Your complete guide to Bangladesh Railway. Find accurate schedules, 
-              live tracking, and travel information for all train routes across Bangladesh.
+              Your complete guide to Bangladesh Railway. Find accurate
+              schedules, live tracking, and travel information for all train
+              routes across Bangladesh.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a 
-                href="https://www.facebook.com/train.jatri" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/train.jatri"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <FaFacebook className="h-5 w-5" />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <FaTwitter className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.instagram.com" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
@@ -57,16 +65,21 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { name: 'Train Schedule', href: '/trains' },
-                { name: 'Routes by Station', href: '/station' },
-                { 
-                  name: 'Live Tracking', 
-                  href: '/live-tracking',
+                { name: "Train Schedule", href: "/trains" },
+                { name: "Routes by Station", href: "/station" },
+                {
+                  name: "Live Tracking",
+                  href: "/live-tracking",
                 },
-                { 
-                  name: 'Book Tickets', 
-                  href: 'https://eticket.railway.gov.bd/',
-                  external: true 
+                {
+                  name: "Book Tickets",
+                  href: "https://eticket.railway.gov.bd/",
+                  external: true,
+                },
+                {
+                  name: "Thailand Train Schedule",
+                  href: "https://www.railthailand.com/",
+                  external: true,
                 },
               ].map((item) => (
                 <li key={item.name}>
@@ -74,13 +87,12 @@ const Footer = () => {
                     <a
                       href={item.href}
                       target="_blank"
-                      rel="noopener noreferrer"
                       className="text-sm text-gray-400 hover:text-red-500 transition-colors"
                     >
                       {item.name}
                     </a>
                   ) : (
-                    <Link 
+                    <Link
                       href={item.href}
                       className="text-sm text-gray-400 hover:text-red-500 transition-colors"
                     >
@@ -100,12 +112,18 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {[
-                { name: 'Narsingdi to Dhaka', slug: 'narsingdi#Narsingdi-to-Dhaka' },
-                { name: 'Cumilla to Dhaka', slug: 'cumilla#Cumilla-to-Dhaka' },
-                { name: 'Dhaka to Chattogram', slug: 'dhaka#Dhaka-to-Chattogram' },
+                {
+                  name: "Narsingdi to Dhaka",
+                  slug: "narsingdi#Narsingdi-to-Dhaka",
+                },
+                { name: "Cumilla to Dhaka", slug: "cumilla#Cumilla-to-Dhaka" },
+                {
+                  name: "Dhaka to Chattogram",
+                  slug: "dhaka#Dhaka-to-Chattogram",
+                },
               ].map((route) => (
                 <li key={route.slug}>
-                  <Link 
+                  <Link
                     href={`/station/${route.slug}`}
                     className="text-sm text-gray-400 hover:text-red-500 transition-colors"
                   >
@@ -134,9 +152,9 @@ const Footer = () => {
                 <p>Official BR Hotline: 131</p>
               </li>
               <li>
-                <a 
-                  href="https://railway.portal.gov.bd/sites/default/files/files/railway.portal.gov.bd/page/add42f17_4f9b_40a9_b7ef_e357878fb6ba/Contact%20Details.pdf" 
-                  target="_blank" 
+                <a
+                  href="https://railway.portal.gov.bd/sites/default/files/files/railway.portal.gov.bd/page/add42f17_4f9b_40a9_b7ef_e357878fb6ba/Contact%20Details.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-red-400 hover:text-red-300"
                 >
@@ -153,13 +171,22 @@ const Footer = () => {
             &copy; {currentYear} TrainJatri.com. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
+            <Link
+              href="/privacy-policy"
+              className="text-sm text-gray-400 hover:text-white"
+            >
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-sm text-gray-400 hover:text-white">
+            <Link
+              href="/contact"
+              className="text-sm text-gray-400 hover:text-white"
+            >
               Contact Us
             </Link>
-            <Link href="/sitemap.xml" className="text-sm text-gray-400 hover:text-white">
+            <Link
+              href="/sitemap.xml"
+              className="text-sm text-gray-400 hover:text-white"
+            >
               Sitemap
             </Link>
           </div>
